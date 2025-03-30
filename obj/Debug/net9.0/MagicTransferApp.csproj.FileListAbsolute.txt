@@ -1,0 +1,14 @@
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\bin\Debug\net9.0\MagicTransferApp.exe
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\bin\Debug\net9.0\MagicTransferApp.deps.json
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\bin\Debug\net9.0\MagicTransferApp.runtimeconfig.json
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\bin\Debug\net9.0\MagicTransferApp.dll
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\bin\Debug\net9.0\MagicTransferApp.pdb
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\obj\Debug\net9.0\MagicTransferApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\obj\Debug\net9.0\MagicTransferApp.AssemblyInfoInputs.cache
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\obj\Debug\net9.0\MagicTransferApp.AssemblyInfo.cs
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\obj\Debug\net9.0\MagicTransferApp.csproj.CoreCompileInputs.cache
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\obj\Debug\net9.0\MagicTransferApp.dll
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\obj\Debug\net9.0\refint\MagicTransferApp.dll
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\obj\Debug\net9.0\MagicTransferApp.pdb
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\obj\Debug\net9.0\MagicTransferApp.genruntimeconfig.cache
+C:\dev\backend\TCC\MagicTransfer\MagicTransferApp\obj\Debug\net9.0\ref\MagicTransferApp.dll

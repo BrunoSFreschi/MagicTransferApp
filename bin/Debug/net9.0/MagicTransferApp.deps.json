@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "MagicTransferApp/1.0.0": {
+        "runtime": {
+          "MagicTransferApp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MagicTransferApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
