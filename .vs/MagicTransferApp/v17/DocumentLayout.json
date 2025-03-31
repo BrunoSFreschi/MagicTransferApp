@@ -22,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 186,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DatabaseSchema.cs",
-              "DocumentMoniker": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\DatabaseSchema.cs",
-              "RelativeDocumentMoniker": "DatabaseSchema.cs",
-              "ToolTip": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\DatabaseSchema.cs",
-              "RelativeToolTip": "DatabaseSchema.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T03:25:51.008Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -56,11 +43,24 @@
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\Program.cs*",
-              "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAuwGEAAAARAAAAAAAAAA==",
+              "ToolTip": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T19:45:47.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DatabaseSchema.cs",
+              "DocumentMoniker": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\DatabaseSchema.cs",
+              "RelativeDocumentMoniker": "DatabaseSchema.cs",
+              "ToolTip": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\DatabaseSchema.cs",
+              "RelativeToolTip": "DatabaseSchema.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T03:25:51.008Z",
               "EditorCaption": ""
             }
           ]
