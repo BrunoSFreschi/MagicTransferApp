@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E470A763-3453-5DE3-776C-48A0F6B0D623}|MagicTransferApp.csproj|c:\\dev\\backend\\tcc\\magictransfer\\magictransferapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E470A763-3453-5DE3-776C-48A0F6B0D623}|MagicTransferApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E470A763-3453-5DE3-776C-48A0F6B0D623}|MagicTransferApp.csproj|c:\\dev\\backend\\tcc\\magictransfer\\magictransferapp\\databaseschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E470A763-3453-5DE3-776C-48A0F6B0D623}|MagicTransferApp.csproj|solutionrelative:databaseschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E470A763-3453-5DE3-776C-48A0F6B0D623}|MagicTransferApp.csproj|c:\\dev\\backend\\tcc\\magictransfer\\magictransferapp\\tableschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E470A763-3453-5DE3-776C-48A0F6B0D623}|MagicTransferApp.csproj|solutionrelative:tableschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 186,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DatabaseSchema.cs",
+              "DocumentMoniker": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\DatabaseSchema.cs",
+              "RelativeDocumentMoniker": "DatabaseSchema.cs",
+              "ToolTip": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\DatabaseSchema.cs",
+              "RelativeToolTip": "DatabaseSchema.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T03:25:51.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TableSchema.cs",
+              "DocumentMoniker": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\TableSchema.cs",
+              "RelativeDocumentMoniker": "TableSchema.cs",
+              "ToolTip": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\TableSchema.cs",
+              "RelativeToolTip": "TableSchema.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T03:24:38.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAuwCwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T19:45:47.667Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
