@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MagicTransferApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9fa843a1542f309950785b5401c4ebd417b230d0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06d0f8d76a4a4d87470ff9c2d91ccb7a3afec293")]
 [assembly: System.Reflection.AssemblyProductAttribute("MagicTransferApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MagicTransferApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
