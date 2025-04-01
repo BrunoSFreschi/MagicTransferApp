@@ -4,9 +4,24 @@ using System.Diagnostics;
 
 class Program
 {
+    // Constantes para ícones
+    private const string ICON_SUCCESS = "✅";
+    private const string ICON_ERROR = "❌";
+    private const string ICON_INFO = "ℹ️";
+    private const string ICON_WARNING = "⚠️";
+    private const string ICON_STEP = "🔵";
+    private const string ICON_TABLE = "📋";
+    private const string ICON_COLUMN = "📝";
+    private const string ICON_FK = "🔗";
+    private const string ICON_TIME = "⏱️";
+    private const string ICON_JSON = "📄";
+
     [Obsolete]
     static void Main()
     {
+        // Configuração para suportar caracteres Unicode
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+
         // Configuração inicial
         string server = "localhost";
         string database = "PRUDENCIO-";
@@ -16,8 +31,7 @@ class Program
 
         // Inicializa o cronômetro para medir o tempo total
         Stopwatch totalTimer = Stopwatch.StartNew();
-        Console.WriteLine("Iniciando análise da estrutura do banco de dados...");
-        Console.WriteLine();
+        LogStep(1, 4, "Iniciando análise da estrutura do banco de dados...");
 
         SqlConnection? conn = null;
         SqlCommand? cmd = null;
@@ -25,21 +39,20 @@ class Program
         try
         {
             // Etapa 1: Conectar ao banco de dados
-            LogStep(1, 3, "Conectando ao banco de dados...");
+            LogStep(2, 4, "Conectando ao banco de dados...");
             var connectTimer = Stopwatch.StartNew();
 
             conn = new SqlConnection(connStr);
             conn.Open();
 
             connectTimer.Stop();
-            LogSuccess($"Conexão estabelecida com sucesso. Tempo: {connectTimer.Elapsed.TotalSeconds:0.00}s");
-            Console.WriteLine();
+            LogSuccess($"Conexão estabelecida com sucesso. {ICON_TIME} Tempo: {connectTimer.Elapsed.TotalSeconds:0.00}s");
 
             // Dicionário para armazenar tabelas e colunas
             Dictionary<string, dynamic> dbStructure = [];
 
             // Etapa 2: Listar tabelas
-            LogStep(2, 3, "Obtendo lista de tabelas...");
+            LogStep(3, 4, "Obtendo lista de tabelas...");
             var tablesTimer = Stopwatch.StartNew();
 
             cmd = new SqlCommand("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'", conn);
@@ -53,12 +66,10 @@ class Program
             reader.Close();
 
             tablesTimer.Stop();
-            LogSuccess($"Encontradas {tables.Count} tabelas. Tempo: {tablesTimer.Elapsed.TotalSeconds:0.00}s");
-            Console.WriteLine();
+            LogSuccess($"{ICON_TABLE} Encontradas {tables.Count} tabelas. {ICON_TIME} Tempo: {tablesTimer.Elapsed.TotalSeconds:0.00}s");
 
             // Etapa 3: Processar cada tabela
-            LogStep(3, 3, $"Processando {tables.Count} tabelas...");
-            Console.WriteLine();
+            LogStep(4, 4, $"{ICON_TABLE} Processando {tables.Count} tabelas...");
 
             int processedTables = 0;
             var processTimer = Stopwatch.StartNew();
@@ -69,10 +80,10 @@ class Program
                 tableTimer.Restart();
                 processedTables++;
 
-                LogInfo($"Processando tabela {processedTables}/{tables.Count}: {tableName}");
-                Console.WriteLine($"- Obtendo colunas e tipos de dados...");
+                LogInfo($"{ICON_TABLE} Processando tabela {processedTables}/{tables.Count}: {tableName}");
 
                 // Obtém os nomes das colunas e tipos de dados
+                Console.WriteLine($"{ICON_COLUMN} Obtendo colunas e tipos de dados...");
                 cmd = new SqlCommand("SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @tableName", conn);
                 cmd.Parameters.AddWithValue("@tableName", tableName);
                 reader = cmd.ExecuteReader();
@@ -88,10 +99,10 @@ class Program
                 }
                 reader.Close();
 
-                Console.WriteLine($"  > Encontradas {columns.Count} colunas");
-                Console.WriteLine($"- Buscando chaves estrangeiras...");
+                LogInfo($"  {ICON_COLUMN} Encontradas {columns.Count} colunas");
 
                 // Obtém as chaves estrangeiras
+                Console.WriteLine($"{ICON_FK} Buscando chaves estrangeiras...");
                 cmd = new SqlCommand(@"
                     SELECT 
                         kcu.COLUMN_NAME,
@@ -122,7 +133,7 @@ class Program
                 }
                 reader.Close();
 
-                Console.WriteLine($"  > Encontradas {foreign_Keys.Count} chaves estrangeiras");
+                LogInfo($"  {ICON_FK} Encontradas {foreign_Keys.Count} chaves estrangeiras");
 
                 // Adiciona a estrutura da tabela ao dicionário
                 dbStructure.Add(tableName, new
@@ -132,42 +143,38 @@ class Program
                 });
 
                 tableTimer.Stop();
-                LogInfo($"Tabela {tableName} processada. Tempo: {tableTimer.Elapsed.TotalSeconds:0.00}s");
+                LogInfo($"{ICON_TABLE} Tabela {tableName} processada. {ICON_TIME} Tempo: {tableTimer.Elapsed.TotalSeconds:0.00}s");
 
                 // Estimativa de tempo restante
                 if (processedTables < tables.Count)
                 {
                     double avgTimePerTable = processTimer.Elapsed.TotalSeconds / processedTables;
                     double estimatedRemaining = avgTimePerTable * (tables.Count - processedTables);
-                    Console.WriteLine($"- Estimativa: faltam ~{estimatedRemaining:0.00}s para conclusão");
+                    LogInfo($"{ICON_TIME} Estimativa: faltam ~{estimatedRemaining:0.00}s para conclusão");
                 }
-
-                Console.WriteLine();
             }
 
             processTimer.Stop();
-            LogSuccess($"Todas as tabelas processadas. Tempo total: {processTimer.Elapsed.TotalSeconds:0.00}s");
-            Console.WriteLine();
+            LogSuccess($"{ICON_SUCCESS} Todas as tabelas processadas. {ICON_TIME} Tempo total: {processTimer.Elapsed.TotalSeconds:0.00}s");
 
-            // Salvar em um arquivo JSON
-            Console.WriteLine("Gerando arquivo JSON...");
+            // Etapa 4: Salvar em um arquivo JSON
+            Console.WriteLine($"{ICON_JSON} Gerando arquivo JSON...");
             var jsonTimer = Stopwatch.StartNew();
 
             string json = JsonConvert.SerializeObject(dbStructure, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText("db_structure.json", json);
 
             jsonTimer.Stop();
-            LogSuccess($"Arquivo 'db_structure.json' gerado com sucesso. Tempo: {jsonTimer.Elapsed.TotalSeconds:0.00}s");
-            Console.WriteLine();
+            LogSuccess($"{ICON_JSON} Arquivo 'db_structure.json' gerado com sucesso. {ICON_TIME} Tempo: {jsonTimer.Elapsed.TotalSeconds:0.00}s");
 
             totalTimer.Stop();
-            LogSuccess($"Processo concluído com sucesso! Tempo total: {totalTimer.Elapsed.TotalSeconds:0.00}s");
+            LogSuccess($"{ICON_SUCCESS} Processo concluído com sucesso! {ICON_TIME} Tempo total: {totalTimer.Elapsed.TotalSeconds:0.00}s");
         }
         catch (Exception e)
         {
             totalTimer.Stop();
-            LogError($"Erro: {e.Message}");
-            LogError($"Tempo decorrido antes do erro: {totalTimer.Elapsed.TotalSeconds:0.00}s");
+            LogError($"{ICON_ERROR} Erro: {e.Message}");
+            LogError($"{ICON_TIME} Tempo decorrido antes do erro: {totalTimer.Elapsed.TotalSeconds:0.00}s");
         }
         finally
         {
@@ -177,32 +184,40 @@ class Program
         }
     }
 
-    // Métodos auxiliares para formatação de logs
+    #region Métodos de Log
     private static void LogStep(int currentStep, int totalSteps, string message)
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine($"[ETAPA {currentStep}/{totalSteps}] {message}");
+        Console.WriteLine($"{ICON_STEP} [ETAPA {currentStep}/{totalSteps}] {message}");
         Console.ResetColor();
     }
 
     private static void LogSuccess(string message)
     {
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine($"[SUCESSO] {message}");
+        Console.WriteLine($"{ICON_SUCCESS} {message}");
         Console.ResetColor();
     }
 
     private static void LogInfo(string message)
     {
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine($"[INFO] {message}");
+        Console.WriteLine($"{ICON_INFO} {message}");
+        Console.ResetColor();
+    }
+
+    private static void LogWarning(string message)
+    {
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        Console.WriteLine($"{ICON_WARNING} {message}");
         Console.ResetColor();
     }
 
     private static void LogError(string message)
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine($"[ERRO] {message}");
+        Console.WriteLine($"{ICON_ERROR} {message}");
         Console.ResetColor();
     }
+    #endregion
 }
