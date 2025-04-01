@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 class Program
 {
-    // Constantes para ícones
+
     private const string ICON_SUCCESS = "✅";
     private const string ICON_ERROR = "❌";
     private const string ICON_INFO = "ℹ️";
@@ -19,17 +19,15 @@ class Program
     [Obsolete]
     static void Main()
     {
-        // Configuração para suportar caracteres Unicode
+
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-        // Configuração inicial
         string server = "localhost";
         string database = "PRUDENCIO-";
         string username = "aggersa";
         string password = "1800Dz10";
         string connStr = $"Server={server};Database={database};User Id={username};Password={password};";
 
-        // Inicializa o cronômetro para medir o tempo total
         Stopwatch totalTimer = Stopwatch.StartNew();
         LogStep(1, 4, "Iniciando análise da estrutura do banco de dados...");
 
@@ -38,7 +36,6 @@ class Program
 
         try
         {
-            // Etapa 1: Conectar ao banco de dados
             LogStep(2, 4, "Conectando ao banco de dados...");
             var connectTimer = Stopwatch.StartNew();
 
@@ -48,10 +45,8 @@ class Program
             connectTimer.Stop();
             LogSuccess($"Conexão estabelecida com sucesso. {ICON_TIME} Tempo: {connectTimer.Elapsed.TotalSeconds:0.00}s");
 
-            // Dicionário para armazenar tabelas e colunas
             Dictionary<string, dynamic> dbStructure = [];
 
-            // Etapa 2: Listar tabelas
             LogStep(3, 4, "Obtendo lista de tabelas...");
             var tablesTimer = Stopwatch.StartNew();
 
@@ -68,7 +63,6 @@ class Program
             tablesTimer.Stop();
             LogSuccess($"{ICON_TABLE} Encontradas {tables.Count} tabelas. {ICON_TIME} Tempo: {tablesTimer.Elapsed.TotalSeconds:0.00}s");
 
-            // Etapa 3: Processar cada tabela
             LogStep(4, 4, $"{ICON_TABLE} Processando {tables.Count} tabelas...");
 
             int processedTables = 0;
@@ -82,7 +76,6 @@ class Program
 
                 LogInfo($"{ICON_TABLE} Processando tabela {processedTables}/{tables.Count}: {tableName}");
 
-                // Obtém os nomes das colunas e tipos de dados
                 Console.WriteLine($"{ICON_COLUMN} Obtendo colunas e tipos de dados...");
                 cmd = new SqlCommand("SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @tableName", conn);
                 cmd.Parameters.AddWithValue("@tableName", tableName);
@@ -101,7 +94,6 @@ class Program
 
                 LogInfo($"  {ICON_COLUMN} Encontradas {columns.Count} colunas");
 
-                // Obtém as chaves estrangeiras
                 Console.WriteLine($"{ICON_FK} Buscando chaves estrangeiras...");
                 cmd = new SqlCommand(@"
                     SELECT 
@@ -135,7 +127,7 @@ class Program
 
                 LogInfo($"  {ICON_FK} Encontradas {foreign_Keys.Count} chaves estrangeiras");
 
-                // Adiciona a estrutura da tabela ao dicionário
+
                 dbStructure.Add(tableName, new
                 {
                     columns,
@@ -145,7 +137,6 @@ class Program
                 tableTimer.Stop();
                 LogInfo($"{ICON_TABLE} Tabela {tableName} processada. {ICON_TIME} Tempo: {tableTimer.Elapsed.TotalSeconds:0.00}s");
 
-                // Estimativa de tempo restante
                 if (processedTables < tables.Count)
                 {
                     double avgTimePerTable = processTimer.Elapsed.TotalSeconds / processedTables;
@@ -157,7 +148,6 @@ class Program
             processTimer.Stop();
             LogSuccess($"{ICON_SUCCESS} Todas as tabelas processadas. {ICON_TIME} Tempo total: {processTimer.Elapsed.TotalSeconds:0.00}s");
 
-            // Etapa 4: Salvar em um arquivo JSON
             Console.WriteLine($"{ICON_JSON} Gerando arquivo JSON...");
             var jsonTimer = Stopwatch.StartNew();
 
@@ -178,7 +168,6 @@ class Program
         }
         finally
         {
-            // Fechar conexão para evitar vazamento de recursos
             cmd?.Dispose();
             conn?.Close();
         }
