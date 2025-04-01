@@ -1,0 +1,7561 @@
+{
+  "sinistro_oficinatipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "perfil_respostas": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chave_pergunta",
+        "type": "int"
+      },
+      {
+        "name": "resposta",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "chave_pergunta",
+        "constraint": "NVRI_PERFILRESPOSTAS_PERGUNTA_RE_NVRF",
+        "references_table": "perfil_perguntas",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "acesso_principal": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_camposcapa": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "codtipo",
+        "type": "int"
+      },
+      {
+        "name": "codramo",
+        "type": "int"
+      },
+      {
+        "name": "ordem",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtipo",
+        "constraint": "NVRI_CAMPOSCAPA_TIPODATA_RE_NVRF",
+        "references_table": "a_tipodata",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codramo",
+        "constraint": "NVRI_CAMPOSCAPA_RAMO_RE_NVRF",
+        "references_table": "ramos",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "clientes_relacao": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "codcli",
+        "type": "int"
+      },
+      {
+        "name": "codclirelacao",
+        "type": "int"
+      },
+      {
+        "name": "codtiporelacao",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtiporelacao",
+        "constraint": "NVRI_CLIENTESRELACAO_TIPORELACAO_RE_NVRF",
+        "references_table": "a_tiporelacao",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codcli",
+        "constraint": "NVRI_CLIENTESRELACAO_CLIENTE_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      },
+      {
+        "column": "codclirelacao",
+        "constraint": "NVRI_CLIENTESRELACAO_CLIENTERELACAO_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      }
+    ]
+  },
+  "sinistro_processo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "chaveproposta",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "cod_status",
+        "type": "int"
+      },
+      {
+        "name": "cod_natureza",
+        "type": "int"
+      },
+      {
+        "name": "cod_guincho",
+        "type": "int"
+      },
+      {
+        "name": "cod_culpa",
+        "type": "int"
+      },
+      {
+        "name": "informacondutor",
+        "type": "bit"
+      },
+      {
+        "name": "cod_relcondutor",
+        "type": "int"
+      },
+      {
+        "name": "cod_clicondutor",
+        "type": "int"
+      },
+      {
+        "name": "informaoficina",
+        "type": "bit"
+      },
+      {
+        "name": "cod_tipooficina",
+        "type": "int"
+      },
+      {
+        "name": "cod_clioficina",
+        "type": "int"
+      },
+      {
+        "name": "dtcadastro",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtaviso",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtsinistro",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "hrsinistro",
+        "type": "time"
+      },
+      {
+        "name": "nbo",
+        "type": "varchar"
+      },
+      {
+        "name": "localbo",
+        "type": "varchar"
+      },
+      {
+        "name": "naviso",
+        "type": "varchar"
+      },
+      {
+        "name": "nvistoria",
+        "type": "varchar"
+      },
+      {
+        "name": "localsinistro",
+        "type": "varchar"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "danos",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      },
+      {
+        "name": "vltotal",
+        "type": "decimal"
+      },
+      {
+        "name": "vlcoberto",
+        "type": "decimal"
+      },
+      {
+        "name": "vlfranquia",
+        "type": "decimal"
+      },
+      {
+        "name": "vlindenizado",
+        "type": "decimal"
+      },
+      {
+        "name": "vlparticular",
+        "type": "decimal"
+      },
+      {
+        "name": "vlterceiros",
+        "type": "decimal"
+      },
+      {
+        "name": "impactobonus",
+        "type": "int"
+      },
+      {
+        "name": "advogado",
+        "type": "varchar"
+      },
+      {
+        "name": "reclamante",
+        "type": "varchar"
+      },
+      {
+        "name": "valoracao",
+        "type": "decimal"
+      },
+      {
+        "name": "motivorecusa",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_relcondutor",
+        "constraint": "NVRI_SINISTROPROCESSO_RELCONDUTOR_RE_NVRF",
+        "references_table": "a_tiporelacao",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_clicondutor",
+        "constraint": "NVRI_SINISTROPROCESSO_CLICONDUTOR_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      },
+      {
+        "column": "cod_clioficina",
+        "constraint": "NVRI_SINISTROPROCESSO_CLIOFICINA_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SINISTROPROCESSO_CHAVEITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      },
+      {
+        "column": "chaveproposta",
+        "constraint": "NVRI_SINISTROPROCESSO_CHAVEPROPOSTA_RE_NVRF",
+        "references_table": "seg_proposta",
+        "references_column": "chave"
+      },
+      {
+        "column": "cod_guincho",
+        "constraint": "FK__sinistro___cod_g__0539C240",
+        "references_table": "sinistro_guincho",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_tipooficina",
+        "constraint": "FK__sinistro___cod_t__07220AB2",
+        "references_table": "sinistro_oficinatipo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_status",
+        "constraint": "FK__sinistro___cod_s__04459E07",
+        "references_table": "sinistro_status",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_natureza",
+        "constraint": "NVRI_SINISTROPROCESSO_NATUREZA_RE_NVRF",
+        "references_table": "sinistro_natureza",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_culpa",
+        "constraint": "FK__sinistro___cod_c__062DE679",
+        "references_table": "sinistro_culpa",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "acesso_opcao": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_principal",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_principal",
+        "constraint": "FK__acesso_op__cod_p__0504B816",
+        "references_table": "acesso_principal",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "perfil_qcabec": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "acesso_usuario_principal": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_principal",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_principal",
+        "constraint": "FK__acesso_us__cod_p__07E124C1",
+        "references_table": "acesso_principal",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_ACESSOUSUARIOPRINCIPAL_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "digital_origem": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "prefixo",
+        "type": "char"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "capa_campos": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "codproposta",
+        "type": "int"
+      },
+      {
+        "name": "codcampo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "data",
+        "type": "smalldatetime"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codcampo",
+        "constraint": "NVRI_CAPACAMPOS_CAMPO_RE_NVRF",
+        "references_table": "a_camposcapa",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codproposta",
+        "constraint": "NVRI_CAPACAMPOS_PROPOSTA_RE_NVRF",
+        "references_table": "seg_proposta",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "perfil_qitens": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chave_qcabec",
+        "type": "int"
+      },
+      {
+        "name": "chave_pergunta",
+        "type": "int"
+      },
+      {
+        "name": "ordem",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "chave_pergunta",
+        "constraint": "NVRI_PERFILQEITENS_PERGUNTA_RE_NVRF",
+        "references_table": "perfil_perguntas",
+        "references_column": "chave"
+      },
+      {
+        "column": "chave_qcabec",
+        "constraint": "NVRI_PERFILQEITENS_QCABEC_RE_NVRF",
+        "references_table": "perfil_qcabec",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "digital_doc": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveorigem",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "chaveorigem",
+        "constraint": "FK__digital_d__chave__0A9D95DB",
+        "references_table": "digital_origem",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "acesso_usuario_opcao": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_opcao",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_opcao",
+        "constraint": "FK__acesso_us__cod_o__0BB1B5A5",
+        "references_table": "acesso_opcao",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_ACESSOUSUARIOOPCAO_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_campositem": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "codtipo",
+        "type": "int"
+      },
+      {
+        "name": "codramo",
+        "type": "int"
+      },
+      {
+        "name": "ordem",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtipo",
+        "constraint": "NVRI_CAMPOSITEM_TIPODATA_RE_NVRF",
+        "references_table": "a_tipodata",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codramo",
+        "constraint": "NVRI_CAMPOSITEM_RAMO_RE_NVRF",
+        "references_table": "ramos",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itensauto": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "anofab",
+        "type": "int"
+      },
+      {
+        "name": "anomod",
+        "type": "int"
+      },
+      {
+        "name": "zero",
+        "type": "bit"
+      },
+      {
+        "name": "portas",
+        "type": "int"
+      },
+      {
+        "name": "nitem",
+        "type": "int"
+      },
+      {
+        "name": "placa",
+        "type": "varchar"
+      },
+      {
+        "name": "chassi",
+        "type": "varchar"
+      },
+      {
+        "name": "renavam",
+        "type": "varchar"
+      },
+      {
+        "name": "combustivel",
+        "type": "int"
+      },
+      {
+        "name": "cor",
+        "type": "int"
+      },
+      {
+        "name": "passageiros",
+        "type": "int"
+      },
+      {
+        "name": "bonus",
+        "type": "int"
+      },
+      {
+        "name": "tipofranquia",
+        "type": "int"
+      },
+      {
+        "name": "vlfranquia",
+        "type": "decimal"
+      },
+      {
+        "name": "kitgas",
+        "type": "int"
+      },
+      {
+        "name": "rastreador",
+        "type": "int"
+      },
+      {
+        "name": "uso",
+        "type": "int"
+      },
+      {
+        "name": "licenciamento",
+        "type": "int"
+      },
+      {
+        "name": "valorfipe",
+        "type": "decimal"
+      },
+      {
+        "name": "codigofipe",
+        "type": "int"
+      },
+      {
+        "name": "blindado",
+        "type": "bit"
+      },
+      {
+        "name": "ci",
+        "type": "varchar"
+      },
+      {
+        "name": "observacoes",
+        "type": "varchar"
+      },
+      {
+        "name": "chave_perfil",
+        "type": "int"
+      },
+      {
+        "name": "codigofipestring",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "combustivel",
+        "constraint": "NVRI_SEGITENSAUTO_COMBUSTIVEL_RE_NVRF",
+        "references_table": "a_combustivel",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cor",
+        "constraint": "NVRI_SEGITENSAUTO_COR_RE_NVRF",
+        "references_table": "a_cores",
+        "references_column": "codigo"
+      },
+      {
+        "column": "tipofranquia",
+        "constraint": "NVRI_SEGITENSAUTO_FRANQUIA_RE_NVRF",
+        "references_table": "a_franquia",
+        "references_column": "codigo"
+      },
+      {
+        "column": "kitgas",
+        "constraint": "NVRI_SEGITENSAUTO_KITGAS_RE_NVRF",
+        "references_table": "a_kitgas",
+        "references_column": "codigo"
+      },
+      {
+        "column": "licenciamento",
+        "constraint": "NVRI_SEGITENSAUTO_LICENCIAMENTO_RE_NVRF",
+        "references_table": "a_licenciamento",
+        "references_column": "codigo"
+      },
+      {
+        "column": "rastreador",
+        "constraint": "NVRI_SEGITENSAUTO_RASTREADOR_RE_NVRF",
+        "references_table": "a_rastreador",
+        "references_column": "codigo"
+      },
+      {
+        "column": "uso",
+        "constraint": "NVRI_SEGITENSAUTO_USO_RE_NVRF",
+        "references_table": "a_usoveiculo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "chave_perfil",
+        "constraint": "NVRI_SEGITENSAUTO_PERFIL_RE_NVRF",
+        "references_table": "perfil_qcabec",
+        "references_column": "chave"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSAUTO_CHAVEITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "digital_extensao": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "extensao",
+        "type": "varchar"
+      },
+      {
+        "name": "programa",
+        "type": "varchar"
+      },
+      {
+        "name": "programapadrao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "agenda_fone": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "contato",
+        "type": "varchar"
+      },
+      {
+        "name": "fones",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "digital": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveextensao",
+        "type": "int"
+      },
+      {
+        "name": "origem",
+        "type": "int"
+      },
+      {
+        "name": "coddoc",
+        "type": "int"
+      },
+      {
+        "name": "codorigem",
+        "type": "int"
+      },
+      {
+        "name": "nomearquivo",
+        "type": "varchar"
+      },
+      {
+        "name": "data",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "ordemdigital",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "origem",
+        "constraint": "FK__digital__origem__114A936A",
+        "references_table": "digital_origem",
+        "references_column": "chave"
+      },
+      {
+        "column": "chaveextensao",
+        "constraint": "FK__digital__chaveex__10566F31",
+        "references_table": "digital_extensao",
+        "references_column": "chave"
+      },
+      {
+        "column": "coddoc",
+        "constraint": "NVRI_DIGITAL_DOCUMENTO_RE_NVRF",
+        "references_table": "digital_doc",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "parametros_sistema": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "versaoservidor",
+        "type": "varchar"
+      },
+      {
+        "name": "versaocorreta",
+        "type": "varchar"
+      },
+      {
+        "name": "link_atualizacao_servidor",
+        "type": "varchar"
+      },
+      {
+        "name": "limitemaquinas",
+        "type": "int"
+      },
+      {
+        "name": "databackup",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "regiao",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "seguradoras_enderecos": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "codseguradora",
+        "type": "int"
+      },
+      {
+        "name": "codtipoendereco",
+        "type": "int"
+      },
+      {
+        "name": "cep",
+        "type": "varchar"
+      },
+      {
+        "name": "tipologradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "logradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "numero",
+        "type": "varchar"
+      },
+      {
+        "name": "complemento",
+        "type": "varchar"
+      },
+      {
+        "name": "bairro",
+        "type": "varchar"
+      },
+      {
+        "name": "cidade",
+        "type": "varchar"
+      },
+      {
+        "name": "estado",
+        "type": "varchar"
+      },
+      {
+        "name": "padrao",
+        "type": "bit"
+      },
+      {
+        "name": "endereco",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtipoendereco",
+        "constraint": "NVRI_SEGURADORASENDERECO_TIPO_RE_NVRF",
+        "references_table": "a_endereco",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codseguradora",
+        "constraint": "NVRI_SEGURADORASENDERECO_SEGURADORA_RE_NVRF",
+        "references_table": "seguradoras",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "mensagem_erro": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "restricao",
+        "type": "varchar"
+      },
+      {
+        "name": "mensagem",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "item_campos": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "coditem",
+        "type": "int"
+      },
+      {
+        "name": "codcampo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "data",
+        "type": "smalldatetime"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codcampo",
+        "constraint": "NVRI_ITEMCAMPOS_CAMPO_RE_NVRF",
+        "references_table": "a_campositem",
+        "references_column": "codigo"
+      },
+      {
+        "column": "coditem",
+        "constraint": "NVRI_ITEMCAMPOS_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "parametros": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "razao",
+        "type": "varchar"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "cep",
+        "type": "varchar"
+      },
+      {
+        "name": "tipologradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "logradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "numero",
+        "type": "varchar"
+      },
+      {
+        "name": "complemento",
+        "type": "varchar"
+      },
+      {
+        "name": "bairro",
+        "type": "varchar"
+      },
+      {
+        "name": "cidade",
+        "type": "varchar"
+      },
+      {
+        "name": "estado",
+        "type": "varchar"
+      },
+      {
+        "name": "fones",
+        "type": "varchar"
+      },
+      {
+        "name": "email",
+        "type": "varchar"
+      },
+      {
+        "name": "website",
+        "type": "varchar"
+      },
+      {
+        "name": "logo_imp",
+        "type": "image"
+      },
+      {
+        "name": "logo_email",
+        "type": "image"
+      },
+      {
+        "name": "fantasia",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "sinistro_terceiro": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_processo",
+        "type": "int"
+      },
+      {
+        "name": "cod_status",
+        "type": "int"
+      },
+      {
+        "name": "infoseguradora",
+        "type": "bit"
+      },
+      {
+        "name": "cod_seguradora",
+        "type": "int"
+      },
+      {
+        "name": "informaoficina",
+        "type": "bit"
+      },
+      {
+        "name": "cod_tipooficina",
+        "type": "int"
+      },
+      {
+        "name": "cod_clioficina",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "veiculo",
+        "type": "varchar"
+      },
+      {
+        "name": "fones",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_cor",
+        "type": "int"
+      },
+      {
+        "name": "placa",
+        "type": "varchar"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "danos",
+        "type": "varchar"
+      },
+      {
+        "name": "naviso",
+        "type": "varchar"
+      },
+      {
+        "name": "codpessoa",
+        "type": "int"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      },
+      {
+        "name": "cnpj",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_cor",
+        "constraint": "FK__sinistro___cod_c__1758727B",
+        "references_table": "a_cores",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codpessoa",
+        "constraint": "NVRI_SINISTROTERCEIRO_PESSOA_RE_NVRF",
+        "references_table": "a_pessoa",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_clioficina",
+        "constraint": "NVRI_SINISTROTERCEIRO_CLIOFICINA_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      },
+      {
+        "column": "cod_seguradora",
+        "constraint": "NVRI_SINISTROTERCEIRO_SEGURADORA_RE_NVRF",
+        "references_table": "seguradoras",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_processo",
+        "constraint": "NVRI_SINISTROTERCEIRO_PROCESSO_RE_NVRF",
+        "references_table": "sinistro_processo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_tipooficina",
+        "constraint": "FK__sinistro___cod_t__16644E42",
+        "references_table": "sinistro_oficinatipo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_status",
+        "constraint": "FK__sinistro___cod_s__15702A09",
+        "references_table": "sinistro_status",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seguradoras_fones": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "codseguradora",
+        "type": "int"
+      },
+      {
+        "name": "codtipofone",
+        "type": "int"
+      },
+      {
+        "name": "fone",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtipofone",
+        "constraint": "NVRI_SEGURADORASFONE_TIPO_RE_NVRF",
+        "references_table": "a_fone",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codseguradora",
+        "constraint": "NVRI_SEGURADORASFONE_SEGURADORA_RE_NVRF",
+        "references_table": "seguradoras",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "produtores": {
+    "columns": [
+      {
+        "name": "codprod",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "corretora",
+        "type": "int"
+      },
+      {
+        "name": "fones",
+        "type": "varchar"
+      },
+      {
+        "name": "email",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      },
+      {
+        "name": "nomecompleto",
+        "type": "varchar"
+      },
+      {
+        "name": "comissao",
+        "type": "decimal"
+      },
+      {
+        "name": "docrecibo",
+        "type": "varchar"
+      },
+      {
+        "name": "nomeemail",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_status",
+        "type": "int"
+      },
+      {
+        "name": "smtp",
+        "type": "varchar"
+      },
+      {
+        "name": "senha",
+        "type": "varchar"
+      },
+      {
+        "name": "porta",
+        "type": "int"
+      },
+      {
+        "name": "chkssl",
+        "type": "bit"
+      },
+      {
+        "name": "logo_email",
+        "type": "image"
+      },
+      {
+        "name": "cod_padrao",
+        "type": "int"
+      },
+      {
+        "name": "rateiopl",
+        "type": "bit"
+      },
+      {
+        "name": "usuarioalternativo",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_banco",
+        "type": "int"
+      },
+      {
+        "name": "agencia",
+        "type": "varchar"
+      },
+      {
+        "name": "conta",
+        "type": "varchar"
+      },
+      {
+        "name": "cpfcnpj",
+        "type": "varchar"
+      },
+      {
+        "name": "favorecido",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_pessoa",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_banco",
+        "constraint": "NVRI_PRODUTORES_BANCO_RE_NVRF",
+        "references_table": "a_banco",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_pessoa",
+        "constraint": "FK__produtore__cod_p__027D5126",
+        "references_table": "a_pessoa",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "acessorios_tipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "acessorios": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chavetipo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "chavetipo",
+        "constraint": "NVRI_ACESSORIOS_TIPO_RE_NVRF",
+        "references_table": "acessorios_tipo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seguradoras_internet": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "codseguradora",
+        "type": "int"
+      },
+      {
+        "name": "codtipointernet",
+        "type": "int"
+      },
+      {
+        "name": "internet",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtipointernet",
+        "constraint": "NVRI_SEGURADORASINTERNET_TIPO_RE_NVRF",
+        "references_table": "a_internet",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codseguradora",
+        "constraint": "NVRI_SEGURADORASINTERNET_SEGURADORA_RE_NVRF",
+        "references_table": "seguradoras",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "usuarios_tipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "usuarios": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_tipo",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_produtor",
+        "type": "int"
+      },
+      {
+        "name": "senha",
+        "type": "varchar"
+      },
+      {
+        "name": "adm",
+        "type": "varchar"
+      },
+      {
+        "name": "ativo",
+        "type": "bit"
+      },
+      {
+        "name": "agenda_visual",
+        "type": "int"
+      },
+      {
+        "name": "usuarioweb",
+        "type": "bit"
+      },
+      {
+        "name": "senhaweb",
+        "type": "varchar"
+      },
+      {
+        "name": "vercomissao",
+        "type": "bit"
+      },
+      {
+        "name": "confirma_duplica",
+        "type": "bit"
+      },
+      {
+        "name": "verchamandoscliente",
+        "type": "bit"
+      },
+      {
+        "name": "veroutroschamandos",
+        "type": "bit"
+      },
+      {
+        "name": "verrateio",
+        "type": "bit"
+      },
+      {
+        "name": "webcomissao",
+        "type": "bit"
+      },
+      {
+        "name": "agenda_horario",
+        "type": "int"
+      },
+      {
+        "name": "horariorestrito",
+        "type": "bit"
+      },
+      {
+        "name": "horaincial",
+        "type": "time"
+      },
+      {
+        "name": "horafinal",
+        "type": "time"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_produtor",
+        "constraint": "NVRI_USUARIOS_PRODUTOR_UN_NVRF",
+        "references_table": "produtores",
+        "references_column": "codprod"
+      },
+      {
+        "column": "cod_tipo",
+        "constraint": "FK__usuarios__cod_ti__1BFD2C07",
+        "references_table": "usuarios_tipo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "sinistro_prejuizo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_processo",
+        "type": "int"
+      },
+      {
+        "name": "cod_cobertura",
+        "type": "int"
+      },
+      {
+        "name": "vltotal",
+        "type": "decimal"
+      },
+      {
+        "name": "vlcoberto",
+        "type": "decimal"
+      },
+      {
+        "name": "vlfranquia",
+        "type": "decimal"
+      },
+      {
+        "name": "vlindenizado",
+        "type": "decimal"
+      },
+      {
+        "name": "vlparticular",
+        "type": "decimal"
+      },
+      {
+        "name": "vlterceiros",
+        "type": "decimal"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_cobertura",
+        "constraint": "NVRI_SINISTROPREJUIZO_COBERTURA_RE_NVRF",
+        "references_table": "coberturas",
+        "references_column": "chave"
+      },
+      {
+        "column": "cod_processo",
+        "constraint": "NVRI_SINISTROPREJUIZO_PROCESSO_RE_NVRF",
+        "references_table": "sinistro_processo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itensacessorios": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "chaveacessorio",
+        "type": "int"
+      },
+      {
+        "name": "valoris",
+        "type": "decimal"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "chaveacessorio",
+        "constraint": "FK__seg_itens__chave__1E3A7A34",
+        "references_table": "acessorios",
+        "references_column": "chave"
+      },
+      {
+        "column": "chaveacessorio",
+        "constraint": "NVRI_SEGITENSACESSORIOS_ACESSORIO_RE_NVRF",
+        "references_table": "acessorios",
+        "references_column": "chave"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "FK__seg_itens__chave__1D4655FB",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSACESSORIOS_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "seg_itenslocal": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "cep",
+        "type": "varchar"
+      },
+      {
+        "name": "tipologradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "logradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "numero",
+        "type": "varchar"
+      },
+      {
+        "name": "complemento",
+        "type": "varchar"
+      },
+      {
+        "name": "bairro",
+        "type": "varchar"
+      },
+      {
+        "name": "cidade",
+        "type": "varchar"
+      },
+      {
+        "name": "estado",
+        "type": "varchar"
+      },
+      {
+        "name": "nitem",
+        "type": "int"
+      },
+      {
+        "name": "bonus",
+        "type": "int"
+      },
+      {
+        "name": "ci",
+        "type": "varchar"
+      },
+      {
+        "name": "observacoes",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "prospect_status": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "seg_itensdescricao": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "nitem",
+        "type": "int"
+      },
+      {
+        "name": "bonus",
+        "type": "int"
+      },
+      {
+        "name": "ci",
+        "type": "varchar"
+      },
+      {
+        "name": "observacoes",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "parametros_email": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "smtp",
+        "type": "varchar"
+      },
+      {
+        "name": "usuario",
+        "type": "varchar"
+      },
+      {
+        "name": "senha",
+        "type": "varchar"
+      },
+      {
+        "name": "porta",
+        "type": "int"
+      },
+      {
+        "name": "contacopia",
+        "type": "varchar"
+      },
+      {
+        "name": "chkssl",
+        "type": "bit"
+      },
+      {
+        "name": "chkconfirmacao",
+        "type": "bit"
+      },
+      {
+        "name": "chkcopia",
+        "type": "bit"
+      },
+      {
+        "name": "usuarioalternativo",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "grade": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_ramo",
+        "type": "int"
+      },
+      {
+        "name": "cod_seguradora",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_ramo",
+        "constraint": "NVRI_GRADE_RAMO_RE_NVRF",
+        "references_table": "ramos",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_seguradora",
+        "constraint": "NVRI_GRADE_SEGURADORA_RE_NVRF",
+        "references_table": "seguradoras",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "ch_tipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "ch_subtipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_tipo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_tipo",
+        "constraint": "FK__ch_subtip__cod_t__25DB9BFC",
+        "references_table": "ch_tipo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itenspessoas": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      },
+      {
+        "name": "nascimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "codsexo",
+        "type": "int"
+      },
+      {
+        "name": "codecivil",
+        "type": "int"
+      },
+      {
+        "name": "nomemae",
+        "type": "varchar"
+      },
+      {
+        "name": "ativo",
+        "type": "bit"
+      },
+      {
+        "name": "dtinclusao",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtiniciovig",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtexclusao",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtfinalvig",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "valormensal",
+        "type": "decimal"
+      },
+      {
+        "name": "nitem",
+        "type": "int"
+      },
+      {
+        "name": "observacoes",
+        "type": "varchar"
+      },
+      {
+        "name": "produto",
+        "type": "varchar"
+      },
+      {
+        "name": "cartao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codecivil",
+        "constraint": "NVRI_SEGITENSPESSOA_ECIVIL_RE_NVRF",
+        "references_table": "a_ecivil",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codsexo",
+        "constraint": "NVRI_SEGITENSPESSOA_SEXO_RE_NVRF",
+        "references_table": "a_sexo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "controle": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "codigocliente",
+        "type": "int"
+      },
+      {
+        "name": "registro",
+        "type": "int"
+      },
+      {
+        "name": "licenca",
+        "type": "varchar"
+      },
+      {
+        "name": "serie",
+        "type": "varchar"
+      },
+      {
+        "name": "dataweb",
+        "type": "date"
+      },
+      {
+        "name": "chavedata",
+        "type": "varchar"
+      },
+      {
+        "name": "trocadatacenter",
+        "type": "bit"
+      },
+      {
+        "name": "sequencia",
+        "type": "varchar"
+      },
+      {
+        "name": "admkey",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "sinistro_historico": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_processo",
+        "type": "int"
+      },
+      {
+        "name": "dtmovimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "hrmovimento",
+        "type": "time"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_processo",
+        "constraint": "NVRI_SINISTROHISTORICO_PROCESSO_RE_NVRF",
+        "references_table": "sinistro_processo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_SINISTROHISTORICO_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "grade_comissao": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_grade",
+        "type": "int"
+      },
+      {
+        "name": "nparcela",
+        "type": "int"
+      },
+      {
+        "name": "comissao",
+        "type": "decimal"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_grade",
+        "constraint": "NVRI_GRADECOMISSAO_GRADE_RE_NVRF",
+        "references_table": "grade",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "computadores": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "serie",
+        "type": "varchar"
+      },
+      {
+        "name": "autorizado",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "func_funcao": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "ch_status": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "Appointments": {
+    "columns": [
+      {
+        "name": "UniqueID",
+        "type": "int"
+      },
+      {
+        "name": "Type",
+        "type": "int"
+      },
+      {
+        "name": "StartDate",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "EndDate",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "AllDay",
+        "type": "bit"
+      },
+      {
+        "name": "Subject",
+        "type": "varchar"
+      },
+      {
+        "name": "Location",
+        "type": "varchar"
+      },
+      {
+        "name": "Description",
+        "type": "nvarchar"
+      },
+      {
+        "name": "Status",
+        "type": "int"
+      },
+      {
+        "name": "Label",
+        "type": "int"
+      },
+      {
+        "name": "ResourceID",
+        "type": "int"
+      },
+      {
+        "name": "ResourceIDs",
+        "type": "nvarchar"
+      },
+      {
+        "name": "ReminderInfo",
+        "type": "nvarchar"
+      },
+      {
+        "name": "RecurrenceInfo",
+        "type": "nvarchar"
+      },
+      {
+        "name": "TimeZoneId",
+        "type": "nvarchar"
+      },
+      {
+        "name": "CustomField1",
+        "type": "nvarchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "ch_fecha": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "seg_itensdependente": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "codtiporelacao",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      },
+      {
+        "name": "nascimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "codsexo",
+        "type": "int"
+      },
+      {
+        "name": "codecivil",
+        "type": "int"
+      },
+      {
+        "name": "nomemae",
+        "type": "varchar"
+      },
+      {
+        "name": "ativo",
+        "type": "bit"
+      },
+      {
+        "name": "dtinclusao",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtiniciovig",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtexclusao",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtfinalvig",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "valormensal",
+        "type": "decimal"
+      },
+      {
+        "name": "cartao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtiporelacao",
+        "constraint": "NVRI_SEGITENSDEPENDENTE_TIPORELACAO_RE_NVRF",
+        "references_table": "a_tiporelacao",
+        "references_column": "codigo"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSDEPENDENTE_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "recibos": {
+    "columns": [
+      {
+        "name": "chaverecibo",
+        "type": "int"
+      },
+      {
+        "name": "nomerecibo",
+        "type": "varchar"
+      },
+      {
+        "name": "titulorecibo",
+        "type": "varchar"
+      },
+      {
+        "name": "obsrecibo",
+        "type": "varchar"
+      },
+      {
+        "name": "reciboparcela",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_pessoa": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "agenda_usuario": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "codpai",
+        "type": "int"
+      },
+      {
+        "name": "codfilho",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codfilho",
+        "constraint": "NVRI_AGENDAUSUARIO_FILHO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codpai",
+        "constraint": "NVRI_AGENDAUSUARIO_PAI_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "func_escolaridade": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "ramos_tipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "ch_cabec": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      },
+      {
+        "name": "cod_tipo",
+        "type": "int"
+      },
+      {
+        "name": "cod_subtipo",
+        "type": "int"
+      },
+      {
+        "name": "cod_status",
+        "type": "int"
+      },
+      {
+        "name": "cod_fecha",
+        "type": "int"
+      },
+      {
+        "name": "cod_cliente",
+        "type": "int"
+      },
+      {
+        "name": "dtabre",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "hrabre",
+        "type": "time"
+      },
+      {
+        "name": "dtoriginal",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtresolve",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "cod_usuariooriginal",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuarioresolve",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_fornecedor",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_fecha",
+        "constraint": "FK__ch_cabec__cod_fe__2F650636",
+        "references_table": "ch_fecha",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_status",
+        "constraint": "FK__ch_cabec__cod_st__2E70E1FD",
+        "references_table": "ch_status",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_subtipo",
+        "constraint": "NVRI_CHCABEC_SUBTIPO_RE_NVRF",
+        "references_table": "ch_subtipo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_tipo",
+        "constraint": "FK__ch_cabec__cod_ti__2D7CBDC4",
+        "references_table": "ch_tipo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_cliente",
+        "constraint": "NVRI_CHCABEC_CLIENTE_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      },
+      {
+        "column": "cod_fornecedor",
+        "constraint": "NVRI_CHCABEC_FORNECEDOR_RE_NVRF",
+        "references_table": "fornecedor",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_CHCABEC_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuariooriginal",
+        "constraint": "NVRI_CHCABEC_USUARIOORIGINAL_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuarioresolve",
+        "constraint": "NVRI_CHCABEC_USUARIORESOLVE_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_tipodoc": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "ramos": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "codigo_tipo",
+        "type": "int"
+      },
+      {
+        "name": "iofpadrao",
+        "type": "decimal"
+      },
+      {
+        "name": "isspadrao",
+        "type": "decimal"
+      },
+      {
+        "name": "renovar",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codigo_tipo",
+        "constraint": "FK__ramos__codigo_ti__2EDAF651",
+        "references_table": "ramos_tipo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "func_status": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "parametros_fichaseguro": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "rodape",
+        "type": "char"
+      },
+      {
+        "name": "assinatura",
+        "type": "char"
+      },
+      {
+        "name": "parcelas",
+        "type": "char"
+      },
+      {
+        "name": "premios",
+        "type": "char"
+      },
+      {
+        "name": "comissao",
+        "type": "char"
+      },
+      {
+        "name": "obscapa",
+        "type": "char"
+      },
+      {
+        "name": "obsitem",
+        "type": "char"
+      },
+      {
+        "name": "perfil",
+        "type": "char"
+      },
+      {
+        "name": "tab_pl",
+        "type": "char"
+      },
+      {
+        "name": "coberturas",
+        "type": "char"
+      },
+      {
+        "name": "clausulas",
+        "type": "char"
+      },
+      {
+        "name": "condutores",
+        "type": "char"
+      },
+      {
+        "name": "acessorios",
+        "type": "char"
+      },
+      {
+        "name": "extracapa",
+        "type": "char"
+      },
+      {
+        "name": "extraitem",
+        "type": "char"
+      },
+      {
+        "name": "dependentes",
+        "type": "char"
+      },
+      {
+        "name": "alteracoes",
+        "type": "char"
+      },
+      {
+        "name": "beneficiarios",
+        "type": "char"
+      },
+      {
+        "name": "locador",
+        "type": "char"
+      },
+      {
+        "name": "locatario",
+        "type": "char"
+      },
+      {
+        "name": "imobiliaria",
+        "type": "char"
+      },
+      {
+        "name": "acompanhante",
+        "type": "char"
+      },
+      {
+        "name": "enderecos",
+        "type": "char"
+      },
+      {
+        "name": "emails",
+        "type": "char"
+      },
+      {
+        "name": "fones",
+        "type": "char"
+      },
+      {
+        "name": "detalhes",
+        "type": "char"
+      },
+      {
+        "name": "parcelascomissao",
+        "type": "char"
+      },
+      {
+        "name": "s_cobertura",
+        "type": "char"
+      },
+      {
+        "name": "s_terceiro",
+        "type": "char"
+      },
+      {
+        "name": "s_hsegurado",
+        "type": "char"
+      },
+      {
+        "name": "s_hterceiro",
+        "type": "char"
+      },
+      {
+        "name": "tituloficha",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "fornecedor": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "razao",
+        "type": "varchar"
+      },
+      {
+        "name": "fantasia",
+        "type": "varchar"
+      },
+      {
+        "name": "contato",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      },
+      {
+        "name": "datacadastro",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "indefinido",
+        "type": "bit"
+      },
+      {
+        "name": "codpessoa",
+        "type": "int"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      },
+      {
+        "name": "cnpj",
+        "type": "varchar"
+      },
+      {
+        "name": "documento",
+        "type": "varchar"
+      },
+      {
+        "name": "resumo",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codpessoa",
+        "constraint": "NVRI_FORNECEDOR_PESSOA_RE_NVRF",
+        "references_table": "a_pessoa",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itensbeneficiario": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "codtiporelacao",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      },
+      {
+        "name": "nascimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "codsexo",
+        "type": "int"
+      },
+      {
+        "name": "codecivil",
+        "type": "int"
+      },
+      {
+        "name": "nomemae",
+        "type": "varchar"
+      },
+      {
+        "name": "ativo",
+        "type": "bit"
+      },
+      {
+        "name": "dtinclusao",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtiniciovig",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtexclusao",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtfinalvig",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "valormensal",
+        "type": "decimal"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtiporelacao",
+        "constraint": "NVRI_SEGITENSBENEFICIARIO_TIPORELACAO_RE_NVRF",
+        "references_table": "a_tiporelacao",
+        "references_column": "codigo"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSBENEFICIARIO_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "a_sexo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "func_tipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "nfe_codigoservico": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_ecivil": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "func_cadastro": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_funcao",
+        "type": "int"
+      },
+      {
+        "name": "cod_status",
+        "type": "int"
+      },
+      {
+        "name": "cod_tipo",
+        "type": "int"
+      },
+      {
+        "name": "cod_sexo",
+        "type": "int"
+      },
+      {
+        "name": "cod_ecivil",
+        "type": "int"
+      },
+      {
+        "name": "cod_escolaridade",
+        "type": "int"
+      },
+      {
+        "name": "salario",
+        "type": "decimal"
+      },
+      {
+        "name": "nascimento",
+        "type": "date"
+      },
+      {
+        "name": "admissao",
+        "type": "date"
+      },
+      {
+        "name": "demissao",
+        "type": "date"
+      },
+      {
+        "name": "motivodemissao",
+        "type": "varchar"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_numero",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_data",
+        "type": "date"
+      },
+      {
+        "name": "carteiratrabalho",
+        "type": "varchar"
+      },
+      {
+        "name": "pis",
+        "type": "varchar"
+      },
+      {
+        "name": "nomepai",
+        "type": "varchar"
+      },
+      {
+        "name": "nomemae",
+        "type": "varchar"
+      },
+      {
+        "name": "naturalidade",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      },
+      {
+        "name": "cep",
+        "type": "varchar"
+      },
+      {
+        "name": "tipologradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "logradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "numero",
+        "type": "varchar"
+      },
+      {
+        "name": "complemento",
+        "type": "varchar"
+      },
+      {
+        "name": "bairro",
+        "type": "varchar"
+      },
+      {
+        "name": "cidade",
+        "type": "varchar"
+      },
+      {
+        "name": "estado",
+        "type": "varchar"
+      },
+      {
+        "name": "email",
+        "type": "varchar"
+      },
+      {
+        "name": "fones",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_ecivil",
+        "constraint": "FK__func_cada__cod_e__35FCF52C",
+        "references_table": "a_ecivil",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_sexo",
+        "constraint": "FK__func_cada__cod_s__3508D0F3",
+        "references_table": "a_sexo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_escolaridade",
+        "constraint": "FK__func_cada__cod_e__36F11965",
+        "references_table": "func_escolaridade",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_funcao",
+        "constraint": "NVRI_FUNCCADASTRO_FUNCAO_RE_NVRF",
+        "references_table": "func_funcao",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_status",
+        "constraint": "FK__func_cada__cod_s__33208881",
+        "references_table": "func_status",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_tipo",
+        "constraint": "FK__func_cada__cod_t__3414ACBA",
+        "references_table": "func_tipo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "grid_forma": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "nomeform",
+        "type": "varchar"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "padrao",
+        "type": "bit"
+      },
+      {
+        "name": "varxml",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "nfe_parametros": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "topo",
+        "type": "varchar"
+      },
+      {
+        "name": "rodape",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_statuscliente": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "cp_ccusto": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "padrao",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "seg_itensmovimento": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "data",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSMOVIMENTO_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "nfe_prestadores": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "cnpj",
+        "type": "varchar"
+      },
+      {
+        "name": "razao",
+        "type": "varchar"
+      },
+      {
+        "name": "tipologradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "logradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "numero",
+        "type": "varchar"
+      },
+      {
+        "name": "complemento",
+        "type": "varchar"
+      },
+      {
+        "name": "bairro",
+        "type": "varchar"
+      },
+      {
+        "name": "cidade",
+        "type": "varchar"
+      },
+      {
+        "name": "estado",
+        "type": "varchar"
+      },
+      {
+        "name": "cep",
+        "type": "varchar"
+      },
+      {
+        "name": "cidade_emissao",
+        "type": "varchar"
+      },
+      {
+        "name": "ultimo_recibo",
+        "type": "int"
+      },
+      {
+        "name": "serie",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_pessoa",
+        "type": "int"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_pessoa",
+        "constraint": "FK__nfe_prest__cod_p__222B06A9",
+        "references_table": "a_pessoa",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_pasta": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "cod_ramo",
+        "type": "int"
+      },
+      {
+        "name": "codcli",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codcli",
+        "constraint": "NVRI_SEGPASTA_CLIENTE_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      },
+      {
+        "column": "cod_ramo",
+        "constraint": "NVRI_SEGPASTA_RAMO_RE_NVRF",
+        "references_table": "ramos",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_truefalse": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "bit"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "ch_movimento": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_chamado",
+        "type": "int"
+      },
+      {
+        "name": "dtmovimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "hrmovimento",
+        "type": "time"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuarioatual",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuarioantes",
+        "type": "int"
+      },
+      {
+        "name": "dtatual",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtantes",
+        "type": "smalldatetime"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_chamado",
+        "constraint": "NVRI_CHMOVIMENTO_CHAMADO_RE_NVRF",
+        "references_table": "ch_cabec",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_CHMOVIMENTO_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuarioantes",
+        "constraint": "NVRI_CHMOVIMENTO_USUARIOANTES_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuarioatual",
+        "constraint": "NVRI_CHMOVIMENTO_USUARIOATUAL_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "nfe_tomadores": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "cnpj",
+        "type": "varchar"
+      },
+      {
+        "name": "razao",
+        "type": "varchar"
+      },
+      {
+        "name": "tipologradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "logradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "numero",
+        "type": "varchar"
+      },
+      {
+        "name": "complemento",
+        "type": "varchar"
+      },
+      {
+        "name": "bairro",
+        "type": "varchar"
+      },
+      {
+        "name": "cidade",
+        "type": "varchar"
+      },
+      {
+        "name": "estado",
+        "type": "varchar"
+      },
+      {
+        "name": "cep",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_pessoa",
+        "type": "int"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_pessoa",
+        "constraint": "FK__nfe_tomad__cod_p__231F2AE2",
+        "references_table": "a_pessoa",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "cp_grupo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "seg_itensaluguel": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "cep",
+        "type": "varchar"
+      },
+      {
+        "name": "tipologradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "logradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "numero",
+        "type": "varchar"
+      },
+      {
+        "name": "complemento",
+        "type": "varchar"
+      },
+      {
+        "name": "bairro",
+        "type": "varchar"
+      },
+      {
+        "name": "cidade",
+        "type": "varchar"
+      },
+      {
+        "name": "estado",
+        "type": "varchar"
+      },
+      {
+        "name": "nitem",
+        "type": "int"
+      },
+      {
+        "name": "observacoes",
+        "type": "varchar"
+      },
+      {
+        "name": "residencial",
+        "type": "bit"
+      },
+      {
+        "name": "dtinicioloca",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtfinalloca",
+        "type": "smalldatetime"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_tipocliente": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "nfe_rps": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "nrps",
+        "type": "int"
+      },
+      {
+        "name": "serie",
+        "type": "varchar"
+      },
+      {
+        "name": "dtemissao",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "mesref",
+        "type": "int"
+      },
+      {
+        "name": "anoref",
+        "type": "int"
+      },
+      {
+        "name": "valor",
+        "type": "decimal"
+      },
+      {
+        "name": "cod_prestador",
+        "type": "int"
+      },
+      {
+        "name": "cod_tomador",
+        "type": "int"
+      },
+      {
+        "name": "cod_servico",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_servico",
+        "constraint": "NVRI_NFERPS_SERVICO_RE_NVRF",
+        "references_table": "nfe_codigoservico",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_prestador",
+        "constraint": "NVRI_NFERPS_PRESTADOR_RE_NVRF",
+        "references_table": "nfe_prestadores",
+        "references_column": "chave"
+      },
+      {
+        "column": "cod_tomador",
+        "constraint": "NVRI_NFERPS_TOMADOR_RE_NVRF",
+        "references_table": "nfe_tomadores",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "seguradoras": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "codigosusep",
+        "type": "varchar"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      },
+      {
+        "name": "fone24horas",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_profissao": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "ordem",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "cp_subgrupo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_grupo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_grupo",
+        "constraint": "NVRI_CPSUBGRUPO_GRUPO_RE_NVRF",
+        "references_table": "cp_grupo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itenslocador": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "codclirelacao",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codclirelacao",
+        "constraint": "NVRI_SEGITENSLOCADOR_CLIENTERELACAO_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSLOCADOR_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "com_cancelada": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_parcela",
+        "type": "int"
+      },
+      {
+        "name": "motivocancela",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_parcela",
+        "constraint": "NVRI_COMCANCELADA_CODPARCELA_RE_NVRF",
+        "references_table": "com_parcelas",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "status_geral": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "sim_nao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "produtos": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_ramo",
+        "type": "int"
+      },
+      {
+        "name": "cod_seguradora",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_ramo",
+        "constraint": "NVRI_PRODUTOS_RAMO_RE_NVRF",
+        "references_table": "ramos",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_seguradora",
+        "constraint": "NVRI_PRODUTOS_SEGURADORA_RE_NVRF",
+        "references_table": "seguradoras",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_atividade": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "ordem",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "cp_contacorrente": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "com_tipolanca": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "descrlanca",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "fornecedor_enderecos": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "cod_fornecedor",
+        "type": "int"
+      },
+      {
+        "name": "codtipoendereco",
+        "type": "int"
+      },
+      {
+        "name": "cep",
+        "type": "varchar"
+      },
+      {
+        "name": "tipologradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "logradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "numero",
+        "type": "varchar"
+      },
+      {
+        "name": "complemento",
+        "type": "varchar"
+      },
+      {
+        "name": "bairro",
+        "type": "varchar"
+      },
+      {
+        "name": "cidade",
+        "type": "varchar"
+      },
+      {
+        "name": "estado",
+        "type": "varchar"
+      },
+      {
+        "name": "padrao",
+        "type": "bit"
+      },
+      {
+        "name": "endereco",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtipoendereco",
+        "constraint": "NVRI_FORNECEDORENDERECO_TIPO_RE_NVRF",
+        "references_table": "a_endereco",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_fornecedor",
+        "constraint": "NVRI_FORNECEDORENDERECO_FORNECEDOR_RE_NVRF",
+        "references_table": "fornecedor",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itenslocatario": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "codclirelacao",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codclirelacao",
+        "constraint": "NVRI_SEGITENSLOCATARIO_CLIENTERELACAO_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSLOCATARIO_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "com_tipoextra": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "cp_formapagto": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "produtos_item": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_ramo",
+        "type": "int"
+      },
+      {
+        "name": "cod_seguradora",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_ramo",
+        "constraint": "NVRI_PRODUTOSITEM_RAMO_RE_NVRF",
+        "references_table": "ramos",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_seguradora",
+        "constraint": "NVRI_PRODUTOSITEM_SEGURADORA_RE_NVRF",
+        "references_table": "seguradoras",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_renda": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "com_dc": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "fornecedor_fones": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "cod_fornecedor",
+        "type": "int"
+      },
+      {
+        "name": "codtipofone",
+        "type": "int"
+      },
+      {
+        "name": "fone",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtipofone",
+        "constraint": "NVRI_FORNECEDORFONE_TIPO_RE_NVRF",
+        "references_table": "a_fone",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_fornecedor",
+        "constraint": "NVRI_FORNECEDORFONE_FORNECEDOR_RE_NVRF",
+        "references_table": "fornecedor",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itensimobiliaria": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "codclirelacao",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codclirelacao",
+        "constraint": "NVRI_SEGITENSIMOBILIARIA_CLIENTERELACAO_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSIMOBILIARIA_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "clientes": {
+    "columns": [
+      {
+        "name": "codcli",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "codpessoa",
+        "type": "int"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      },
+      {
+        "name": "cnpj",
+        "type": "varchar"
+      },
+      {
+        "name": "codtipodoc",
+        "type": "int"
+      },
+      {
+        "name": "rg_numero",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_data",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "rg_orgao",
+        "type": "varchar"
+      },
+      {
+        "name": "nascimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      },
+      {
+        "name": "contato",
+        "type": "varchar"
+      },
+      {
+        "name": "codsexo",
+        "type": "int"
+      },
+      {
+        "name": "codecivil",
+        "type": "int"
+      },
+      {
+        "name": "codstatus",
+        "type": "int"
+      },
+      {
+        "name": "codtipo",
+        "type": "int"
+      },
+      {
+        "name": "codprodutor",
+        "type": "int"
+      },
+      {
+        "name": "datacadastro",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "cnh_numero",
+        "type": "varchar"
+      },
+      {
+        "name": "cnh_categoria",
+        "type": "varchar"
+      },
+      {
+        "name": "cnh_validade",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "cnh_primeira",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "codprofissao",
+        "type": "int"
+      },
+      {
+        "name": "codatividade",
+        "type": "int"
+      },
+      {
+        "name": "codrenda",
+        "type": "int"
+      },
+      {
+        "name": "fantasia",
+        "type": "varchar"
+      },
+      {
+        "name": "fonesms",
+        "type": "varchar"
+      },
+      {
+        "name": "email",
+        "type": "varchar"
+      },
+      {
+        "name": "codigocliente",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_intermedio",
+        "type": "int"
+      },
+      {
+        "name": "apelidocliente",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codatividade",
+        "constraint": "NVRI_CLIENTE_ATIVIDADE_RE_NVRF",
+        "references_table": "a_atividade",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codecivil",
+        "constraint": "NVRI_CLIENTE_ECIVIL_RE_NVRF",
+        "references_table": "a_ecivil",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codpessoa",
+        "constraint": "NVRI_CLIENTE_PESSOA_RE_NVRF",
+        "references_table": "a_pessoa",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codprofissao",
+        "constraint": "NVRI_CLIENTE_PROFISSAO_RE_NVRF",
+        "references_table": "a_profissao",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codrenda",
+        "constraint": "NVRI_CLIENTE_RENDA_RE_NVRF",
+        "references_table": "a_renda",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codsexo",
+        "constraint": "NVRI_CLIENTE_SEXO_RE_NVRF",
+        "references_table": "a_sexo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codstatus",
+        "constraint": "NVRI_CLIENTE_STATUS_RE_NVRF",
+        "references_table": "a_statuscliente",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codtipo",
+        "constraint": "NVRI_CLIENTE_TIPO_RE_NVRF",
+        "references_table": "a_tipocliente",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codtipodoc",
+        "constraint": "NVRI_CLIENTE_TIPODOC_RE_NVRF",
+        "references_table": "a_tipodoc",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_intermedio",
+        "constraint": "NVRI_CLIENTE_INTERMEDIO_RE_NVRF",
+        "references_table": "clientes_intermedio",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codprodutor",
+        "constraint": "NVRI_CLIENTE_PRODUTOR_RE_NVRF",
+        "references_table": "produtores",
+        "references_column": "codprod"
+      }
+    ]
+  },
+  "cp_statustitulo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "com_cabec": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_proposta",
+        "type": "int"
+      },
+      {
+        "name": "cod_tipolanca",
+        "type": "int"
+      },
+      {
+        "name": "cod_dc",
+        "type": "int"
+      },
+      {
+        "name": "qtd_comissao",
+        "type": "int"
+      },
+      {
+        "name": "qtd_parcelas",
+        "type": "int"
+      },
+      {
+        "name": "dtproducao",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "premioliquido",
+        "type": "decimal"
+      },
+      {
+        "name": "custoapolice",
+        "type": "decimal"
+      },
+      {
+        "name": "adicional",
+        "type": "decimal"
+      },
+      {
+        "name": "iof",
+        "type": "decimal"
+      },
+      {
+        "name": "impostoretido",
+        "type": "decimal"
+      },
+      {
+        "name": "parcelacalculo",
+        "type": "decimal"
+      },
+      {
+        "name": "comissaobruta",
+        "type": "decimal"
+      },
+      {
+        "name": "desconto",
+        "type": "decimal"
+      },
+      {
+        "name": "comissaotrab",
+        "type": "decimal"
+      },
+      {
+        "name": "valorcomissao",
+        "type": "decimal"
+      },
+      {
+        "name": "tipo_data",
+        "type": "int"
+      },
+      {
+        "name": "tipo_segunda",
+        "type": "int"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      },
+      {
+        "name": "lancamentoconfirmado",
+        "type": "bit"
+      },
+      {
+        "name": "fga",
+        "type": "decimal"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_dc",
+        "constraint": "FK__com_cabec__cod_d__45544755",
+        "references_table": "com_dc",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_tipolanca",
+        "constraint": "FK__com_cabec__cod_t__4460231C",
+        "references_table": "com_tipolanca",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_proposta",
+        "constraint": "NVRI_COMCABEC_CODPROPOSTA_RE_NVRF",
+        "references_table": "seg_proposta",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "cp_localtitulo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "pendente",
+        "type": "bit"
+      },
+      {
+        "name": "padrao",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_tipoproposta": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "endosso",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "fornecedor_internet": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "cod_fornecedor",
+        "type": "int"
+      },
+      {
+        "name": "codtipointernet",
+        "type": "int"
+      },
+      {
+        "name": "internet",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtipointernet",
+        "constraint": "NVRI_FORNECEDORINTERNET_TIPO_RE_NVRF",
+        "references_table": "a_internet",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_fornecedor",
+        "constraint": "NVRI_FORNECEDORINTERNET_FORNECEDOR_RE_NVRF",
+        "references_table": "fornecedor",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itensviagem": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      },
+      {
+        "name": "nascimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "codsexo",
+        "type": "int"
+      },
+      {
+        "name": "codecivil",
+        "type": "int"
+      },
+      {
+        "name": "nomemae",
+        "type": "varchar"
+      },
+      {
+        "name": "nitem",
+        "type": "int"
+      },
+      {
+        "name": "observacoes",
+        "type": "varchar"
+      },
+      {
+        "name": "produto",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_numero",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_orgao",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_data",
+        "type": "smalldatetime"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codecivil",
+        "constraint": "NVRI_SEGITENSVIAGEM_ECIVIL_RE_NVRF",
+        "references_table": "a_ecivil",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codsexo",
+        "constraint": "NVRI_SEGITENSVIAGEM_SEXO_RE_NVRF",
+        "references_table": "a_sexo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_tipoendosso": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_ramo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "cancela",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_ramo",
+        "constraint": "NVRI_TIPOENDOSSO_RAMO_RE_NVRF",
+        "references_table": "ramos",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "com_status": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "cp_nota": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "nota",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_ccusto",
+        "type": "int"
+      },
+      {
+        "name": "cod_fornecedor",
+        "type": "int"
+      },
+      {
+        "name": "cod_grupo",
+        "type": "int"
+      },
+      {
+        "name": "cod_subgrupo",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      },
+      {
+        "name": "dtemissao",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtlanca",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "vlbruto",
+        "type": "decimal"
+      },
+      {
+        "name": "vldesconto",
+        "type": "decimal"
+      },
+      {
+        "name": "vlliquido",
+        "type": "decimal"
+      },
+      {
+        "name": "automatico",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_ccusto",
+        "constraint": "NVRI_CPNOTA_CCUSTO_RE_NVRF",
+        "references_table": "cp_ccusto",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_grupo",
+        "constraint": "NVRI_CPNOTA_GRUPO_RE_NVRF",
+        "references_table": "cp_grupo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_subgrupo",
+        "constraint": "NVRI_CPNOTA_SUBGRUPO_RE_NVRF",
+        "references_table": "cp_subgrupo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_fornecedor",
+        "constraint": "NVRI_CPNOTA_FORNECEDOR_RE_NVRF",
+        "references_table": "fornecedor",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_CPNOTA_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "fornecedor_contas": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "cod_fornecedor",
+        "type": "int"
+      },
+      {
+        "name": "codbanco",
+        "type": "int"
+      },
+      {
+        "name": "agencia",
+        "type": "varchar"
+      },
+      {
+        "name": "conta",
+        "type": "varchar"
+      },
+      {
+        "name": "codpessoa",
+        "type": "int"
+      },
+      {
+        "name": "cpfcnpj",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codbanco",
+        "constraint": "NVRI_FORNECEDORCONTAS_CODBANCO_RE_NVRF",
+        "references_table": "a_banco",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codpessoa",
+        "constraint": "NVRI_FORNECEDORCONTAS_CODPESSOA_RE_NVRF",
+        "references_table": "a_pessoa",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_fornecedor",
+        "constraint": "NVRI_FORNECEDORCONTAS_FORNECEDOR_RE_NVRF",
+        "references_table": "fornecedor",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "com_parcelas": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_proposta",
+        "type": "int"
+      },
+      {
+        "name": "cod_cabec",
+        "type": "int"
+      },
+      {
+        "name": "cod_status",
+        "type": "int"
+      },
+      {
+        "name": "nparcela",
+        "type": "int"
+      },
+      {
+        "name": "dtprevista",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "vlprevisto",
+        "type": "decimal"
+      },
+      {
+        "name": "dtrecebe",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "vlrecebe",
+        "type": "decimal"
+      },
+      {
+        "name": "automatica",
+        "type": "bit"
+      },
+      {
+        "name": "faturaseguradora",
+        "type": "varchar"
+      },
+      {
+        "name": "datafaturaseguradora",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtmovimento",
+        "type": "smalldatetime"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_cabec",
+        "constraint": "NVRI_COMPARCELAS_CODCABEC_RE_NVRF",
+        "references_table": "com_cabec",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_status",
+        "constraint": "FK__com_parce__cod_s__4B0D20AB",
+        "references_table": "com_status",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_proposta",
+        "constraint": "NVRI_COMPARCELAS_CODPROPOSTA_RE_NVRF",
+        "references_table": "seg_proposta",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "faixa_etaria": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "inicial",
+        "type": "int"
+      },
+      {
+        "name": "final",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "seg_itensacompanhante": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "codtiporelacao",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      },
+      {
+        "name": "nascimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "codsexo",
+        "type": "int"
+      },
+      {
+        "name": "codecivil",
+        "type": "int"
+      },
+      {
+        "name": "nomemae",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_numero",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_orgao",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_data",
+        "type": "smalldatetime"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtiporelacao",
+        "constraint": "NVRI_SEGITENSACOMPANHANTE_TIPORELACAO_RE_NVRF",
+        "references_table": "a_tiporelacao",
+        "references_column": "codigo"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSACOMPANHANTE_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "a_statusproposta": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "seg_grupo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "impostos": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "data",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "cod_seguradora",
+        "type": "int"
+      },
+      {
+        "name": "bruto",
+        "type": "decimal"
+      },
+      {
+        "name": "ir",
+        "type": "decimal"
+      },
+      {
+        "name": "iss",
+        "type": "decimal"
+      },
+      {
+        "name": "inss",
+        "type": "decimal"
+      },
+      {
+        "name": "debito",
+        "type": "decimal"
+      },
+      {
+        "name": "credito",
+        "type": "decimal"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_seguradora",
+        "constraint": "NVRI_IMPOSTOS_SEGURADORA_RE_NVRF",
+        "references_table": "seguradoras",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itenscosorciotipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_endereco": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "cp_titulo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_nota",
+        "type": "int"
+      },
+      {
+        "name": "nparcela",
+        "type": "int"
+      },
+      {
+        "name": "titulo",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_local",
+        "type": "int"
+      },
+      {
+        "name": "cod_cc",
+        "type": "int"
+      },
+      {
+        "name": "cod_formapagto",
+        "type": "int"
+      },
+      {
+        "name": "cod_status",
+        "type": "int"
+      },
+      {
+        "name": "dtvencimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "vloriginal",
+        "type": "decimal"
+      },
+      {
+        "name": "dtpagamento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtbaixa",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "vldesconto",
+        "type": "decimal"
+      },
+      {
+        "name": "vljuros",
+        "type": "decimal"
+      },
+      {
+        "name": "vlpago",
+        "type": "decimal"
+      },
+      {
+        "name": "documento",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_cc",
+        "constraint": "NVRI_CPTITULO_CC_RE_NVRF",
+        "references_table": "cp_contacorrente",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_formapagto",
+        "constraint": "NVRI_CPTITULO_FORMAPAGTO_RE_NVRF",
+        "references_table": "cp_formapagto",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_local",
+        "constraint": "NVRI_CPTITULO_LOCAL_RE_NVRF",
+        "references_table": "cp_localtitulo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_nota",
+        "constraint": "NVRI_CPTITULO_NOTA_RE_NVRF",
+        "references_table": "cp_nota",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_status",
+        "constraint": "NVRI_CPTITULO_STATUS_RE_NVRF",
+        "references_table": "cp_statustitulo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "com_rateio": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_proposta",
+        "type": "int"
+      },
+      {
+        "name": "cod_cabec",
+        "type": "int"
+      },
+      {
+        "name": "cod_parcela",
+        "type": "int"
+      },
+      {
+        "name": "cod_produtor",
+        "type": "int"
+      },
+      {
+        "name": "rateio",
+        "type": "decimal"
+      },
+      {
+        "name": "vlprevisto",
+        "type": "decimal"
+      },
+      {
+        "name": "vlrecebido",
+        "type": "decimal"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_cabec",
+        "constraint": "NVRI_COMRATEIO_CODCABEC_RE_NVRF",
+        "references_table": "com_cabec",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_parcela",
+        "constraint": "NVRI_COMRATEIO_CODPARCELA_RE_NVRF",
+        "references_table": "com_parcelas",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_produtor",
+        "constraint": "NVRI_COMRATEIO_CODPRODUTOR_RE_NVRF",
+        "references_table": "produtores",
+        "references_column": "codprod"
+      },
+      {
+        "column": "cod_proposta",
+        "constraint": "NVRI_COMRATEIO_CODPROPOSTA_RE_NVRF",
+        "references_table": "seg_proposta",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "seg_proposta": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chavepasta",
+        "type": "int"
+      },
+      {
+        "name": "chaveorigem",
+        "type": "int"
+      },
+      {
+        "name": "cod_seguradora",
+        "type": "int"
+      },
+      {
+        "name": "cod_produto",
+        "type": "int"
+      },
+      {
+        "name": "cod_produtor",
+        "type": "int"
+      },
+      {
+        "name": "cod_tipoproposta",
+        "type": "int"
+      },
+      {
+        "name": "cod_tipoendosso",
+        "type": "int"
+      },
+      {
+        "name": "cod_status",
+        "type": "int"
+      },
+      {
+        "name": "cod_grupo",
+        "type": "int"
+      },
+      {
+        "name": "descricaoseguro",
+        "type": "varchar"
+      },
+      {
+        "name": "cmp_endosso",
+        "type": "varchar"
+      },
+      {
+        "name": "renovar",
+        "type": "bit"
+      },
+      {
+        "name": "dtcadastro",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtemissao",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtiniciovig",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtfinalvig",
+        "type": "date"
+      },
+      {
+        "name": "nproposta",
+        "type": "varchar"
+      },
+      {
+        "name": "napolice",
+        "type": "varchar"
+      },
+      {
+        "name": "nendosso",
+        "type": "varchar"
+      },
+      {
+        "name": "emitido",
+        "type": "bit"
+      },
+      {
+        "name": "bloqueio",
+        "type": "bit"
+      },
+      {
+        "name": "atual",
+        "type": "bit"
+      },
+      {
+        "name": "gerarnome",
+        "type": "bit"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      },
+      {
+        "name": "dtprospeccao",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "numeropasta",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_statusprospect",
+        "type": "int"
+      },
+      {
+        "name": "sem_movimento",
+        "type": "bit"
+      },
+      {
+        "name": "motivoinativo",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      },
+      {
+        "name": "hrprospeccao",
+        "type": "time"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_status",
+        "constraint": "NVRI_SEGPROPOSTA_STATUSPROPOSTA_RE_NVRF",
+        "references_table": "a_statusproposta",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_tipoendosso",
+        "constraint": "NVRI_SEGPROPOSTA_TIPOENDOSSO_RE_NVRF",
+        "references_table": "a_tipoendosso",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_tipoproposta",
+        "constraint": "NVRI_SEGPROPOSTA_TIPOPROPOSTA_RE_NVRF",
+        "references_table": "a_tipoproposta",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_produtor",
+        "constraint": "NVRI_SEGPROPOSTA_PRODUTOR_RE_NVRF",
+        "references_table": "produtores",
+        "references_column": "codprod"
+      },
+      {
+        "column": "cod_produto",
+        "constraint": "NVRI_SEGPROPOSTA_PRODUTO_RE_NVRF",
+        "references_table": "produtos",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_statusprospect",
+        "constraint": "NVRI_SEGPROPOSTA_STATUSPROSPECT_RE_NVRF",
+        "references_table": "prospect_status",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_grupo",
+        "constraint": "NVRI_SEGPROPOSTA_GRUPO_RE_NVRF",
+        "references_table": "seg_grupo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "chavepasta",
+        "constraint": "NVRI_SEGPROPOSTA_PASTA_RE_NVRF",
+        "references_table": "seg_pasta",
+        "references_column": "chave"
+      },
+      {
+        "column": "cod_seguradora",
+        "constraint": "NVRI_SEGPROPOSTA_SEGURADORA_RE_NVRF",
+        "references_table": "seguradoras",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_SEGPROPOSTA_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itensconsorcio": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "codtipo",
+        "type": "int"
+      },
+      {
+        "name": "grupo",
+        "type": "varchar"
+      },
+      {
+        "name": "cota",
+        "type": "varchar"
+      },
+      {
+        "name": "prazo",
+        "type": "varchar"
+      },
+      {
+        "name": "indice",
+        "type": "varchar"
+      },
+      {
+        "name": "bemreferencia",
+        "type": "varchar"
+      },
+      {
+        "name": "valorcredito",
+        "type": "decimal"
+      },
+      {
+        "name": "produto",
+        "type": "varchar"
+      },
+      {
+        "name": "nitem",
+        "type": "int"
+      },
+      {
+        "name": "observacoes",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtipo",
+        "constraint": "FK__seg_itens__codti__51EF2864",
+        "references_table": "seg_itenscosorciotipo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_fone": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "seguradoras_contatos": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "codseguradora",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "depto",
+        "type": "varchar"
+      },
+      {
+        "name": "fones",
+        "type": "varchar"
+      },
+      {
+        "name": "email",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codseguradora",
+        "constraint": "NVRI_SEGURADORASCONTATO_SEGURADORA_RE_NVRF",
+        "references_table": "seguradoras",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_internet": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "sinistro_historicoterceiro": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_processo",
+        "type": "int"
+      },
+      {
+        "name": "dtmovimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "hrmovimento",
+        "type": "time"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      },
+      {
+        "name": "codterceiro",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codterceiro",
+        "constraint": "NVRI_SINISTROHISTORICOTERCEIRO_TERCEIRO_RE_NVRF",
+        "references_table": "sinistro_terceiro",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_processo",
+        "constraint": "NVRI_SINISTROHISTORICOTERCEIRO_PROCESSO_RE_NVRF",
+        "references_table": "sinistro_processo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_SINISTROHISTORICOTERCEIRO_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_estado": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "sigla",
+        "type": "varchar"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "com_pagprodutor": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "data",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "hora",
+        "type": "time"
+      },
+      {
+        "name": "cod_produtor",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      },
+      {
+        "name": "valor",
+        "type": "decimal"
+      },
+      {
+        "name": "ativo",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_produtor",
+        "constraint": "NVRI_COMPAGPRODUTOR_CODPRODUTOR_RE_NVRF",
+        "references_table": "produtores",
+        "references_column": "codprod"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_COMPAGPRODUTOR_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itensprevidencia": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      },
+      {
+        "name": "nascimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "codsexo",
+        "type": "int"
+      },
+      {
+        "name": "codecivil",
+        "type": "int"
+      },
+      {
+        "name": "nomemae",
+        "type": "varchar"
+      },
+      {
+        "name": "nitem",
+        "type": "int"
+      },
+      {
+        "name": "observacoes",
+        "type": "varchar"
+      },
+      {
+        "name": "produto",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_numero",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_orgao",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_data",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "indice",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codecivil",
+        "constraint": "NVRI_SEGITENSPREVIDENCIA_ECIVIL_RE_NVRF",
+        "references_table": "a_ecivil",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codsexo",
+        "constraint": "NVRI_SEGITENSPREVIDENCIA_SEXO_RE_NVRF",
+        "references_table": "a_sexo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "cp_extrato": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "data",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "hora",
+        "type": "time"
+      },
+      {
+        "name": "cod_cc",
+        "type": "int"
+      },
+      {
+        "name": "cod_titulo",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      },
+      {
+        "name": "tipodc",
+        "type": "varchar"
+      },
+      {
+        "name": "valorc",
+        "type": "decimal"
+      },
+      {
+        "name": "valord",
+        "type": "decimal"
+      },
+      {
+        "name": "saldo",
+        "type": "decimal"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_cc",
+        "constraint": "NVRI_CPEXTRATO_CONTA_RE_NVRF",
+        "references_table": "cp_contacorrente",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_titulo",
+        "constraint": "NVRI_CPEXTRATO_TITULO_RE_NVRF",
+        "references_table": "cp_titulo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_CPEXTRATO_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "clientes_enderecos": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "codcli",
+        "type": "int"
+      },
+      {
+        "name": "codtipoendereco",
+        "type": "int"
+      },
+      {
+        "name": "cep",
+        "type": "varchar"
+      },
+      {
+        "name": "tipologradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "logradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "numero",
+        "type": "varchar"
+      },
+      {
+        "name": "complemento",
+        "type": "varchar"
+      },
+      {
+        "name": "bairro",
+        "type": "varchar"
+      },
+      {
+        "name": "cidade",
+        "type": "varchar"
+      },
+      {
+        "name": "estado",
+        "type": "varchar"
+      },
+      {
+        "name": "padrao",
+        "type": "bit"
+      },
+      {
+        "name": "endereco",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtipoendereco",
+        "constraint": "NVRI_CLIENTESENDERECO_TIPO_RE_NVRF",
+        "references_table": "a_endereco",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codcli",
+        "constraint": "NVRI_CLIENTESENDERECO_CLIENTE_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      }
+    ]
+  },
+  "parametros_opcoes": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "valor",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "com_extrato": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "data",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "hora",
+        "type": "time"
+      },
+      {
+        "name": "cod_produtor",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      },
+      {
+        "name": "cod_origem",
+        "type": "int"
+      },
+      {
+        "name": "tipodc",
+        "type": "varchar"
+      },
+      {
+        "name": "valorc",
+        "type": "decimal"
+      },
+      {
+        "name": "valord",
+        "type": "decimal"
+      },
+      {
+        "name": "saldo",
+        "type": "decimal"
+      },
+      {
+        "name": "dtrecebecomissao",
+        "type": "date"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_produtor",
+        "constraint": "NVRI_COMEXTRATO_CODPRODUTOR_RE_NVRF",
+        "references_table": "produtores",
+        "references_column": "codprod"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_COMEXTRATO_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "coberturas": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "cod_ramo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "is_padrao",
+        "type": "decimal"
+      },
+      {
+        "name": "premio_padrao",
+        "type": "decimal"
+      },
+      {
+        "name": "franquia_padrao",
+        "type": "decimal"
+      },
+      {
+        "name": "obs_padrao",
+        "type": "varchar"
+      },
+      {
+        "name": "uso_padrao",
+        "type": "bit"
+      },
+      {
+        "name": "ordem",
+        "type": "int"
+      },
+      {
+        "name": "id_importacao",
+        "type": "int"
+      },
+      {
+        "name": "ativo",
+        "type": "char"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_ramo",
+        "constraint": "NVRI_COBERTURAS_RAMO_RE_NVRF",
+        "references_table": "ramos",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "clientes_fones": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "codcli",
+        "type": "int"
+      },
+      {
+        "name": "codtipofone",
+        "type": "int"
+      },
+      {
+        "name": "fone",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtipofone",
+        "constraint": "NVRI_CLIENTESFONE_TIPO_RE_NVRF",
+        "references_table": "a_fone",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codcli",
+        "constraint": "NVRI_CLIENTESFONE_CLIENTE_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      }
+    ]
+  },
+  "prospect": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "chaveproposta",
+        "type": "int"
+      },
+      {
+        "name": "dtmovimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "hrmovimento",
+        "type": "time"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "chaveproposta",
+        "constraint": "NVRI_PROSPECT_PROPOSTA_RE_NVRF",
+        "references_table": "seg_proposta",
+        "references_column": "chave"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_PROSPECT_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_formapag": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "tipodado",
+        "type": "char"
+      },
+      {
+        "name": "id_importacao",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "seg_itens": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveproposta",
+        "type": "int"
+      },
+      {
+        "name": "nitem",
+        "type": "int"
+      },
+      {
+        "name": "descricaoseguro",
+        "type": "varchar"
+      },
+      {
+        "name": "ativo",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "chaveproposta",
+        "constraint": "NVRI_SEGITENS_PROPOSTA_RE_NVRF",
+        "references_table": "seg_proposta",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "clientes_internet": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "codcli",
+        "type": "int"
+      },
+      {
+        "name": "codtipointernet",
+        "type": "int"
+      },
+      {
+        "name": "internet",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtipointernet",
+        "constraint": "NVRI_CLIENTESINTERNET_TIPO_RE_NVRF",
+        "references_table": "a_internet",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codcli",
+        "constraint": "NVRI_CLIENTESINTERNET_CLIENTE_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      }
+    ]
+  },
+  "mail_localuso": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "mail_tipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "localuso",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "localuso",
+        "constraint": "FK__mail_tipo__local__61BB7BD9",
+        "references_table": "mail_localuso",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_franquia": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "id_importacao",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_banco": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "seg_parcelas": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_proposta",
+        "type": "int"
+      },
+      {
+        "name": "cod_cabec",
+        "type": "int"
+      },
+      {
+        "name": "cod_status",
+        "type": "int"
+      },
+      {
+        "name": "cod_formapagto",
+        "type": "int"
+      },
+      {
+        "name": "cod_banco",
+        "type": "int"
+      },
+      {
+        "name": "cod_bandeira",
+        "type": "int"
+      },
+      {
+        "name": "cod_pessoa",
+        "type": "int"
+      },
+      {
+        "name": "nparcela",
+        "type": "int"
+      },
+      {
+        "name": "dtvencimento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtpagamento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "valor",
+        "type": "decimal"
+      },
+      {
+        "name": "agencia",
+        "type": "varchar"
+      },
+      {
+        "name": "conta",
+        "type": "varchar"
+      },
+      {
+        "name": "cpfcnpj",
+        "type": "varchar"
+      },
+      {
+        "name": "ncartao",
+        "type": "varchar"
+      },
+      {
+        "name": "validade",
+        "type": "varchar"
+      },
+      {
+        "name": "obscartao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_banco",
+        "constraint": "NVRI_SEGPARCELAS_BANCO_RE_NVRF",
+        "references_table": "a_banco",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_bandeira",
+        "constraint": "NVRI_SEGPARCELAS_BANDEIRA_RE_NVRF",
+        "references_table": "a_bandeiracartao",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_pessoa",
+        "constraint": "FK__seg_parce__cod_p__64CCF2AE",
+        "references_table": "a_pessoa",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_cabec",
+        "constraint": "NVRI_SEGPARCELAS_CODCABEC_RE_NVRF",
+        "references_table": "com_cabec",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_status",
+        "constraint": "FK__seg_parce__cod_s__63D8CE75",
+        "references_table": "com_status",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_formapagto",
+        "constraint": "NVRI_SEGPARCELAS_FORMAPAGTO_RE_NVRF",
+        "references_table": "seg_formapag",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_proposta",
+        "constraint": "NVRI_SEGPARCELAS_CODPROPOSTA_RE_NVRF",
+        "references_table": "seg_proposta",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "mail_status": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_kitgas": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "seg_itenscobertura": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "chavecobertura",
+        "type": "int"
+      },
+      {
+        "name": "valoris",
+        "type": "decimal"
+      },
+      {
+        "name": "premio",
+        "type": "decimal"
+      },
+      {
+        "name": "franquia",
+        "type": "decimal"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "chavecobertura",
+        "constraint": "NVRI_SEGITENSCOBERTURA_COBERTURA_RE_NVRF",
+        "references_table": "coberturas",
+        "references_column": "chave"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSCOBERTURA_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "mail_texto": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_tipo",
+        "type": "int"
+      },
+      {
+        "name": "titulo",
+        "type": "varchar"
+      },
+      {
+        "name": "assunto",
+        "type": "varchar"
+      },
+      {
+        "name": "texto",
+        "type": "varchar"
+      },
+      {
+        "name": "ativo",
+        "type": "bit"
+      },
+      {
+        "name": "alinhamento",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_tipo",
+        "constraint": "FK__mail_text__cod_t__668030F6",
+        "references_table": "mail_tipo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_rastreador": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_bandeiracartao": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "portovisa",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_usoveiculo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "ordem",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "imp_painel": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "endereco",
+        "type": "varchar"
+      },
+      {
+        "name": "bairro",
+        "type": "varchar"
+      },
+      {
+        "name": "cidade",
+        "type": "varchar"
+      },
+      {
+        "name": "estado",
+        "type": "varchar"
+      },
+      {
+        "name": "cep",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "clientes_intermedio": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "clientes_contas": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "codcli",
+        "type": "int"
+      },
+      {
+        "name": "codbanco",
+        "type": "int"
+      },
+      {
+        "name": "agencia",
+        "type": "varchar"
+      },
+      {
+        "name": "conta",
+        "type": "varchar"
+      },
+      {
+        "name": "codpessoa",
+        "type": "int"
+      },
+      {
+        "name": "cpfcnpj",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codbanco",
+        "constraint": "NVRI_CLIENTESCONTAS_CODBANCO_RE_NVRF",
+        "references_table": "a_banco",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codpessoa",
+        "constraint": "NVRI_CLIENTESCONTAS_CODPESSOA_RE_NVRF",
+        "references_table": "a_pessoa",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codcli",
+        "constraint": "NVRI_CLIENTESCONTAS_CLIENTE_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      }
+    ]
+  },
+  "mail_painel": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuariocria",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuarioevento",
+        "type": "int"
+      },
+      {
+        "name": "cod_status",
+        "type": "int"
+      },
+      {
+        "name": "cod_tipo",
+        "type": "int"
+      },
+      {
+        "name": "cod_texto",
+        "type": "int"
+      },
+      {
+        "name": "cod_cliente",
+        "type": "int"
+      },
+      {
+        "name": "cod_proposta",
+        "type": "int"
+      },
+      {
+        "name": "cod_item",
+        "type": "int"
+      },
+      {
+        "name": "cod_produtor",
+        "type": "int"
+      },
+      {
+        "name": "destinatario",
+        "type": "varchar"
+      },
+      {
+        "name": "copia",
+        "type": "varchar"
+      },
+      {
+        "name": "dtcria",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "dtevento",
+        "type": "smalldatetime"
+      },
+      {
+        "name": "hrevento",
+        "type": "time"
+      },
+      {
+        "name": "htm",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_cliente",
+        "constraint": "NVRI_MAIL_CLIENTE_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      },
+      {
+        "column": "cod_status",
+        "constraint": "FK__mail_pain__cod_s__6C390A4C",
+        "references_table": "mail_status",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_texto",
+        "constraint": "NVRI_MAIL_TEXTO_RE_NVRF",
+        "references_table": "mail_texto",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_tipo",
+        "constraint": "FK__mail_pain__cod_t__6D2D2E85",
+        "references_table": "mail_tipo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_produtor",
+        "constraint": "NVRI_MAIL_PRODUTOR_RE_NVRF",
+        "references_table": "produtores",
+        "references_column": "codprod"
+      },
+      {
+        "column": "cod_item",
+        "constraint": "NVRI_MAIL_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      },
+      {
+        "column": "cod_proposta",
+        "constraint": "NVRI_MAIL_PROPOSTA_RE_NVRF",
+        "references_table": "seg_proposta",
+        "references_column": "chave"
+      },
+      {
+        "column": "cod_usuariocria",
+        "constraint": "NVRI_MAIL_USUARIOCRIA_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuarioevento",
+        "constraint": "NVRI_MAIL_USUARIOEVENTO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "com_calculocabec": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_tipo",
+        "type": "int"
+      },
+      {
+        "name": "cod_seguradora",
+        "type": "int"
+      },
+      {
+        "name": "cod_ramo",
+        "type": "int"
+      },
+      {
+        "name": "cod_produto",
+        "type": "int"
+      },
+      {
+        "name": "comissaobase",
+        "type": "decimal"
+      },
+      {
+        "name": "custoapolice",
+        "type": "decimal"
+      },
+      {
+        "name": "tipodesconto",
+        "type": "char"
+      },
+      {
+        "name": "ca_primeira",
+        "type": "char"
+      },
+      {
+        "name": "pliquidadif",
+        "type": "char"
+      },
+      {
+        "name": "esgotamentodif",
+        "type": "char"
+      },
+      {
+        "name": "configurado",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_licenciamento": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "clausulas": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "cod_ramo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "obs_padrao",
+        "type": "varchar"
+      },
+      {
+        "name": "uso_padrao",
+        "type": "bit"
+      },
+      {
+        "name": "ordem",
+        "type": "int"
+      },
+      {
+        "name": "ativo",
+        "type": "char"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_ramo",
+        "constraint": "NVRI_CLAUSULAS_RAMO_RE_NVRF",
+        "references_table": "ramos",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_meses": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "com_calculoitem": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_cabec",
+        "type": "int"
+      },
+      {
+        "name": "qtdpcliente",
+        "type": "int"
+      },
+      {
+        "name": "qtdpcomissao",
+        "type": "int"
+      },
+      {
+        "name": "pagaadicional",
+        "type": "char"
+      },
+      {
+        "name": "divisaosimples",
+        "type": "char"
+      },
+      {
+        "name": "parcelaliquida",
+        "type": "decimal"
+      },
+      {
+        "name": "tipofluxo",
+        "type": "char"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_cabec",
+        "constraint": "FK__com_calcu__cod_c__6F4A8121",
+        "references_table": "com_calculocabec",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "clientes_cartoes": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "codcli",
+        "type": "int"
+      },
+      {
+        "name": "codbandeira",
+        "type": "int"
+      },
+      {
+        "name": "ncartao",
+        "type": "varchar"
+      },
+      {
+        "name": "validade",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      },
+      {
+        "name": "nomeimpresso",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codbandeira",
+        "constraint": "NVRI_CLIENTESCARTOES_BANDEIRA_RE_NVRF",
+        "references_table": "a_bandeiracartao",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codcli",
+        "constraint": "NVRI_CLIENTESCARTOES_CLIENTE_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      }
+    ]
+  },
+  "a_licenciamentomeses": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "finalplaca",
+        "type": "char"
+      },
+      {
+        "name": "mesveiculo",
+        "type": "int"
+      },
+      {
+        "name": "mescaminhao",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "mescaminhao",
+        "constraint": "FK__a_licenci__mesca__719CDDE7",
+        "references_table": "a_meses",
+        "references_column": "codigo"
+      },
+      {
+        "column": "mesveiculo",
+        "constraint": "FK__a_licenci__mesve__70A8B9AE",
+        "references_table": "a_meses",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "com_calculoitemdif": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_cabec",
+        "type": "int"
+      },
+      {
+        "name": "cod_item",
+        "type": "int"
+      },
+      {
+        "name": "parcela",
+        "type": "int"
+      },
+      {
+        "name": "percentual",
+        "type": "decimal"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_cabec",
+        "constraint": "FK__com_calcu__cod_c__7226EDCC",
+        "references_table": "com_calculocabec",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_item",
+        "constraint": "FK__com_calcu__cod_i__731B1205",
+        "references_table": "com_calculoitem",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_tipodata": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "seg_itensclausula": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "chaveclausula",
+        "type": "int"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "chaveclausula",
+        "constraint": "NVRI_SEGITENSCLAUSULA_CLAUSULA_RE_NVRF",
+        "references_table": "clausulas",
+        "references_column": "chave"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSCLAUSULA_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "a_combustivel": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_pessoacampo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "acesso_personalizado": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "padrao",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "com_calculotipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_cores": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "ordem",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "mail_campos": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "localuso",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "localuso",
+        "constraint": "FK__mail_camp__local__76B698BF",
+        "references_table": "mail_localuso",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "a_camposcliente": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "codtipo",
+        "type": "int"
+      },
+      {
+        "name": "codpessoa",
+        "type": "int"
+      },
+      {
+        "name": "ordem",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codpessoa",
+        "constraint": "FK__a_camposc__codpe__787EE5A0",
+        "references_table": "a_pessoacampo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codtipo",
+        "constraint": "FK__a_camposc__codti__778AC167",
+        "references_table": "a_tipodata",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "com_calculotipofluxo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "varchar"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "sinistro_natureza": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "codigo_tipo",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codigo_tipo",
+        "constraint": "FK__sinistro___codig__78D3EB5B",
+        "references_table": "ramos_tipo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itenscondutor": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "codclirelacao",
+        "type": "int"
+      },
+      {
+        "name": "codtiporelacao",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codtiporelacao",
+        "constraint": "NVRI_SEGITENSCONDUTOR_TIPORELACAO_RE_NVRF",
+        "references_table": "a_tiporelacao",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codclirelacao",
+        "constraint": "NVRI_SEGITENSCONDUTOR_CLIENTERELACAO_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSCONDUTOR_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "envelope": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "altura",
+        "type": "int"
+      },
+      {
+        "name": "largura",
+        "type": "int"
+      },
+      {
+        "name": "imprimelogo",
+        "type": "char"
+      },
+      {
+        "name": "imprimerodape",
+        "type": "char"
+      },
+      {
+        "name": "usacorretora",
+        "type": "char"
+      },
+      {
+        "name": "corretora",
+        "type": "varchar"
+      },
+      {
+        "name": "endereco",
+        "type": "varchar"
+      },
+      {
+        "name": "orientacao",
+        "type": "int"
+      },
+      {
+        "name": "subir",
+        "type": "int"
+      },
+      {
+        "name": "padrao",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "acesso_personalizado_item": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_menu",
+        "type": "int"
+      },
+      {
+        "name": "cod_acessoprincipal",
+        "type": "int"
+      },
+      {
+        "name": "cod_ordem",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_menu",
+        "constraint": "FK__acesso_pe__cod_m__79B300FB",
+        "references_table": "acesso_personalizado",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_acessoprincipal",
+        "constraint": "FK__acesso_pe__cod_a__7AA72534",
+        "references_table": "acesso_principal",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "perfil_tipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "perfil_status": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "sinistro_status": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "clientes_campos": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "codcli",
+        "type": "int"
+      },
+      {
+        "name": "codcampo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "data",
+        "type": "smalldatetime"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "codcampo",
+        "constraint": "NVRI_CLIENTESCAMPOS_CAMPO_RE_NVRF",
+        "references_table": "a_camposcliente",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codcli",
+        "constraint": "NVRI_CLIENTESCAMPOS_CLIENTE_RE_NVRF",
+        "references_table": "clientes",
+        "references_column": "codcli"
+      }
+    ]
+  },
+  "acesso_personalizado_usuario": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_menu",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      },
+      {
+        "name": "restrito",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_menu",
+        "constraint": "FK__acesso_pe__cod_m__7D8391DF",
+        "references_table": "acesso_personalizado",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_ACESSOPERSONALIZADO_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "seg_itensperfil": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chaveitem",
+        "type": "int"
+      },
+      {
+        "name": "chave_pergunta",
+        "type": "int"
+      },
+      {
+        "name": "chave_resposta",
+        "type": "int"
+      },
+      {
+        "name": "resposta_texto",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "chave_pergunta",
+        "constraint": "NVRI_SEGITENSPERFIL_PERGUNTA_RE_NVRF",
+        "references_table": "perfil_perguntas",
+        "references_column": "chave"
+      },
+      {
+        "column": "chave_resposta",
+        "constraint": "NVRI_SEGITENSPERFIL_RESPOSTA_RE_NVRF",
+        "references_table": "perfil_respostas",
+        "references_column": "chave"
+      },
+      {
+        "column": "chaveitem",
+        "constraint": "NVRI_SEGITENSPERFIL_ITEM_RE_NVRF",
+        "references_table": "seg_itens",
+        "references_column": "chave"
+      }
+    ]
+  },
+  "perfil_perguntas": {
+    "columns": [
+      {
+        "name": "chave",
+        "type": "int"
+      },
+      {
+        "name": "chave_tipo",
+        "type": "int"
+      },
+      {
+        "name": "chave_status",
+        "type": "int"
+      },
+      {
+        "name": "pergunta",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "chave_status",
+        "constraint": "FK__perfil_pe__chave__7EF6D905",
+        "references_table": "perfil_status",
+        "references_column": "codigo"
+      },
+      {
+        "column": "chave_tipo",
+        "constraint": "FK__perfil_pe__chave__7E02B4CC",
+        "references_table": "perfil_tipo",
+        "references_column": "codigo"
+      }
+    ]
+  },
+  "sinistro_guincho": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "sinistro_culpa": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "a_tiporelacao": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "envelope_outros": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "linha1",
+        "type": "varchar"
+      },
+      {
+        "name": "linha2",
+        "type": "varchar"
+      },
+      {
+        "name": "linha3",
+        "type": "varchar"
+      },
+      {
+        "name": "linha4",
+        "type": "varchar"
+      },
+      {
+        "name": "linha5",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  }
+}
