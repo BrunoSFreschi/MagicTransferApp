@@ -75,12 +75,10 @@ const string ICON_JSON = "📄";
                 LogInfo($"{ICON_TABLE} Processando tabela {processedTables}/{tables.Count}: {tableName}");
 
                 Console.WriteLine($"{ICON_COLUMN} Obtendo colunas e tipos de dados...");
-                cmd = new SqlCommand("SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @tableName", conn);
-                cmd.Parameters.AddWithValue("@tableName", tableName);
-                reader = cmd.ExecuteReader();
-
-                List<dynamic> columns = [];
-                while (reader.Read())
+        List<ColumnInfo> columns = new();
+        await using (SqlCommand columnsCmd = new(
+            "SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @tableName",
+            conn))
                 {
                     columns.Add(new
                     {
