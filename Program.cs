@@ -51,8 +51,8 @@ const string ICON_JSON = "📄";
         "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'",
         conn);
 
-            List<string> tables = [];
-            while (reader.Read())
+    List<string> tables = new();
+    await using (SqlDataReader tablesReader = await tablesCmd.ExecuteReaderAsync())
             {
                 tables.Add(reader["TABLE_NAME"].ToString() ?? "");
             }
