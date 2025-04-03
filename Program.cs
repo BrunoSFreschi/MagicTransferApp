@@ -220,4 +220,19 @@ const string ICON_JSON = "📄";
         Console.ResetColor();
     }
     #endregion
-}
+
+
+#region Record updateTypes
+public record ColumnInfo(string Name, string Type);
+
+public record ForeignKeyInfo(
+    string Column,
+    string Constraint,
+    string ReferencingColumn,
+    string ReferencedTable,
+    string ReferencedColumn);
+
+public record TableStructure(
+    List<ColumnInfo> Columns,
+    List<ForeignKeyInfo> ForeignKeys);
+#endregion
