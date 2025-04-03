@@ -4,7 +4,6 @@ using System.Diagnostics;
 
 class Program
 {
-
     private const string ICON_SUCCESS = "✅";
     private const string ICON_ERROR = "❌";
     private const string ICON_INFO = "ℹ️";
@@ -23,7 +22,7 @@ class Program
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
         string server = "localhost";
-        string database = "PRUDENCIO-";
+        string database = "DOUTOR";
         string username = "aggersa";
         string password = "1800Dz10";
         string connStr = $"Server={server};Database={database};User Id={username};Password={password};";
