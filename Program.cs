@@ -84,9 +84,12 @@ const string ICON_JSON = "📄";
                 {
                     columns.Add(new
                     {
-                        name = reader["COLUMN_NAME"].ToString(),
-                        type = reader["DATA_TYPE"].ToString()
-                    });
+                while (await columnsReader.ReadAsync())
+                {
+                    columns.Add(new ColumnInfo(
+                        columnsReader.GetString(0),
+                        columnsReader.GetString(1))
+                    );
                 }
                 reader.Close();
 
