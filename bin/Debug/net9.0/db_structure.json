@@ -306,12 +306,6 @@
         "references_column": "chave"
       },
       {
-        "column": "cod_guincho",
-        "constraint": "FK__sinistro___cod_g__0539C240",
-        "references_table": "sinistro_guincho",
-        "references_column": "codigo"
-      },
-      {
         "column": "cod_tipooficina",
         "constraint": "FK__sinistro___cod_t__07220AB2",
         "references_table": "sinistro_oficinatipo",
@@ -324,15 +318,21 @@
         "references_column": "codigo"
       },
       {
-        "column": "cod_natureza",
-        "constraint": "NVRI_SINISTROPROCESSO_NATUREZA_RE_NVRF",
-        "references_table": "sinistro_natureza",
+        "column": "cod_guincho",
+        "constraint": "FK__sinistro___cod_g__0539C240",
+        "references_table": "sinistro_guincho",
         "references_column": "codigo"
       },
       {
         "column": "cod_culpa",
         "constraint": "FK__sinistro___cod_c__062DE679",
         "references_table": "sinistro_culpa",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_natureza",
+        "constraint": "NVRI_SINISTROPROCESSO_NATUREZA_RE_NVRF",
+        "references_table": "sinistro_natureza",
         "references_column": "codigo"
       }
     ]
@@ -1368,13 +1368,39 @@
       },
       {
         "column": "cod_pessoa",
-        "constraint": "FK__produtore__cod_p__027D5126",
+        "constraint": "FK__produtore__cod_p__6F6A7CB2",
         "references_table": "a_pessoa",
         "references_column": "codigo"
       }
     ]
   },
+  "func_funcao": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
   "acessorios_tipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "func_escolaridade": {
     "columns": [
       {
         "name": "codigo",
@@ -1560,6 +1586,19 @@
       }
     ]
   },
+  "func_status": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
   "sinistro_prejuizo": {
     "columns": [
       {
@@ -1660,6 +1699,19 @@
       }
     ]
   },
+  "func_tipo": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
   "seg_itenslocal": {
     "columns": [
       {
@@ -1733,6 +1785,176 @@
       }
     ],
     "foreign_Keys": []
+  },
+  "func_cadastro": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "nome",
+        "type": "varchar"
+      },
+      {
+        "name": "cod_funcao",
+        "type": "int"
+      },
+      {
+        "name": "cod_status",
+        "type": "int"
+      },
+      {
+        "name": "cod_tipo",
+        "type": "int"
+      },
+      {
+        "name": "cod_sexo",
+        "type": "int"
+      },
+      {
+        "name": "cod_ecivil",
+        "type": "int"
+      },
+      {
+        "name": "cod_escolaridade",
+        "type": "int"
+      },
+      {
+        "name": "salario",
+        "type": "decimal"
+      },
+      {
+        "name": "nascimento",
+        "type": "date"
+      },
+      {
+        "name": "admissao",
+        "type": "date"
+      },
+      {
+        "name": "demissao",
+        "type": "date"
+      },
+      {
+        "name": "motivodemissao",
+        "type": "varchar"
+      },
+      {
+        "name": "cpf",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_numero",
+        "type": "varchar"
+      },
+      {
+        "name": "rg_data",
+        "type": "date"
+      },
+      {
+        "name": "carteiratrabalho",
+        "type": "varchar"
+      },
+      {
+        "name": "pis",
+        "type": "varchar"
+      },
+      {
+        "name": "nomepai",
+        "type": "varchar"
+      },
+      {
+        "name": "nomemae",
+        "type": "varchar"
+      },
+      {
+        "name": "naturalidade",
+        "type": "varchar"
+      },
+      {
+        "name": "obs",
+        "type": "varchar"
+      },
+      {
+        "name": "cep",
+        "type": "varchar"
+      },
+      {
+        "name": "tipologradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "logradouro",
+        "type": "varchar"
+      },
+      {
+        "name": "numero",
+        "type": "varchar"
+      },
+      {
+        "name": "complemento",
+        "type": "varchar"
+      },
+      {
+        "name": "bairro",
+        "type": "varchar"
+      },
+      {
+        "name": "cidade",
+        "type": "varchar"
+      },
+      {
+        "name": "estado",
+        "type": "varchar"
+      },
+      {
+        "name": "email",
+        "type": "varchar"
+      },
+      {
+        "name": "fones",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_ecivil",
+        "constraint": "FK__func_cada__cod_e__22EA20B8",
+        "references_table": "a_ecivil",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_sexo",
+        "constraint": "FK__func_cada__cod_s__21F5FC7F",
+        "references_table": "a_sexo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_escolaridade",
+        "constraint": "FK__func_cada__cod_e__23DE44F1",
+        "references_table": "func_escolaridade",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_funcao",
+        "constraint": "NVRI_FUNCCADASTRO_FUNCAO_RE_NVRF",
+        "references_table": "func_funcao",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_status",
+        "constraint": "FK__func_cada__cod_s__200DB40D",
+        "references_table": "func_status",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_tipo",
+        "constraint": "FK__func_cada__cod_t__2101D846",
+        "references_table": "func_tipo",
+        "references_column": "codigo"
+      }
+    ]
   },
   "seg_itensdescricao": {
     "columns": [
@@ -1855,6 +2077,27 @@
       {
         "name": "descricao",
         "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
+  "faixa_etaria": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "inicial",
+        "type": "int"
+      },
+      {
+        "name": "final",
+        "type": "int"
       }
     ],
     "foreign_Keys": []
@@ -2109,18 +2352,29 @@
     ],
     "foreign_Keys": []
   },
-  "func_funcao": {
+  "com_cancelada": {
     "columns": [
       {
         "name": "codigo",
         "type": "int"
       },
       {
-        "name": "descricao",
+        "name": "cod_parcela",
+        "type": "int"
+      },
+      {
+        "name": "motivocancela",
         "type": "varchar"
       }
     ],
-    "foreign_Keys": []
+    "foreign_Keys": [
+      {
+        "column": "cod_parcela",
+        "constraint": "NVRI_COMCANCELADA_CODPARCELA_RE_NVRF",
+        "references_table": "com_parcelas",
+        "references_column": "codigo"
+      }
+    ]
   },
   "ch_status": {
     "columns": [
@@ -2367,19 +2621,6 @@
       }
     ]
   },
-  "func_escolaridade": {
-    "columns": [
-      {
-        "name": "codigo",
-        "type": "int"
-      },
-      {
-        "name": "descricao",
-        "type": "varchar"
-      }
-    ],
-    "foreign_Keys": []
-  },
   "ramos_tipo": {
     "columns": [
       {
@@ -2561,19 +2802,6 @@
         "references_column": "codigo"
       }
     ]
-  },
-  "func_status": {
-    "columns": [
-      {
-        "name": "codigo",
-        "type": "int"
-      },
-      {
-        "name": "descricao",
-        "type": "varchar"
-      }
-    ],
-    "foreign_Keys": []
   },
   "parametros_fichaseguro": {
     "columns": [
@@ -2863,19 +3091,6 @@
     ],
     "foreign_Keys": []
   },
-  "func_tipo": {
-    "columns": [
-      {
-        "name": "codigo",
-        "type": "int"
-      },
-      {
-        "name": "descricao",
-        "type": "varchar"
-      }
-    ],
-    "foreign_Keys": []
-  },
   "nfe_codigoservico": {
     "columns": [
       {
@@ -2901,176 +3116,6 @@
       }
     ],
     "foreign_Keys": []
-  },
-  "func_cadastro": {
-    "columns": [
-      {
-        "name": "codigo",
-        "type": "int"
-      },
-      {
-        "name": "nome",
-        "type": "varchar"
-      },
-      {
-        "name": "cod_funcao",
-        "type": "int"
-      },
-      {
-        "name": "cod_status",
-        "type": "int"
-      },
-      {
-        "name": "cod_tipo",
-        "type": "int"
-      },
-      {
-        "name": "cod_sexo",
-        "type": "int"
-      },
-      {
-        "name": "cod_ecivil",
-        "type": "int"
-      },
-      {
-        "name": "cod_escolaridade",
-        "type": "int"
-      },
-      {
-        "name": "salario",
-        "type": "decimal"
-      },
-      {
-        "name": "nascimento",
-        "type": "date"
-      },
-      {
-        "name": "admissao",
-        "type": "date"
-      },
-      {
-        "name": "demissao",
-        "type": "date"
-      },
-      {
-        "name": "motivodemissao",
-        "type": "varchar"
-      },
-      {
-        "name": "cpf",
-        "type": "varchar"
-      },
-      {
-        "name": "rg_numero",
-        "type": "varchar"
-      },
-      {
-        "name": "rg_data",
-        "type": "date"
-      },
-      {
-        "name": "carteiratrabalho",
-        "type": "varchar"
-      },
-      {
-        "name": "pis",
-        "type": "varchar"
-      },
-      {
-        "name": "nomepai",
-        "type": "varchar"
-      },
-      {
-        "name": "nomemae",
-        "type": "varchar"
-      },
-      {
-        "name": "naturalidade",
-        "type": "varchar"
-      },
-      {
-        "name": "obs",
-        "type": "varchar"
-      },
-      {
-        "name": "cep",
-        "type": "varchar"
-      },
-      {
-        "name": "tipologradouro",
-        "type": "varchar"
-      },
-      {
-        "name": "logradouro",
-        "type": "varchar"
-      },
-      {
-        "name": "numero",
-        "type": "varchar"
-      },
-      {
-        "name": "complemento",
-        "type": "varchar"
-      },
-      {
-        "name": "bairro",
-        "type": "varchar"
-      },
-      {
-        "name": "cidade",
-        "type": "varchar"
-      },
-      {
-        "name": "estado",
-        "type": "varchar"
-      },
-      {
-        "name": "email",
-        "type": "varchar"
-      },
-      {
-        "name": "fones",
-        "type": "varchar"
-      }
-    ],
-    "foreign_Keys": [
-      {
-        "column": "cod_ecivil",
-        "constraint": "FK__func_cada__cod_e__35FCF52C",
-        "references_table": "a_ecivil",
-        "references_column": "codigo"
-      },
-      {
-        "column": "cod_sexo",
-        "constraint": "FK__func_cada__cod_s__3508D0F3",
-        "references_table": "a_sexo",
-        "references_column": "codigo"
-      },
-      {
-        "column": "cod_escolaridade",
-        "constraint": "FK__func_cada__cod_e__36F11965",
-        "references_table": "func_escolaridade",
-        "references_column": "codigo"
-      },
-      {
-        "column": "cod_funcao",
-        "constraint": "NVRI_FUNCCADASTRO_FUNCAO_RE_NVRF",
-        "references_table": "func_funcao",
-        "references_column": "codigo"
-      },
-      {
-        "column": "cod_status",
-        "constraint": "FK__func_cada__cod_s__33208881",
-        "references_table": "func_status",
-        "references_column": "codigo"
-      },
-      {
-        "column": "cod_tipo",
-        "constraint": "FK__func_cada__cod_t__3414ACBA",
-        "references_table": "func_tipo",
-        "references_column": "codigo"
-      }
-    ]
   },
   "grid_forma": {
     "columns": [
@@ -3242,7 +3287,7 @@
     "foreign_Keys": [
       {
         "column": "cod_pessoa",
-        "constraint": "FK__nfe_prest__cod_p__222B06A9",
+        "constraint": "FK__nfe_prest__cod_p__7C055DC1",
         "references_table": "a_pessoa",
         "references_column": "codigo"
       }
@@ -3419,7 +3464,7 @@
     "foreign_Keys": [
       {
         "column": "cod_pessoa",
-        "constraint": "FK__nfe_tomad__cod_p__231F2AE2",
+        "constraint": "FK__nfe_tomad__cod_p__7CF981FA",
         "references_table": "a_pessoa",
         "references_column": "codigo"
       }
@@ -3673,30 +3718,6 @@
         "constraint": "NVRI_SEGITENSLOCADOR_ITEM_RE_NVRF",
         "references_table": "seg_itens",
         "references_column": "chave"
-      }
-    ]
-  },
-  "com_cancelada": {
-    "columns": [
-      {
-        "name": "codigo",
-        "type": "int"
-      },
-      {
-        "name": "cod_parcela",
-        "type": "int"
-      },
-      {
-        "name": "motivocancela",
-        "type": "varchar"
-      }
-    ],
-    "foreign_Keys": [
-      {
-        "column": "cod_parcela",
-        "constraint": "NVRI_COMCANCELADA_CODPARCELA_RE_NVRF",
-        "references_table": "com_parcelas",
-        "references_column": "codigo"
       }
     ]
   },
@@ -4373,6 +4394,19 @@
       }
     ]
   },
+  "clientes_intermedio": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      }
+    ],
+    "foreign_Keys": []
+  },
   "cp_localtitulo": {
     "columns": [
       {
@@ -4787,27 +4821,6 @@
         "references_column": "chave"
       }
     ]
-  },
-  "faixa_etaria": {
-    "columns": [
-      {
-        "name": "codigo",
-        "type": "int"
-      },
-      {
-        "name": "descricao",
-        "type": "varchar"
-      },
-      {
-        "name": "inicial",
-        "type": "int"
-      },
-      {
-        "name": "final",
-        "type": "int"
-      }
-    ],
-    "foreign_Keys": []
   },
   "seg_itensacompanhante": {
     "columns": [
@@ -5490,15 +5503,15 @@
     ],
     "foreign_Keys": [
       {
-        "column": "codterceiro",
-        "constraint": "NVRI_SINISTROHISTORICOTERCEIRO_TERCEIRO_RE_NVRF",
-        "references_table": "sinistro_terceiro",
-        "references_column": "codigo"
-      },
-      {
         "column": "cod_processo",
         "constraint": "NVRI_SINISTROHISTORICOTERCEIRO_PROCESSO_RE_NVRF",
         "references_table": "sinistro_processo",
+        "references_column": "codigo"
+      },
+      {
+        "column": "codterceiro",
+        "constraint": "NVRI_SINISTROHISTORICOTERCEIRO_TERCEIRO_RE_NVRF",
+        "references_table": "sinistro_terceiro",
         "references_column": "codigo"
       },
       {
@@ -6139,6 +6152,23 @@
       }
     ]
   },
+  "acesso_personalizado": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "descricao",
+        "type": "varchar"
+      },
+      {
+        "name": "padrao",
+        "type": "bit"
+      }
+    ],
+    "foreign_Keys": []
+  },
   "a_franquia": {
     "columns": [
       {
@@ -6401,6 +6431,40 @@
       }
     ]
   },
+  "acesso_personalizado_item": {
+    "columns": [
+      {
+        "name": "codigo",
+        "type": "int"
+      },
+      {
+        "name": "cod_menu",
+        "type": "int"
+      },
+      {
+        "name": "cod_acessoprincipal",
+        "type": "int"
+      },
+      {
+        "name": "cod_ordem",
+        "type": "int"
+      }
+    ],
+    "foreign_Keys": [
+      {
+        "column": "cod_acessoprincipal",
+        "constraint": "FK__acesso_pe__cod_a__679450C0",
+        "references_table": "acesso_principal",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_menu",
+        "constraint": "FK__acesso_pe__cod_m__66A02C87",
+        "references_table": "acesso_personalizado",
+        "references_column": "codigo"
+      }
+    ]
+  },
   "a_rastreador": {
     "columns": [
       {
@@ -6481,18 +6545,39 @@
     ],
     "foreign_Keys": []
   },
-  "clientes_intermedio": {
+  "acesso_personalizado_usuario": {
     "columns": [
       {
         "name": "codigo",
         "type": "int"
       },
       {
-        "name": "descricao",
-        "type": "varchar"
+        "name": "cod_menu",
+        "type": "int"
+      },
+      {
+        "name": "cod_usuario",
+        "type": "int"
+      },
+      {
+        "name": "restrito",
+        "type": "bit"
       }
     ],
-    "foreign_Keys": []
+    "foreign_Keys": [
+      {
+        "column": "cod_menu",
+        "constraint": "FK__acesso_pe__cod_m__6A70BD6B",
+        "references_table": "acesso_personalizado",
+        "references_column": "codigo"
+      },
+      {
+        "column": "cod_usuario",
+        "constraint": "NVRI_ACESSOPERSONALIZADO_USUARIO_RE_NVRF",
+        "references_table": "usuarios",
+        "references_column": "codigo"
+      }
+    ]
   },
   "clientes_contas": {
     "columns": [
@@ -7028,23 +7113,6 @@
     ],
     "foreign_Keys": []
   },
-  "acesso_personalizado": {
-    "columns": [
-      {
-        "name": "codigo",
-        "type": "int"
-      },
-      {
-        "name": "descricao",
-        "type": "varchar"
-      },
-      {
-        "name": "padrao",
-        "type": "bit"
-      }
-    ],
-    "foreign_Keys": []
-  },
   "com_calculotipo": {
     "columns": [
       {
@@ -7267,40 +7335,6 @@
     ],
     "foreign_Keys": []
   },
-  "acesso_personalizado_item": {
-    "columns": [
-      {
-        "name": "codigo",
-        "type": "int"
-      },
-      {
-        "name": "cod_menu",
-        "type": "int"
-      },
-      {
-        "name": "cod_acessoprincipal",
-        "type": "int"
-      },
-      {
-        "name": "cod_ordem",
-        "type": "int"
-      }
-    ],
-    "foreign_Keys": [
-      {
-        "column": "cod_menu",
-        "constraint": "FK__acesso_pe__cod_m__79B300FB",
-        "references_table": "acesso_personalizado",
-        "references_column": "codigo"
-      },
-      {
-        "column": "cod_acessoprincipal",
-        "constraint": "FK__acesso_pe__cod_a__7AA72534",
-        "references_table": "acesso_principal",
-        "references_column": "codigo"
-      }
-    ]
-  },
   "perfil_tipo": {
     "columns": [
       {
@@ -7375,40 +7409,6 @@
         "constraint": "NVRI_CLIENTESCAMPOS_CLIENTE_RE_NVRF",
         "references_table": "clientes",
         "references_column": "codcli"
-      }
-    ]
-  },
-  "acesso_personalizado_usuario": {
-    "columns": [
-      {
-        "name": "codigo",
-        "type": "int"
-      },
-      {
-        "name": "cod_menu",
-        "type": "int"
-      },
-      {
-        "name": "cod_usuario",
-        "type": "int"
-      },
-      {
-        "name": "restrito",
-        "type": "bit"
-      }
-    ],
-    "foreign_Keys": [
-      {
-        "column": "cod_menu",
-        "constraint": "FK__acesso_pe__cod_m__7D8391DF",
-        "references_table": "acesso_personalizado",
-        "references_column": "codigo"
-      },
-      {
-        "column": "cod_usuario",
-        "constraint": "NVRI_ACESSOPERSONALIZADO_USUARIO_RE_NVRF",
-        "references_table": "usuarios",
-        "references_column": "codigo"
       }
     ]
   },
