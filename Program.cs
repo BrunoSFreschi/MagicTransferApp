@@ -36,9 +36,8 @@ const string ICON_JSON = "📄";
             LogStep(2, 4, "Conectando ao banco de dados...");
             var connectTimer = Stopwatch.StartNew();
 
-            conn = new SqlConnection(connStr);
-            conn.Open();
-
+    await using SqlConnection conn = new(connStr);
+    await conn.OpenAsync();
             connectTimer.Stop();
             LogSuccess($"Conexão estabelecida com sucesso. {ICON_TIME} Tempo: {connectTimer.Elapsed.TotalSeconds:0.00}s");
 
