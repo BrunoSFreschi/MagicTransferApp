@@ -115,11 +115,17 @@ const string ICON_JSON = "📄";
                 {
                     foreign_Keys.Add(new
                     {
-                        column = reader["COLUMN_NAME"].ToString(),
-                        constraint = reader["CONSTRAINT_NAME"].ToString(),
-                        references_table = reader["referenced_table"].ToString(),
-                        references_column = reader["referenced_column"].ToString()
-                    });
+                while (await fkReader.ReadAsync())
+                {
+                    foreignKeys.Add(new ForeignKeyInfo(
+                        fkReader.GetString(0),
+                        fkReader.GetString(1),
+                        fkReader.GetString(3),
+                        fkReader.GetString(4),
+                        fkReader.GetString(5))
+                    );
+                }
+            }
                 }
                 reader.Close();
 
