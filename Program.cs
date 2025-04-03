@@ -155,8 +155,14 @@ const string ICON_JSON = "📄";
             Console.WriteLine($"{ICON_JSON} Gerando arquivo JSON...");
             var jsonTimer = Stopwatch.StartNew();
 
-            string json = JsonConvert.SerializeObject(dbStructure, Newtonsoft.Json.Formatting.Indented);
-            File.WriteAllText("db_structure.json", json);
+    var jsonOptions = new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+    };
+
+    string json = JsonSerializer.Serialize(dbStructure, jsonOptions);
+    await File.WriteAllTextAsync("db_structure.json", json);
 
             jsonTimer.Stop();
             LogSuccess($"{ICON_JSON} Arquivo 'db_structure.json' gerado com sucesso. {ICON_TIME} Tempo: {jsonTimer.Elapsed.TotalSeconds:0.00}s");
