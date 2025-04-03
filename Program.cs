@@ -46,8 +46,10 @@ const string ICON_JSON = "📄";
             LogStep(3, 4, "Obtendo lista de tabelas...");
             var tablesTimer = Stopwatch.StartNew();
 
-            cmd = new SqlCommand("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'", conn);
-            SqlDataReader reader = cmd.ExecuteReader();
+    // Get tables list - using ExecuteReader with MARS (Multiple Active Result Sets) enabled
+    await using SqlCommand tablesCmd = new(
+        "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'",
+        conn);
 
             List<string> tables = [];
             while (reader.Read())
