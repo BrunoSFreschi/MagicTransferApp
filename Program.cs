@@ -2,18 +2,16 @@
 using System.Data.SqlClient;
 using System.Diagnostics;
 
-class Program
-{
-    private const string ICON_SUCCESS = "✅";
-    private const string ICON_ERROR = "❌";
-    private const string ICON_INFO = "ℹ️";
-    private const string ICON_WARNING = "⚠️";
-    private const string ICON_STEP = "🔵";
-    private const string ICON_TABLE = "📋";
-    private const string ICON_COLUMN = "📝";
-    private const string ICON_FK = "🔗";
-    private const string ICON_TIME = "⏱️";
-    private const string ICON_JSON = "📄";
+const string ICON_SUCCESS = "✅";
+const string ICON_ERROR = "❌";
+const string ICON_INFO = "ℹ️";
+const string ICON_WARNING = "⚠️";
+const string ICON_STEP = "🔵";
+const string ICON_TABLE = "📋";
+const string ICON_COLUMN = "📝";
+const string ICON_FK = "🔗";
+const string ICON_TIME = "⏱️";
+const string ICON_JSON = "📄";
 
     [Obsolete]
     static void Main()
