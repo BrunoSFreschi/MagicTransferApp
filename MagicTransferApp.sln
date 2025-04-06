@@ -4,6 +4,8 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicTransferApp", "MagicTransferApp.csproj", "{E470A763-3453-5DE3-776C-48A0F6B0D623}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicDBCreate", "..\MagicDBCreate\MagicDBCreate.csproj", "{3D4106E2-82E9-433A-982C-ED4F35FF53EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{E470A763-3453-5DE3-776C-48A0F6B0D623}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E470A763-3453-5DE3-776C-48A0F6B0D623}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E470A763-3453-5DE3-776C-48A0F6B0D623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D4106E2-82E9-433A-982C-ED4F35FF53EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4106E2-82E9-433A-982C-ED4F35FF53EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D4106E2-82E9-433A-982C-ED4F35FF53EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D4106E2-82E9-433A-982C-ED4F35FF53EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
