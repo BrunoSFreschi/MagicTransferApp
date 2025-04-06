@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3D4106E2-82E9-433A-982C-ED4F35FF53EF}|..\\MagicDBCreate\\MagicDBCreate.csproj|c:\\dev\\backend\\tcc\\magictransfer\\magicdbcreate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E470A763-3453-5DE3-776C-48A0F6B0D623}|MagicTransferApp.csproj|c:\\dev\\backend\\tcc\\magictransfer\\magictransferapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E470A763-3453-5DE3-776C-48A0F6B0D623}|MagicTransferApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -52,11 +55,24 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
+              "DocumentMoniker": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicDBCreate\\Program.cs",
+              "RelativeDocumentMoniker": "..\\MagicDBCreate\\Program.cs",
+              "ToolTip": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicDBCreate\\Program.cs",
+              "RelativeToolTip": "..\\MagicDBCreate\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T22:07:41.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
               "DocumentMoniker": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACMBAAAAAAAAAAAmwCsBAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-04T03:18:43.502Z",
               "EditorCaption": ""
