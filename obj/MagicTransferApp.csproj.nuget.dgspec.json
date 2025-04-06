@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\MagicTransferApp.csproj": {}
+    "C:\\dev\\TCC\\MagicTransferApp.csproj": {}
   },
   "projects": {
-    "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\MagicTransferApp.csproj": {
+    "C:\\dev\\TCC\\MagicTransferApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\MagicTransferApp.csproj",
+        "projectUniqueName": "C:\\dev\\TCC\\MagicTransferApp.csproj",
         "projectName": "MagicTransferApp",
-        "projectPath": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\MagicTransferApp.csproj",
-        "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\backend\\TCC\\MagicTransfer\\MagicTransferApp\\obj\\",
+        "projectPath": "C:\\dev\\TCC\\MagicTransferApp.csproj",
+        "packagesPath": "C:\\Users\\agger\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\TCC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\agger\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

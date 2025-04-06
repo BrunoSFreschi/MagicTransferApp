@@ -1,0 +1,7813 @@
+{
+  "sinistro_oficinatipo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "perfil_respostas": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chave_pergunta",
+        "Type": "int"
+      },
+      {
+        "Name": "resposta",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "chave_pergunta",
+        "Constraint": "NVRI_PERFILRESPOSTAS_PERGUNTA_RE_NVRF",
+        "ReferencingColumn": "chave_pergunta",
+        "ReferencedTable": "perfil_perguntas",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "acesso_principal": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_camposcapa": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "codtipo",
+        "Type": "int"
+      },
+      {
+        "Name": "codramo",
+        "Type": "int"
+      },
+      {
+        "Name": "ordem",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtipo",
+        "Constraint": "NVRI_CAMPOSCAPA_TIPODATA_RE_NVRF",
+        "ReferencingColumn": "codtipo",
+        "ReferencedTable": "a_tipodata",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codramo",
+        "Constraint": "NVRI_CAMPOSCAPA_RAMO_RE_NVRF",
+        "ReferencingColumn": "codramo",
+        "ReferencedTable": "ramos",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "clientes_relacao": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "codcli",
+        "Type": "int"
+      },
+      {
+        "Name": "codclirelacao",
+        "Type": "int"
+      },
+      {
+        "Name": "codtiporelacao",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtiporelacao",
+        "Constraint": "NVRI_CLIENTESRELACAO_TIPORELACAO_RE_NVRF",
+        "ReferencingColumn": "codtiporelacao",
+        "ReferencedTable": "a_tiporelacao",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codcli",
+        "Constraint": "NVRI_CLIENTESRELACAO_CLIENTE_RE_NVRF",
+        "ReferencingColumn": "codcli",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      },
+      {
+        "Column": "codclirelacao",
+        "Constraint": "NVRI_CLIENTESRELACAO_CLIENTERELACAO_RE_NVRF",
+        "ReferencingColumn": "codclirelacao",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      }
+    ]
+  },
+  "sinistro_processo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveproposta",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_status",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_natureza",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_guincho",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_culpa",
+        "Type": "int"
+      },
+      {
+        "Name": "informacondutor",
+        "Type": "bit"
+      },
+      {
+        "Name": "cod_relcondutor",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_clicondutor",
+        "Type": "int"
+      },
+      {
+        "Name": "informaoficina",
+        "Type": "bit"
+      },
+      {
+        "Name": "cod_tipooficina",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_clioficina",
+        "Type": "int"
+      },
+      {
+        "Name": "dtcadastro",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtaviso",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtsinistro",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "hrsinistro",
+        "Type": "time"
+      },
+      {
+        "Name": "nbo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "localbo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "naviso",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nvistoria",
+        "Type": "varchar"
+      },
+      {
+        "Name": "localsinistro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "danos",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      },
+      {
+        "Name": "vltotal",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlcoberto",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlfranquia",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlindenizado",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlparticular",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlterceiros",
+        "Type": "decimal"
+      },
+      {
+        "Name": "impactobonus",
+        "Type": "int"
+      },
+      {
+        "Name": "advogado",
+        "Type": "varchar"
+      },
+      {
+        "Name": "reclamante",
+        "Type": "varchar"
+      },
+      {
+        "Name": "valoracao",
+        "Type": "decimal"
+      },
+      {
+        "Name": "motivorecusa",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_relcondutor",
+        "Constraint": "NVRI_SINISTROPROCESSO_RELCONDUTOR_RE_NVRF",
+        "ReferencingColumn": "cod_relcondutor",
+        "ReferencedTable": "a_tiporelacao",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_clicondutor",
+        "Constraint": "NVRI_SINISTROPROCESSO_CLICONDUTOR_RE_NVRF",
+        "ReferencingColumn": "cod_clicondutor",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      },
+      {
+        "Column": "cod_clioficina",
+        "Constraint": "NVRI_SINISTROPROCESSO_CLIOFICINA_RE_NVRF",
+        "ReferencingColumn": "cod_clioficina",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SINISTROPROCESSO_CHAVEITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "chaveproposta",
+        "Constraint": "NVRI_SINISTROPROCESSO_CHAVEPROPOSTA_RE_NVRF",
+        "ReferencingColumn": "chaveproposta",
+        "ReferencedTable": "seg_proposta",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "cod_tipooficina",
+        "Constraint": "FK__sinistro___cod_t__07220AB2",
+        "ReferencingColumn": "cod_tipooficina",
+        "ReferencedTable": "sinistro_oficinatipo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_status",
+        "Constraint": "FK__sinistro___cod_s__04459E07",
+        "ReferencingColumn": "cod_status",
+        "ReferencedTable": "sinistro_status",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_guincho",
+        "Constraint": "FK__sinistro___cod_g__0539C240",
+        "ReferencingColumn": "cod_guincho",
+        "ReferencedTable": "sinistro_guincho",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_culpa",
+        "Constraint": "FK__sinistro___cod_c__062DE679",
+        "ReferencingColumn": "cod_culpa",
+        "ReferencedTable": "sinistro_culpa",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_natureza",
+        "Constraint": "NVRI_SINISTROPROCESSO_NATUREZA_RE_NVRF",
+        "ReferencingColumn": "cod_natureza",
+        "ReferencedTable": "sinistro_natureza",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "acesso_opcao": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_principal",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_principal",
+        "Constraint": "FK__acesso_op__cod_p__0504B816",
+        "ReferencingColumn": "cod_principal",
+        "ReferencedTable": "acesso_principal",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "perfil_qcabec": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "acesso_usuario_principal": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_principal",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_principal",
+        "Constraint": "FK__acesso_us__cod_p__07E124C1",
+        "ReferencingColumn": "cod_principal",
+        "ReferencedTable": "acesso_principal",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_ACESSOUSUARIOPRINCIPAL_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "digital_origem": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "prefixo",
+        "Type": "char"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "capa_campos": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "codproposta",
+        "Type": "int"
+      },
+      {
+        "Name": "codcampo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "data",
+        "Type": "smalldatetime"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codcampo",
+        "Constraint": "NVRI_CAPACAMPOS_CAMPO_RE_NVRF",
+        "ReferencingColumn": "codcampo",
+        "ReferencedTable": "a_camposcapa",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codproposta",
+        "Constraint": "NVRI_CAPACAMPOS_PROPOSTA_RE_NVRF",
+        "ReferencingColumn": "codproposta",
+        "ReferencedTable": "seg_proposta",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "perfil_qitens": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chave_qcabec",
+        "Type": "int"
+      },
+      {
+        "Name": "chave_pergunta",
+        "Type": "int"
+      },
+      {
+        "Name": "ordem",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "chave_pergunta",
+        "Constraint": "NVRI_PERFILQEITENS_PERGUNTA_RE_NVRF",
+        "ReferencingColumn": "chave_pergunta",
+        "ReferencedTable": "perfil_perguntas",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "chave_qcabec",
+        "Constraint": "NVRI_PERFILQEITENS_QCABEC_RE_NVRF",
+        "ReferencingColumn": "chave_qcabec",
+        "ReferencedTable": "perfil_qcabec",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "digital_doc": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveorigem",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "chaveorigem",
+        "Constraint": "FK__digital_d__chave__0A9D95DB",
+        "ReferencingColumn": "chaveorigem",
+        "ReferencedTable": "digital_origem",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "acesso_usuario_opcao": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_opcao",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_opcao",
+        "Constraint": "FK__acesso_us__cod_o__0BB1B5A5",
+        "ReferencingColumn": "cod_opcao",
+        "ReferencedTable": "acesso_opcao",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_ACESSOUSUARIOOPCAO_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_campositem": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "codtipo",
+        "Type": "int"
+      },
+      {
+        "Name": "codramo",
+        "Type": "int"
+      },
+      {
+        "Name": "ordem",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtipo",
+        "Constraint": "NVRI_CAMPOSITEM_TIPODATA_RE_NVRF",
+        "ReferencingColumn": "codtipo",
+        "ReferencedTable": "a_tipodata",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codramo",
+        "Constraint": "NVRI_CAMPOSITEM_RAMO_RE_NVRF",
+        "ReferencingColumn": "codramo",
+        "ReferencedTable": "ramos",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itensauto": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "anofab",
+        "Type": "int"
+      },
+      {
+        "Name": "anomod",
+        "Type": "int"
+      },
+      {
+        "Name": "zero",
+        "Type": "bit"
+      },
+      {
+        "Name": "portas",
+        "Type": "int"
+      },
+      {
+        "Name": "nitem",
+        "Type": "int"
+      },
+      {
+        "Name": "placa",
+        "Type": "varchar"
+      },
+      {
+        "Name": "chassi",
+        "Type": "varchar"
+      },
+      {
+        "Name": "renavam",
+        "Type": "varchar"
+      },
+      {
+        "Name": "combustivel",
+        "Type": "int"
+      },
+      {
+        "Name": "cor",
+        "Type": "int"
+      },
+      {
+        "Name": "passageiros",
+        "Type": "int"
+      },
+      {
+        "Name": "bonus",
+        "Type": "int"
+      },
+      {
+        "Name": "tipofranquia",
+        "Type": "int"
+      },
+      {
+        "Name": "vlfranquia",
+        "Type": "decimal"
+      },
+      {
+        "Name": "kitgas",
+        "Type": "int"
+      },
+      {
+        "Name": "rastreador",
+        "Type": "int"
+      },
+      {
+        "Name": "uso",
+        "Type": "int"
+      },
+      {
+        "Name": "licenciamento",
+        "Type": "int"
+      },
+      {
+        "Name": "valorfipe",
+        "Type": "decimal"
+      },
+      {
+        "Name": "codigofipe",
+        "Type": "int"
+      },
+      {
+        "Name": "blindado",
+        "Type": "bit"
+      },
+      {
+        "Name": "ci",
+        "Type": "varchar"
+      },
+      {
+        "Name": "observacoes",
+        "Type": "varchar"
+      },
+      {
+        "Name": "chave_perfil",
+        "Type": "int"
+      },
+      {
+        "Name": "codigofipestring",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "combustivel",
+        "Constraint": "NVRI_SEGITENSAUTO_COMBUSTIVEL_RE_NVRF",
+        "ReferencingColumn": "combustivel",
+        "ReferencedTable": "a_combustivel",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cor",
+        "Constraint": "NVRI_SEGITENSAUTO_COR_RE_NVRF",
+        "ReferencingColumn": "cor",
+        "ReferencedTable": "a_cores",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "tipofranquia",
+        "Constraint": "NVRI_SEGITENSAUTO_FRANQUIA_RE_NVRF",
+        "ReferencingColumn": "tipofranquia",
+        "ReferencedTable": "a_franquia",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "kitgas",
+        "Constraint": "NVRI_SEGITENSAUTO_KITGAS_RE_NVRF",
+        "ReferencingColumn": "kitgas",
+        "ReferencedTable": "a_kitgas",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "licenciamento",
+        "Constraint": "NVRI_SEGITENSAUTO_LICENCIAMENTO_RE_NVRF",
+        "ReferencingColumn": "licenciamento",
+        "ReferencedTable": "a_licenciamento",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "rastreador",
+        "Constraint": "NVRI_SEGITENSAUTO_RASTREADOR_RE_NVRF",
+        "ReferencingColumn": "rastreador",
+        "ReferencedTable": "a_rastreador",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "uso",
+        "Constraint": "NVRI_SEGITENSAUTO_USO_RE_NVRF",
+        "ReferencingColumn": "uso",
+        "ReferencedTable": "a_usoveiculo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "chave_perfil",
+        "Constraint": "NVRI_SEGITENSAUTO_PERFIL_RE_NVRF",
+        "ReferencingColumn": "chave_perfil",
+        "ReferencedTable": "perfil_qcabec",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSAUTO_CHAVEITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "digital_extensao": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "extensao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "programa",
+        "Type": "varchar"
+      },
+      {
+        "Name": "programapadrao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "agenda_fone": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "contato",
+        "Type": "varchar"
+      },
+      {
+        "Name": "fones",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "digital": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveextensao",
+        "Type": "int"
+      },
+      {
+        "Name": "origem",
+        "Type": "int"
+      },
+      {
+        "Name": "coddoc",
+        "Type": "int"
+      },
+      {
+        "Name": "codorigem",
+        "Type": "int"
+      },
+      {
+        "Name": "nomearquivo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "data",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ordemdigital",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "origem",
+        "Constraint": "FK__digital__origem__114A936A",
+        "ReferencingColumn": "origem",
+        "ReferencedTable": "digital_origem",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "chaveextensao",
+        "Constraint": "FK__digital__chaveex__10566F31",
+        "ReferencingColumn": "chaveextensao",
+        "ReferencedTable": "digital_extensao",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "coddoc",
+        "Constraint": "NVRI_DIGITAL_DOCUMENTO_RE_NVRF",
+        "ReferencingColumn": "coddoc",
+        "ReferencedTable": "digital_doc",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "parametros_sistema": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "versaoservidor",
+        "Type": "varchar"
+      },
+      {
+        "Name": "versaocorreta",
+        "Type": "varchar"
+      },
+      {
+        "Name": "link_atualizacao_servidor",
+        "Type": "varchar"
+      },
+      {
+        "Name": "limitemaquinas",
+        "Type": "int"
+      },
+      {
+        "Name": "databackup",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "regiao",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "seguradoras_enderecos": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "codseguradora",
+        "Type": "int"
+      },
+      {
+        "Name": "codtipoendereco",
+        "Type": "int"
+      },
+      {
+        "Name": "cep",
+        "Type": "varchar"
+      },
+      {
+        "Name": "tipologradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "logradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "complemento",
+        "Type": "varchar"
+      },
+      {
+        "Name": "bairro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cidade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "estado",
+        "Type": "varchar"
+      },
+      {
+        "Name": "padrao",
+        "Type": "bit"
+      },
+      {
+        "Name": "endereco",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtipoendereco",
+        "Constraint": "NVRI_SEGURADORASENDERECO_TIPO_RE_NVRF",
+        "ReferencingColumn": "codtipoendereco",
+        "ReferencedTable": "a_endereco",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codseguradora",
+        "Constraint": "NVRI_SEGURADORASENDERECO_SEGURADORA_RE_NVRF",
+        "ReferencingColumn": "codseguradora",
+        "ReferencedTable": "seguradoras",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "mensagem_erro": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "restricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "mensagem",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "item_campos": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "coditem",
+        "Type": "int"
+      },
+      {
+        "Name": "codcampo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "data",
+        "Type": "smalldatetime"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codcampo",
+        "Constraint": "NVRI_ITEMCAMPOS_CAMPO_RE_NVRF",
+        "ReferencingColumn": "codcampo",
+        "ReferencedTable": "a_campositem",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "coditem",
+        "Constraint": "NVRI_ITEMCAMPOS_ITEM_RE_NVRF",
+        "ReferencingColumn": "coditem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "parametros": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "razao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cep",
+        "Type": "varchar"
+      },
+      {
+        "Name": "tipologradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "logradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "complemento",
+        "Type": "varchar"
+      },
+      {
+        "Name": "bairro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cidade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "estado",
+        "Type": "varchar"
+      },
+      {
+        "Name": "fones",
+        "Type": "varchar"
+      },
+      {
+        "Name": "email",
+        "Type": "varchar"
+      },
+      {
+        "Name": "website",
+        "Type": "varchar"
+      },
+      {
+        "Name": "logo_imp",
+        "Type": "image"
+      },
+      {
+        "Name": "logo_email",
+        "Type": "image"
+      },
+      {
+        "Name": "fantasia",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "sinistro_terceiro": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_processo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_status",
+        "Type": "int"
+      },
+      {
+        "Name": "infoseguradora",
+        "Type": "bit"
+      },
+      {
+        "Name": "cod_seguradora",
+        "Type": "int"
+      },
+      {
+        "Name": "informaoficina",
+        "Type": "bit"
+      },
+      {
+        "Name": "cod_tipooficina",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_clioficina",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "veiculo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "fones",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_cor",
+        "Type": "int"
+      },
+      {
+        "Name": "placa",
+        "Type": "varchar"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "danos",
+        "Type": "varchar"
+      },
+      {
+        "Name": "naviso",
+        "Type": "varchar"
+      },
+      {
+        "Name": "codpessoa",
+        "Type": "int"
+      },
+      {
+        "Name": "cpf",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cnpj",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_cor",
+        "Constraint": "FK__sinistro___cod_c__1758727B",
+        "ReferencingColumn": "cod_cor",
+        "ReferencedTable": "a_cores",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codpessoa",
+        "Constraint": "NVRI_SINISTROTERCEIRO_PESSOA_RE_NVRF",
+        "ReferencingColumn": "codpessoa",
+        "ReferencedTable": "a_pessoa",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_clioficina",
+        "Constraint": "NVRI_SINISTROTERCEIRO_CLIOFICINA_RE_NVRF",
+        "ReferencingColumn": "cod_clioficina",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      },
+      {
+        "Column": "cod_seguradora",
+        "Constraint": "NVRI_SINISTROTERCEIRO_SEGURADORA_RE_NVRF",
+        "ReferencingColumn": "cod_seguradora",
+        "ReferencedTable": "seguradoras",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_processo",
+        "Constraint": "NVRI_SINISTROTERCEIRO_PROCESSO_RE_NVRF",
+        "ReferencingColumn": "cod_processo",
+        "ReferencedTable": "sinistro_processo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_tipooficina",
+        "Constraint": "FK__sinistro___cod_t__16644E42",
+        "ReferencingColumn": "cod_tipooficina",
+        "ReferencedTable": "sinistro_oficinatipo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_status",
+        "Constraint": "FK__sinistro___cod_s__15702A09",
+        "ReferencingColumn": "cod_status",
+        "ReferencedTable": "sinistro_status",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seguradoras_fones": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "codseguradora",
+        "Type": "int"
+      },
+      {
+        "Name": "codtipofone",
+        "Type": "int"
+      },
+      {
+        "Name": "fone",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtipofone",
+        "Constraint": "NVRI_SEGURADORASFONE_TIPO_RE_NVRF",
+        "ReferencingColumn": "codtipofone",
+        "ReferencedTable": "a_fone",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codseguradora",
+        "Constraint": "NVRI_SEGURADORASFONE_SEGURADORA_RE_NVRF",
+        "ReferencingColumn": "codseguradora",
+        "ReferencedTable": "seguradoras",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "produtores": {
+    "Columns": [
+      {
+        "Name": "codprod",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "corretora",
+        "Type": "int"
+      },
+      {
+        "Name": "fones",
+        "Type": "varchar"
+      },
+      {
+        "Name": "email",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nomecompleto",
+        "Type": "varchar"
+      },
+      {
+        "Name": "comissao",
+        "Type": "decimal"
+      },
+      {
+        "Name": "docrecibo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nomeemail",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_status",
+        "Type": "int"
+      },
+      {
+        "Name": "smtp",
+        "Type": "varchar"
+      },
+      {
+        "Name": "senha",
+        "Type": "varchar"
+      },
+      {
+        "Name": "porta",
+        "Type": "int"
+      },
+      {
+        "Name": "chkssl",
+        "Type": "bit"
+      },
+      {
+        "Name": "logo_email",
+        "Type": "image"
+      },
+      {
+        "Name": "cod_padrao",
+        "Type": "int"
+      },
+      {
+        "Name": "rateiopl",
+        "Type": "bit"
+      },
+      {
+        "Name": "usuarioalternativo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_banco",
+        "Type": "int"
+      },
+      {
+        "Name": "agencia",
+        "Type": "varchar"
+      },
+      {
+        "Name": "conta",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cpfcnpj",
+        "Type": "varchar"
+      },
+      {
+        "Name": "favorecido",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_pessoa",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_banco",
+        "Constraint": "NVRI_PRODUTORES_BANCO_RE_NVRF",
+        "ReferencingColumn": "cod_banco",
+        "ReferencedTable": "a_banco",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_pessoa",
+        "Constraint": "FK__produtore__cod_p__6F6A7CB2",
+        "ReferencingColumn": "cod_pessoa",
+        "ReferencedTable": "a_pessoa",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "func_funcao": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "acessorios_tipo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "func_escolaridade": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "acessorios": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chavetipo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "chavetipo",
+        "Constraint": "NVRI_ACESSORIOS_TIPO_RE_NVRF",
+        "ReferencingColumn": "chavetipo",
+        "ReferencedTable": "acessorios_tipo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seguradoras_internet": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "codseguradora",
+        "Type": "int"
+      },
+      {
+        "Name": "codtipointernet",
+        "Type": "int"
+      },
+      {
+        "Name": "internet",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtipointernet",
+        "Constraint": "NVRI_SEGURADORASINTERNET_TIPO_RE_NVRF",
+        "ReferencingColumn": "codtipointernet",
+        "ReferencedTable": "a_internet",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codseguradora",
+        "Constraint": "NVRI_SEGURADORASINTERNET_SEGURADORA_RE_NVRF",
+        "ReferencingColumn": "codseguradora",
+        "ReferencedTable": "seguradoras",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "usuarios_tipo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "usuarios": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_tipo",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_produtor",
+        "Type": "int"
+      },
+      {
+        "Name": "senha",
+        "Type": "varchar"
+      },
+      {
+        "Name": "adm",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ativo",
+        "Type": "bit"
+      },
+      {
+        "Name": "agenda_visual",
+        "Type": "int"
+      },
+      {
+        "Name": "usuarioweb",
+        "Type": "bit"
+      },
+      {
+        "Name": "senhaweb",
+        "Type": "varchar"
+      },
+      {
+        "Name": "vercomissao",
+        "Type": "bit"
+      },
+      {
+        "Name": "confirma_duplica",
+        "Type": "bit"
+      },
+      {
+        "Name": "verchamandoscliente",
+        "Type": "bit"
+      },
+      {
+        "Name": "veroutroschamandos",
+        "Type": "bit"
+      },
+      {
+        "Name": "verrateio",
+        "Type": "bit"
+      },
+      {
+        "Name": "webcomissao",
+        "Type": "bit"
+      },
+      {
+        "Name": "agenda_horario",
+        "Type": "int"
+      },
+      {
+        "Name": "horariorestrito",
+        "Type": "bit"
+      },
+      {
+        "Name": "horaincial",
+        "Type": "time"
+      },
+      {
+        "Name": "horafinal",
+        "Type": "time"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_produtor",
+        "Constraint": "NVRI_USUARIOS_PRODUTOR_UN_NVRF",
+        "ReferencingColumn": "cod_produtor",
+        "ReferencedTable": "produtores",
+        "ReferencedColumn": "codprod"
+      },
+      {
+        "Column": "cod_tipo",
+        "Constraint": "FK__usuarios__cod_ti__1BFD2C07",
+        "ReferencingColumn": "cod_tipo",
+        "ReferencedTable": "usuarios_tipo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "func_status": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "sinistro_prejuizo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_processo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_cobertura",
+        "Type": "int"
+      },
+      {
+        "Name": "vltotal",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlcoberto",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlfranquia",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlindenizado",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlparticular",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlterceiros",
+        "Type": "decimal"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_cobertura",
+        "Constraint": "NVRI_SINISTROPREJUIZO_COBERTURA_RE_NVRF",
+        "ReferencingColumn": "cod_cobertura",
+        "ReferencedTable": "coberturas",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "cod_processo",
+        "Constraint": "NVRI_SINISTROPREJUIZO_PROCESSO_RE_NVRF",
+        "ReferencingColumn": "cod_processo",
+        "ReferencedTable": "sinistro_processo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itensacessorios": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveacessorio",
+        "Type": "int"
+      },
+      {
+        "Name": "valoris",
+        "Type": "decimal"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "chaveacessorio",
+        "Constraint": "FK__seg_itens__chave__1E3A7A34",
+        "ReferencingColumn": "chaveacessorio",
+        "ReferencedTable": "acessorios",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "chaveacessorio",
+        "Constraint": "NVRI_SEGITENSACESSORIOS_ACESSORIO_RE_NVRF",
+        "ReferencingColumn": "chaveacessorio",
+        "ReferencedTable": "acessorios",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "FK__seg_itens__chave__1D4655FB",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSACESSORIOS_ITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "func_tipo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "seg_itenslocal": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "cep",
+        "Type": "varchar"
+      },
+      {
+        "Name": "tipologradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "logradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "complemento",
+        "Type": "varchar"
+      },
+      {
+        "Name": "bairro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cidade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "estado",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nitem",
+        "Type": "int"
+      },
+      {
+        "Name": "bonus",
+        "Type": "int"
+      },
+      {
+        "Name": "ci",
+        "Type": "varchar"
+      },
+      {
+        "Name": "observacoes",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "prospect_status": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "func_cadastro": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_funcao",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_status",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_tipo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_sexo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_ecivil",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_escolaridade",
+        "Type": "int"
+      },
+      {
+        "Name": "salario",
+        "Type": "decimal"
+      },
+      {
+        "Name": "nascimento",
+        "Type": "date"
+      },
+      {
+        "Name": "admissao",
+        "Type": "date"
+      },
+      {
+        "Name": "demissao",
+        "Type": "date"
+      },
+      {
+        "Name": "motivodemissao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cpf",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rg_numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rg_data",
+        "Type": "date"
+      },
+      {
+        "Name": "carteiratrabalho",
+        "Type": "varchar"
+      },
+      {
+        "Name": "pis",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nomepai",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nomemae",
+        "Type": "varchar"
+      },
+      {
+        "Name": "naturalidade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cep",
+        "Type": "varchar"
+      },
+      {
+        "Name": "tipologradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "logradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "complemento",
+        "Type": "varchar"
+      },
+      {
+        "Name": "bairro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cidade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "estado",
+        "Type": "varchar"
+      },
+      {
+        "Name": "email",
+        "Type": "varchar"
+      },
+      {
+        "Name": "fones",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_ecivil",
+        "Constraint": "FK__func_cada__cod_e__22EA20B8",
+        "ReferencingColumn": "cod_ecivil",
+        "ReferencedTable": "a_ecivil",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_sexo",
+        "Constraint": "FK__func_cada__cod_s__21F5FC7F",
+        "ReferencingColumn": "cod_sexo",
+        "ReferencedTable": "a_sexo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_escolaridade",
+        "Constraint": "FK__func_cada__cod_e__23DE44F1",
+        "ReferencingColumn": "cod_escolaridade",
+        "ReferencedTable": "func_escolaridade",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_funcao",
+        "Constraint": "NVRI_FUNCCADASTRO_FUNCAO_RE_NVRF",
+        "ReferencingColumn": "cod_funcao",
+        "ReferencedTable": "func_funcao",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_status",
+        "Constraint": "FK__func_cada__cod_s__200DB40D",
+        "ReferencingColumn": "cod_status",
+        "ReferencedTable": "func_status",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_tipo",
+        "Constraint": "FK__func_cada__cod_t__2101D846",
+        "ReferencingColumn": "cod_tipo",
+        "ReferencedTable": "func_tipo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itensdescricao": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nitem",
+        "Type": "int"
+      },
+      {
+        "Name": "bonus",
+        "Type": "int"
+      },
+      {
+        "Name": "ci",
+        "Type": "varchar"
+      },
+      {
+        "Name": "observacoes",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "parametros_email": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "smtp",
+        "Type": "varchar"
+      },
+      {
+        "Name": "usuario",
+        "Type": "varchar"
+      },
+      {
+        "Name": "senha",
+        "Type": "varchar"
+      },
+      {
+        "Name": "porta",
+        "Type": "int"
+      },
+      {
+        "Name": "contacopia",
+        "Type": "varchar"
+      },
+      {
+        "Name": "chkssl",
+        "Type": "bit"
+      },
+      {
+        "Name": "chkconfirmacao",
+        "Type": "bit"
+      },
+      {
+        "Name": "chkcopia",
+        "Type": "bit"
+      },
+      {
+        "Name": "usuarioalternativo",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "grade": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_ramo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_seguradora",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_ramo",
+        "Constraint": "NVRI_GRADE_RAMO_RE_NVRF",
+        "ReferencingColumn": "cod_ramo",
+        "ReferencedTable": "ramos",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_seguradora",
+        "Constraint": "NVRI_GRADE_SEGURADORA_RE_NVRF",
+        "ReferencingColumn": "cod_seguradora",
+        "ReferencedTable": "seguradoras",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "ch_tipo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "faixa_etaria": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "inicial",
+        "Type": "int"
+      },
+      {
+        "Name": "final",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "ch_subtipo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_tipo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_tipo",
+        "Constraint": "FK__ch_subtip__cod_t__25DB9BFC",
+        "ReferencingColumn": "cod_tipo",
+        "ReferencedTable": "ch_tipo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itenspessoas": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cpf",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nascimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "codsexo",
+        "Type": "int"
+      },
+      {
+        "Name": "codecivil",
+        "Type": "int"
+      },
+      {
+        "Name": "nomemae",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ativo",
+        "Type": "bit"
+      },
+      {
+        "Name": "dtinclusao",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtiniciovig",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtexclusao",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtfinalvig",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "valormensal",
+        "Type": "decimal"
+      },
+      {
+        "Name": "nitem",
+        "Type": "int"
+      },
+      {
+        "Name": "observacoes",
+        "Type": "varchar"
+      },
+      {
+        "Name": "produto",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cartao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codecivil",
+        "Constraint": "NVRI_SEGITENSPESSOA_ECIVIL_RE_NVRF",
+        "ReferencingColumn": "codecivil",
+        "ReferencedTable": "a_ecivil",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codsexo",
+        "Constraint": "NVRI_SEGITENSPESSOA_SEXO_RE_NVRF",
+        "ReferencingColumn": "codsexo",
+        "ReferencedTable": "a_sexo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "controle": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "codigocliente",
+        "Type": "int"
+      },
+      {
+        "Name": "registro",
+        "Type": "int"
+      },
+      {
+        "Name": "licenca",
+        "Type": "varchar"
+      },
+      {
+        "Name": "serie",
+        "Type": "varchar"
+      },
+      {
+        "Name": "dataweb",
+        "Type": "date"
+      },
+      {
+        "Name": "chavedata",
+        "Type": "varchar"
+      },
+      {
+        "Name": "trocadatacenter",
+        "Type": "bit"
+      },
+      {
+        "Name": "sequencia",
+        "Type": "varchar"
+      },
+      {
+        "Name": "admkey",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "sinistro_historico": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_processo",
+        "Type": "int"
+      },
+      {
+        "Name": "dtmovimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "hrmovimento",
+        "Type": "time"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_processo",
+        "Constraint": "NVRI_SINISTROHISTORICO_PROCESSO_RE_NVRF",
+        "ReferencingColumn": "cod_processo",
+        "ReferencedTable": "sinistro_processo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_SINISTROHISTORICO_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "grade_comissao": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_grade",
+        "Type": "int"
+      },
+      {
+        "Name": "nparcela",
+        "Type": "int"
+      },
+      {
+        "Name": "comissao",
+        "Type": "decimal"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_grade",
+        "Constraint": "NVRI_GRADECOMISSAO_GRADE_RE_NVRF",
+        "ReferencingColumn": "cod_grade",
+        "ReferencedTable": "grade",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "computadores": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "serie",
+        "Type": "varchar"
+      },
+      {
+        "Name": "autorizado",
+        "Type": "bit"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "com_cancelada": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_parcela",
+        "Type": "int"
+      },
+      {
+        "Name": "motivocancela",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_parcela",
+        "Constraint": "NVRI_COMCANCELADA_CODPARCELA_RE_NVRF",
+        "ReferencingColumn": "cod_parcela",
+        "ReferencedTable": "com_parcelas",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "ch_status": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "Appointments": {
+    "Columns": [
+      {
+        "Name": "UniqueID",
+        "Type": "int"
+      },
+      {
+        "Name": "Type",
+        "Type": "int"
+      },
+      {
+        "Name": "StartDate",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "EndDate",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "AllDay",
+        "Type": "bit"
+      },
+      {
+        "Name": "Subject",
+        "Type": "varchar"
+      },
+      {
+        "Name": "Location",
+        "Type": "varchar"
+      },
+      {
+        "Name": "Description",
+        "Type": "nvarchar"
+      },
+      {
+        "Name": "Status",
+        "Type": "int"
+      },
+      {
+        "Name": "Label",
+        "Type": "int"
+      },
+      {
+        "Name": "ResourceID",
+        "Type": "int"
+      },
+      {
+        "Name": "ResourceIDs",
+        "Type": "nvarchar"
+      },
+      {
+        "Name": "ReminderInfo",
+        "Type": "nvarchar"
+      },
+      {
+        "Name": "RecurrenceInfo",
+        "Type": "nvarchar"
+      },
+      {
+        "Name": "TimeZoneId",
+        "Type": "nvarchar"
+      },
+      {
+        "Name": "CustomField1",
+        "Type": "nvarchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "ch_fecha": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "seg_itensdependente": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "codtiporelacao",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cpf",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nascimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "codsexo",
+        "Type": "int"
+      },
+      {
+        "Name": "codecivil",
+        "Type": "int"
+      },
+      {
+        "Name": "nomemae",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ativo",
+        "Type": "bit"
+      },
+      {
+        "Name": "dtinclusao",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtiniciovig",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtexclusao",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtfinalvig",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "valormensal",
+        "Type": "decimal"
+      },
+      {
+        "Name": "cartao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtiporelacao",
+        "Constraint": "NVRI_SEGITENSDEPENDENTE_TIPORELACAO_RE_NVRF",
+        "ReferencingColumn": "codtiporelacao",
+        "ReferencedTable": "a_tiporelacao",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSDEPENDENTE_ITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "recibos": {
+    "Columns": [
+      {
+        "Name": "chaverecibo",
+        "Type": "int"
+      },
+      {
+        "Name": "nomerecibo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "titulorecibo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obsrecibo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "reciboparcela",
+        "Type": "bit"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_pessoa": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "agenda_usuario": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "codpai",
+        "Type": "int"
+      },
+      {
+        "Name": "codfilho",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codfilho",
+        "Constraint": "NVRI_AGENDAUSUARIO_FILHO_RE_NVRF",
+        "ReferencingColumn": "codfilho",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codpai",
+        "Constraint": "NVRI_AGENDAUSUARIO_PAI_RE_NVRF",
+        "ReferencingColumn": "codpai",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "ramos_tipo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "ch_cabec": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_tipo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_subtipo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_status",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_fecha",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_cliente",
+        "Type": "int"
+      },
+      {
+        "Name": "dtabre",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "hrabre",
+        "Type": "time"
+      },
+      {
+        "Name": "dtoriginal",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtresolve",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "cod_usuariooriginal",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuarioresolve",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_fornecedor",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_fecha",
+        "Constraint": "FK__ch_cabec__cod_fe__2F650636",
+        "ReferencingColumn": "cod_fecha",
+        "ReferencedTable": "ch_fecha",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_status",
+        "Constraint": "FK__ch_cabec__cod_st__2E70E1FD",
+        "ReferencingColumn": "cod_status",
+        "ReferencedTable": "ch_status",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_subtipo",
+        "Constraint": "NVRI_CHCABEC_SUBTIPO_RE_NVRF",
+        "ReferencingColumn": "cod_subtipo",
+        "ReferencedTable": "ch_subtipo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_tipo",
+        "Constraint": "FK__ch_cabec__cod_ti__2D7CBDC4",
+        "ReferencingColumn": "cod_tipo",
+        "ReferencedTable": "ch_tipo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_cliente",
+        "Constraint": "NVRI_CHCABEC_CLIENTE_RE_NVRF",
+        "ReferencingColumn": "cod_cliente",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      },
+      {
+        "Column": "cod_fornecedor",
+        "Constraint": "NVRI_CHCABEC_FORNECEDOR_RE_NVRF",
+        "ReferencingColumn": "cod_fornecedor",
+        "ReferencedTable": "fornecedor",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_CHCABEC_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuariooriginal",
+        "Constraint": "NVRI_CHCABEC_USUARIOORIGINAL_RE_NVRF",
+        "ReferencingColumn": "cod_usuariooriginal",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuarioresolve",
+        "Constraint": "NVRI_CHCABEC_USUARIORESOLVE_RE_NVRF",
+        "ReferencingColumn": "cod_usuarioresolve",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_tipodoc": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "ramos": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "codigo_tipo",
+        "Type": "int"
+      },
+      {
+        "Name": "iofpadrao",
+        "Type": "decimal"
+      },
+      {
+        "Name": "isspadrao",
+        "Type": "decimal"
+      },
+      {
+        "Name": "renovar",
+        "Type": "bit"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codigo_tipo",
+        "Constraint": "FK__ramos__codigo_ti__2EDAF651",
+        "ReferencingColumn": "codigo_tipo",
+        "ReferencedTable": "ramos_tipo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "parametros_fichaseguro": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "rodape",
+        "Type": "char"
+      },
+      {
+        "Name": "assinatura",
+        "Type": "char"
+      },
+      {
+        "Name": "parcelas",
+        "Type": "char"
+      },
+      {
+        "Name": "premios",
+        "Type": "char"
+      },
+      {
+        "Name": "comissao",
+        "Type": "char"
+      },
+      {
+        "Name": "obscapa",
+        "Type": "char"
+      },
+      {
+        "Name": "obsitem",
+        "Type": "char"
+      },
+      {
+        "Name": "perfil",
+        "Type": "char"
+      },
+      {
+        "Name": "tab_pl",
+        "Type": "char"
+      },
+      {
+        "Name": "coberturas",
+        "Type": "char"
+      },
+      {
+        "Name": "clausulas",
+        "Type": "char"
+      },
+      {
+        "Name": "condutores",
+        "Type": "char"
+      },
+      {
+        "Name": "acessorios",
+        "Type": "char"
+      },
+      {
+        "Name": "extracapa",
+        "Type": "char"
+      },
+      {
+        "Name": "extraitem",
+        "Type": "char"
+      },
+      {
+        "Name": "dependentes",
+        "Type": "char"
+      },
+      {
+        "Name": "alteracoes",
+        "Type": "char"
+      },
+      {
+        "Name": "beneficiarios",
+        "Type": "char"
+      },
+      {
+        "Name": "locador",
+        "Type": "char"
+      },
+      {
+        "Name": "locatario",
+        "Type": "char"
+      },
+      {
+        "Name": "imobiliaria",
+        "Type": "char"
+      },
+      {
+        "Name": "acompanhante",
+        "Type": "char"
+      },
+      {
+        "Name": "enderecos",
+        "Type": "char"
+      },
+      {
+        "Name": "emails",
+        "Type": "char"
+      },
+      {
+        "Name": "fones",
+        "Type": "char"
+      },
+      {
+        "Name": "detalhes",
+        "Type": "char"
+      },
+      {
+        "Name": "parcelascomissao",
+        "Type": "char"
+      },
+      {
+        "Name": "s_cobertura",
+        "Type": "char"
+      },
+      {
+        "Name": "s_terceiro",
+        "Type": "char"
+      },
+      {
+        "Name": "s_hsegurado",
+        "Type": "char"
+      },
+      {
+        "Name": "s_hterceiro",
+        "Type": "char"
+      },
+      {
+        "Name": "tituloficha",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "fornecedor": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "razao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "fantasia",
+        "Type": "varchar"
+      },
+      {
+        "Name": "contato",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      },
+      {
+        "Name": "datacadastro",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "indefinido",
+        "Type": "bit"
+      },
+      {
+        "Name": "codpessoa",
+        "Type": "int"
+      },
+      {
+        "Name": "cpf",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cnpj",
+        "Type": "varchar"
+      },
+      {
+        "Name": "documento",
+        "Type": "varchar"
+      },
+      {
+        "Name": "resumo",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codpessoa",
+        "Constraint": "NVRI_FORNECEDOR_PESSOA_RE_NVRF",
+        "ReferencingColumn": "codpessoa",
+        "ReferencedTable": "a_pessoa",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itensbeneficiario": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "codtiporelacao",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cpf",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nascimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "codsexo",
+        "Type": "int"
+      },
+      {
+        "Name": "codecivil",
+        "Type": "int"
+      },
+      {
+        "Name": "nomemae",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ativo",
+        "Type": "bit"
+      },
+      {
+        "Name": "dtinclusao",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtiniciovig",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtexclusao",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtfinalvig",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "valormensal",
+        "Type": "decimal"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtiporelacao",
+        "Constraint": "NVRI_SEGITENSBENEFICIARIO_TIPORELACAO_RE_NVRF",
+        "ReferencingColumn": "codtiporelacao",
+        "ReferencedTable": "a_tiporelacao",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSBENEFICIARIO_ITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "a_sexo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "nfe_codigoservico": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_ecivil": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "grid_forma": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "nomeform",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "padrao",
+        "Type": "bit"
+      },
+      {
+        "Name": "varxml",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "nfe_parametros": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "topo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rodape",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_statuscliente": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "cp_ccusto": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "padrao",
+        "Type": "bit"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "seg_itensmovimento": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "data",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSMOVIMENTO_ITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "nfe_prestadores": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "cnpj",
+        "Type": "varchar"
+      },
+      {
+        "Name": "razao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "tipologradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "logradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "complemento",
+        "Type": "varchar"
+      },
+      {
+        "Name": "bairro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cidade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "estado",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cep",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cidade_emissao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ultimo_recibo",
+        "Type": "int"
+      },
+      {
+        "Name": "serie",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_pessoa",
+        "Type": "int"
+      },
+      {
+        "Name": "cpf",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_pessoa",
+        "Constraint": "FK__nfe_prest__cod_p__7C055DC1",
+        "ReferencingColumn": "cod_pessoa",
+        "ReferencedTable": "a_pessoa",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_pasta": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_ramo",
+        "Type": "int"
+      },
+      {
+        "Name": "codcli",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codcli",
+        "Constraint": "NVRI_SEGPASTA_CLIENTE_RE_NVRF",
+        "ReferencingColumn": "codcli",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      },
+      {
+        "Column": "cod_ramo",
+        "Constraint": "NVRI_SEGPASTA_RAMO_RE_NVRF",
+        "ReferencingColumn": "cod_ramo",
+        "ReferencedTable": "ramos",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_truefalse": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "bit"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "ch_movimento": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_chamado",
+        "Type": "int"
+      },
+      {
+        "Name": "dtmovimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "hrmovimento",
+        "Type": "time"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuarioatual",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuarioantes",
+        "Type": "int"
+      },
+      {
+        "Name": "dtatual",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtantes",
+        "Type": "smalldatetime"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_chamado",
+        "Constraint": "NVRI_CHMOVIMENTO_CHAMADO_RE_NVRF",
+        "ReferencingColumn": "cod_chamado",
+        "ReferencedTable": "ch_cabec",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_CHMOVIMENTO_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuarioantes",
+        "Constraint": "NVRI_CHMOVIMENTO_USUARIOANTES_RE_NVRF",
+        "ReferencingColumn": "cod_usuarioantes",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuarioatual",
+        "Constraint": "NVRI_CHMOVIMENTO_USUARIOATUAL_RE_NVRF",
+        "ReferencingColumn": "cod_usuarioatual",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "nfe_tomadores": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "cnpj",
+        "Type": "varchar"
+      },
+      {
+        "Name": "razao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "tipologradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "logradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "complemento",
+        "Type": "varchar"
+      },
+      {
+        "Name": "bairro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cidade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "estado",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cep",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_pessoa",
+        "Type": "int"
+      },
+      {
+        "Name": "cpf",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_pessoa",
+        "Constraint": "FK__nfe_tomad__cod_p__7CF981FA",
+        "ReferencingColumn": "cod_pessoa",
+        "ReferencedTable": "a_pessoa",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "cp_grupo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "seg_itensaluguel": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "cep",
+        "Type": "varchar"
+      },
+      {
+        "Name": "tipologradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "logradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "complemento",
+        "Type": "varchar"
+      },
+      {
+        "Name": "bairro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cidade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "estado",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nitem",
+        "Type": "int"
+      },
+      {
+        "Name": "observacoes",
+        "Type": "varchar"
+      },
+      {
+        "Name": "residencial",
+        "Type": "bit"
+      },
+      {
+        "Name": "dtinicioloca",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtfinalloca",
+        "Type": "smalldatetime"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_tipocliente": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "nfe_rps": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "nrps",
+        "Type": "int"
+      },
+      {
+        "Name": "serie",
+        "Type": "varchar"
+      },
+      {
+        "Name": "dtemissao",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "mesref",
+        "Type": "int"
+      },
+      {
+        "Name": "anoref",
+        "Type": "int"
+      },
+      {
+        "Name": "valor",
+        "Type": "decimal"
+      },
+      {
+        "Name": "cod_prestador",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_tomador",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_servico",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_servico",
+        "Constraint": "NVRI_NFERPS_SERVICO_RE_NVRF",
+        "ReferencingColumn": "cod_servico",
+        "ReferencedTable": "nfe_codigoservico",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_prestador",
+        "Constraint": "NVRI_NFERPS_PRESTADOR_RE_NVRF",
+        "ReferencingColumn": "cod_prestador",
+        "ReferencedTable": "nfe_prestadores",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "cod_tomador",
+        "Constraint": "NVRI_NFERPS_TOMADOR_RE_NVRF",
+        "ReferencingColumn": "cod_tomador",
+        "ReferencedTable": "nfe_tomadores",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "seguradoras": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "codigosusep",
+        "Type": "varchar"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      },
+      {
+        "Name": "fone24horas",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_profissao": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ordem",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "cp_subgrupo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_grupo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_grupo",
+        "Constraint": "NVRI_CPSUBGRUPO_GRUPO_RE_NVRF",
+        "ReferencingColumn": "cod_grupo",
+        "ReferencedTable": "cp_grupo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itenslocador": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "codclirelacao",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codclirelacao",
+        "Constraint": "NVRI_SEGITENSLOCADOR_CLIENTERELACAO_RE_NVRF",
+        "ReferencingColumn": "codclirelacao",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSLOCADOR_ITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "status_geral": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "sim_nao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "produtos": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_ramo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_seguradora",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_ramo",
+        "Constraint": "NVRI_PRODUTOS_RAMO_RE_NVRF",
+        "ReferencingColumn": "cod_ramo",
+        "ReferencedTable": "ramos",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_seguradora",
+        "Constraint": "NVRI_PRODUTOS_SEGURADORA_RE_NVRF",
+        "ReferencingColumn": "cod_seguradora",
+        "ReferencedTable": "seguradoras",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_atividade": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ordem",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "cp_contacorrente": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "com_tipolanca": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "descrlanca",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "fornecedor_enderecos": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_fornecedor",
+        "Type": "int"
+      },
+      {
+        "Name": "codtipoendereco",
+        "Type": "int"
+      },
+      {
+        "Name": "cep",
+        "Type": "varchar"
+      },
+      {
+        "Name": "tipologradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "logradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "complemento",
+        "Type": "varchar"
+      },
+      {
+        "Name": "bairro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cidade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "estado",
+        "Type": "varchar"
+      },
+      {
+        "Name": "padrao",
+        "Type": "bit"
+      },
+      {
+        "Name": "endereco",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtipoendereco",
+        "Constraint": "NVRI_FORNECEDORENDERECO_TIPO_RE_NVRF",
+        "ReferencingColumn": "codtipoendereco",
+        "ReferencedTable": "a_endereco",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_fornecedor",
+        "Constraint": "NVRI_FORNECEDORENDERECO_FORNECEDOR_RE_NVRF",
+        "ReferencingColumn": "cod_fornecedor",
+        "ReferencedTable": "fornecedor",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itenslocatario": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "codclirelacao",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codclirelacao",
+        "Constraint": "NVRI_SEGITENSLOCATARIO_CLIENTERELACAO_RE_NVRF",
+        "ReferencingColumn": "codclirelacao",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSLOCATARIO_ITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "com_tipoextra": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "cp_formapagto": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "produtos_item": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_ramo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_seguradora",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_ramo",
+        "Constraint": "NVRI_PRODUTOSITEM_RAMO_RE_NVRF",
+        "ReferencingColumn": "cod_ramo",
+        "ReferencedTable": "ramos",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_seguradora",
+        "Constraint": "NVRI_PRODUTOSITEM_SEGURADORA_RE_NVRF",
+        "ReferencingColumn": "cod_seguradora",
+        "ReferencedTable": "seguradoras",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_renda": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "com_dc": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "fornecedor_fones": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_fornecedor",
+        "Type": "int"
+      },
+      {
+        "Name": "codtipofone",
+        "Type": "int"
+      },
+      {
+        "Name": "fone",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtipofone",
+        "Constraint": "NVRI_FORNECEDORFONE_TIPO_RE_NVRF",
+        "ReferencingColumn": "codtipofone",
+        "ReferencedTable": "a_fone",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_fornecedor",
+        "Constraint": "NVRI_FORNECEDORFONE_FORNECEDOR_RE_NVRF",
+        "ReferencingColumn": "cod_fornecedor",
+        "ReferencedTable": "fornecedor",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itensimobiliaria": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "codclirelacao",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codclirelacao",
+        "Constraint": "NVRI_SEGITENSIMOBILIARIA_CLIENTERELACAO_RE_NVRF",
+        "ReferencingColumn": "codclirelacao",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSIMOBILIARIA_ITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "clientes": {
+    "Columns": [
+      {
+        "Name": "codcli",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "codpessoa",
+        "Type": "int"
+      },
+      {
+        "Name": "cpf",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cnpj",
+        "Type": "varchar"
+      },
+      {
+        "Name": "codtipodoc",
+        "Type": "int"
+      },
+      {
+        "Name": "rg_numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rg_data",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "rg_orgao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nascimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      },
+      {
+        "Name": "contato",
+        "Type": "varchar"
+      },
+      {
+        "Name": "codsexo",
+        "Type": "int"
+      },
+      {
+        "Name": "codecivil",
+        "Type": "int"
+      },
+      {
+        "Name": "codstatus",
+        "Type": "int"
+      },
+      {
+        "Name": "codtipo",
+        "Type": "int"
+      },
+      {
+        "Name": "codprodutor",
+        "Type": "int"
+      },
+      {
+        "Name": "datacadastro",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "cnh_numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cnh_categoria",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cnh_validade",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "cnh_primeira",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "codprofissao",
+        "Type": "int"
+      },
+      {
+        "Name": "codatividade",
+        "Type": "int"
+      },
+      {
+        "Name": "codrenda",
+        "Type": "int"
+      },
+      {
+        "Name": "fantasia",
+        "Type": "varchar"
+      },
+      {
+        "Name": "fonesms",
+        "Type": "varchar"
+      },
+      {
+        "Name": "email",
+        "Type": "varchar"
+      },
+      {
+        "Name": "codigocliente",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_intermedio",
+        "Type": "int"
+      },
+      {
+        "Name": "apelidocliente",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codatividade",
+        "Constraint": "NVRI_CLIENTE_ATIVIDADE_RE_NVRF",
+        "ReferencingColumn": "codatividade",
+        "ReferencedTable": "a_atividade",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codecivil",
+        "Constraint": "NVRI_CLIENTE_ECIVIL_RE_NVRF",
+        "ReferencingColumn": "codecivil",
+        "ReferencedTable": "a_ecivil",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codpessoa",
+        "Constraint": "NVRI_CLIENTE_PESSOA_RE_NVRF",
+        "ReferencingColumn": "codpessoa",
+        "ReferencedTable": "a_pessoa",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codprofissao",
+        "Constraint": "NVRI_CLIENTE_PROFISSAO_RE_NVRF",
+        "ReferencingColumn": "codprofissao",
+        "ReferencedTable": "a_profissao",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codrenda",
+        "Constraint": "NVRI_CLIENTE_RENDA_RE_NVRF",
+        "ReferencingColumn": "codrenda",
+        "ReferencedTable": "a_renda",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codsexo",
+        "Constraint": "NVRI_CLIENTE_SEXO_RE_NVRF",
+        "ReferencingColumn": "codsexo",
+        "ReferencedTable": "a_sexo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codstatus",
+        "Constraint": "NVRI_CLIENTE_STATUS_RE_NVRF",
+        "ReferencingColumn": "codstatus",
+        "ReferencedTable": "a_statuscliente",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codtipo",
+        "Constraint": "NVRI_CLIENTE_TIPO_RE_NVRF",
+        "ReferencingColumn": "codtipo",
+        "ReferencedTable": "a_tipocliente",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codtipodoc",
+        "Constraint": "NVRI_CLIENTE_TIPODOC_RE_NVRF",
+        "ReferencingColumn": "codtipodoc",
+        "ReferencedTable": "a_tipodoc",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_intermedio",
+        "Constraint": "NVRI_CLIENTE_INTERMEDIO_RE_NVRF",
+        "ReferencingColumn": "cod_intermedio",
+        "ReferencedTable": "clientes_intermedio",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codprodutor",
+        "Constraint": "NVRI_CLIENTE_PRODUTOR_RE_NVRF",
+        "ReferencingColumn": "codprodutor",
+        "ReferencedTable": "produtores",
+        "ReferencedColumn": "codprod"
+      }
+    ]
+  },
+  "cp_statustitulo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "com_cabec": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_proposta",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_tipolanca",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_dc",
+        "Type": "int"
+      },
+      {
+        "Name": "qtd_comissao",
+        "Type": "int"
+      },
+      {
+        "Name": "qtd_parcelas",
+        "Type": "int"
+      },
+      {
+        "Name": "dtproducao",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "premioliquido",
+        "Type": "decimal"
+      },
+      {
+        "Name": "custoapolice",
+        "Type": "decimal"
+      },
+      {
+        "Name": "adicional",
+        "Type": "decimal"
+      },
+      {
+        "Name": "iof",
+        "Type": "decimal"
+      },
+      {
+        "Name": "impostoretido",
+        "Type": "decimal"
+      },
+      {
+        "Name": "parcelacalculo",
+        "Type": "decimal"
+      },
+      {
+        "Name": "comissaobruta",
+        "Type": "decimal"
+      },
+      {
+        "Name": "desconto",
+        "Type": "decimal"
+      },
+      {
+        "Name": "comissaotrab",
+        "Type": "decimal"
+      },
+      {
+        "Name": "valorcomissao",
+        "Type": "decimal"
+      },
+      {
+        "Name": "tipo_data",
+        "Type": "int"
+      },
+      {
+        "Name": "tipo_segunda",
+        "Type": "int"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      },
+      {
+        "Name": "lancamentoconfirmado",
+        "Type": "bit"
+      },
+      {
+        "Name": "fga",
+        "Type": "decimal"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_dc",
+        "Constraint": "FK__com_cabec__cod_d__45544755",
+        "ReferencingColumn": "cod_dc",
+        "ReferencedTable": "com_dc",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_tipolanca",
+        "Constraint": "FK__com_cabec__cod_t__4460231C",
+        "ReferencingColumn": "cod_tipolanca",
+        "ReferencedTable": "com_tipolanca",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_proposta",
+        "Constraint": "NVRI_COMCABEC_CODPROPOSTA_RE_NVRF",
+        "ReferencingColumn": "cod_proposta",
+        "ReferencedTable": "seg_proposta",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "clientes_intermedio": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "cp_localtitulo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "pendente",
+        "Type": "bit"
+      },
+      {
+        "Name": "padrao",
+        "Type": "bit"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_tipoproposta": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "endosso",
+        "Type": "bit"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "fornecedor_internet": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_fornecedor",
+        "Type": "int"
+      },
+      {
+        "Name": "codtipointernet",
+        "Type": "int"
+      },
+      {
+        "Name": "internet",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtipointernet",
+        "Constraint": "NVRI_FORNECEDORINTERNET_TIPO_RE_NVRF",
+        "ReferencingColumn": "codtipointernet",
+        "ReferencedTable": "a_internet",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_fornecedor",
+        "Constraint": "NVRI_FORNECEDORINTERNET_FORNECEDOR_RE_NVRF",
+        "ReferencingColumn": "cod_fornecedor",
+        "ReferencedTable": "fornecedor",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itensviagem": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cpf",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nascimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "codsexo",
+        "Type": "int"
+      },
+      {
+        "Name": "codecivil",
+        "Type": "int"
+      },
+      {
+        "Name": "nomemae",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nitem",
+        "Type": "int"
+      },
+      {
+        "Name": "observacoes",
+        "Type": "varchar"
+      },
+      {
+        "Name": "produto",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rg_numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rg_orgao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rg_data",
+        "Type": "smalldatetime"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codecivil",
+        "Constraint": "NVRI_SEGITENSVIAGEM_ECIVIL_RE_NVRF",
+        "ReferencingColumn": "codecivil",
+        "ReferencedTable": "a_ecivil",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codsexo",
+        "Constraint": "NVRI_SEGITENSVIAGEM_SEXO_RE_NVRF",
+        "ReferencingColumn": "codsexo",
+        "ReferencedTable": "a_sexo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_tipoendosso": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_ramo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cancela",
+        "Type": "bit"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_ramo",
+        "Constraint": "NVRI_TIPOENDOSSO_RAMO_RE_NVRF",
+        "ReferencingColumn": "cod_ramo",
+        "ReferencedTable": "ramos",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "com_status": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "cp_nota": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "nota",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_ccusto",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_fornecedor",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_grupo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_subgrupo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      },
+      {
+        "Name": "dtemissao",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtlanca",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "vlbruto",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vldesconto",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlliquido",
+        "Type": "decimal"
+      },
+      {
+        "Name": "automatico",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_ccusto",
+        "Constraint": "NVRI_CPNOTA_CCUSTO_RE_NVRF",
+        "ReferencingColumn": "cod_ccusto",
+        "ReferencedTable": "cp_ccusto",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_grupo",
+        "Constraint": "NVRI_CPNOTA_GRUPO_RE_NVRF",
+        "ReferencingColumn": "cod_grupo",
+        "ReferencedTable": "cp_grupo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_subgrupo",
+        "Constraint": "NVRI_CPNOTA_SUBGRUPO_RE_NVRF",
+        "ReferencingColumn": "cod_subgrupo",
+        "ReferencedTable": "cp_subgrupo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_fornecedor",
+        "Constraint": "NVRI_CPNOTA_FORNECEDOR_RE_NVRF",
+        "ReferencingColumn": "cod_fornecedor",
+        "ReferencedTable": "fornecedor",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_CPNOTA_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "fornecedor_contas": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_fornecedor",
+        "Type": "int"
+      },
+      {
+        "Name": "codbanco",
+        "Type": "int"
+      },
+      {
+        "Name": "agencia",
+        "Type": "varchar"
+      },
+      {
+        "Name": "conta",
+        "Type": "varchar"
+      },
+      {
+        "Name": "codpessoa",
+        "Type": "int"
+      },
+      {
+        "Name": "cpfcnpj",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codbanco",
+        "Constraint": "NVRI_FORNECEDORCONTAS_CODBANCO_RE_NVRF",
+        "ReferencingColumn": "codbanco",
+        "ReferencedTable": "a_banco",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codpessoa",
+        "Constraint": "NVRI_FORNECEDORCONTAS_CODPESSOA_RE_NVRF",
+        "ReferencingColumn": "codpessoa",
+        "ReferencedTable": "a_pessoa",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_fornecedor",
+        "Constraint": "NVRI_FORNECEDORCONTAS_FORNECEDOR_RE_NVRF",
+        "ReferencingColumn": "cod_fornecedor",
+        "ReferencedTable": "fornecedor",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "com_parcelas": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_proposta",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_cabec",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_status",
+        "Type": "int"
+      },
+      {
+        "Name": "nparcela",
+        "Type": "int"
+      },
+      {
+        "Name": "dtprevista",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "vlprevisto",
+        "Type": "decimal"
+      },
+      {
+        "Name": "dtrecebe",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "vlrecebe",
+        "Type": "decimal"
+      },
+      {
+        "Name": "automatica",
+        "Type": "bit"
+      },
+      {
+        "Name": "faturaseguradora",
+        "Type": "varchar"
+      },
+      {
+        "Name": "datafaturaseguradora",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtmovimento",
+        "Type": "smalldatetime"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_cabec",
+        "Constraint": "NVRI_COMPARCELAS_CODCABEC_RE_NVRF",
+        "ReferencingColumn": "cod_cabec",
+        "ReferencedTable": "com_cabec",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_status",
+        "Constraint": "FK__com_parce__cod_s__4B0D20AB",
+        "ReferencingColumn": "cod_status",
+        "ReferencedTable": "com_status",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_proposta",
+        "Constraint": "NVRI_COMPARCELAS_CODPROPOSTA_RE_NVRF",
+        "ReferencingColumn": "cod_proposta",
+        "ReferencedTable": "seg_proposta",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "seg_itensacompanhante": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "codtiporelacao",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cpf",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nascimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "codsexo",
+        "Type": "int"
+      },
+      {
+        "Name": "codecivil",
+        "Type": "int"
+      },
+      {
+        "Name": "nomemae",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rg_numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rg_orgao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rg_data",
+        "Type": "smalldatetime"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtiporelacao",
+        "Constraint": "NVRI_SEGITENSACOMPANHANTE_TIPORELACAO_RE_NVRF",
+        "ReferencingColumn": "codtiporelacao",
+        "ReferencedTable": "a_tiporelacao",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSACOMPANHANTE_ITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "a_statusproposta": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "seg_grupo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "impostos": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "data",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "cod_seguradora",
+        "Type": "int"
+      },
+      {
+        "Name": "bruto",
+        "Type": "decimal"
+      },
+      {
+        "Name": "ir",
+        "Type": "decimal"
+      },
+      {
+        "Name": "iss",
+        "Type": "decimal"
+      },
+      {
+        "Name": "inss",
+        "Type": "decimal"
+      },
+      {
+        "Name": "debito",
+        "Type": "decimal"
+      },
+      {
+        "Name": "credito",
+        "Type": "decimal"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_seguradora",
+        "Constraint": "NVRI_IMPOSTOS_SEGURADORA_RE_NVRF",
+        "ReferencingColumn": "cod_seguradora",
+        "ReferencedTable": "seguradoras",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itenscosorciotipo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_endereco": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "cp_titulo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_nota",
+        "Type": "int"
+      },
+      {
+        "Name": "nparcela",
+        "Type": "int"
+      },
+      {
+        "Name": "titulo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_local",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_cc",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_formapagto",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_status",
+        "Type": "int"
+      },
+      {
+        "Name": "dtvencimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "vloriginal",
+        "Type": "decimal"
+      },
+      {
+        "Name": "dtpagamento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtbaixa",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "vldesconto",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vljuros",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlpago",
+        "Type": "decimal"
+      },
+      {
+        "Name": "documento",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_cc",
+        "Constraint": "NVRI_CPTITULO_CC_RE_NVRF",
+        "ReferencingColumn": "cod_cc",
+        "ReferencedTable": "cp_contacorrente",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_formapagto",
+        "Constraint": "NVRI_CPTITULO_FORMAPAGTO_RE_NVRF",
+        "ReferencingColumn": "cod_formapagto",
+        "ReferencedTable": "cp_formapagto",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_local",
+        "Constraint": "NVRI_CPTITULO_LOCAL_RE_NVRF",
+        "ReferencingColumn": "cod_local",
+        "ReferencedTable": "cp_localtitulo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_nota",
+        "Constraint": "NVRI_CPTITULO_NOTA_RE_NVRF",
+        "ReferencingColumn": "cod_nota",
+        "ReferencedTable": "cp_nota",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_status",
+        "Constraint": "NVRI_CPTITULO_STATUS_RE_NVRF",
+        "ReferencingColumn": "cod_status",
+        "ReferencedTable": "cp_statustitulo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "com_rateio": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_proposta",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_cabec",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_parcela",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_produtor",
+        "Type": "int"
+      },
+      {
+        "Name": "rateio",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlprevisto",
+        "Type": "decimal"
+      },
+      {
+        "Name": "vlrecebido",
+        "Type": "decimal"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_cabec",
+        "Constraint": "NVRI_COMRATEIO_CODCABEC_RE_NVRF",
+        "ReferencingColumn": "cod_cabec",
+        "ReferencedTable": "com_cabec",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_parcela",
+        "Constraint": "NVRI_COMRATEIO_CODPARCELA_RE_NVRF",
+        "ReferencingColumn": "cod_parcela",
+        "ReferencedTable": "com_parcelas",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_produtor",
+        "Constraint": "NVRI_COMRATEIO_CODPRODUTOR_RE_NVRF",
+        "ReferencingColumn": "cod_produtor",
+        "ReferencedTable": "produtores",
+        "ReferencedColumn": "codprod"
+      },
+      {
+        "Column": "cod_proposta",
+        "Constraint": "NVRI_COMRATEIO_CODPROPOSTA_RE_NVRF",
+        "ReferencingColumn": "cod_proposta",
+        "ReferencedTable": "seg_proposta",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "seg_proposta": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chavepasta",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveorigem",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_seguradora",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_produto",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_produtor",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_tipoproposta",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_tipoendosso",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_status",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_grupo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricaoseguro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cmp_endosso",
+        "Type": "varchar"
+      },
+      {
+        "Name": "renovar",
+        "Type": "bit"
+      },
+      {
+        "Name": "dtcadastro",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtemissao",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtiniciovig",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtfinalvig",
+        "Type": "date"
+      },
+      {
+        "Name": "nproposta",
+        "Type": "varchar"
+      },
+      {
+        "Name": "napolice",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nendosso",
+        "Type": "varchar"
+      },
+      {
+        "Name": "emitido",
+        "Type": "bit"
+      },
+      {
+        "Name": "bloqueio",
+        "Type": "bit"
+      },
+      {
+        "Name": "atual",
+        "Type": "bit"
+      },
+      {
+        "Name": "gerarnome",
+        "Type": "bit"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      },
+      {
+        "Name": "dtprospeccao",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "numeropasta",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_statusprospect",
+        "Type": "int"
+      },
+      {
+        "Name": "sem_movimento",
+        "Type": "bit"
+      },
+      {
+        "Name": "motivoinativo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      },
+      {
+        "Name": "hrprospeccao",
+        "Type": "time"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_status",
+        "Constraint": "NVRI_SEGPROPOSTA_STATUSPROPOSTA_RE_NVRF",
+        "ReferencingColumn": "cod_status",
+        "ReferencedTable": "a_statusproposta",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_tipoendosso",
+        "Constraint": "NVRI_SEGPROPOSTA_TIPOENDOSSO_RE_NVRF",
+        "ReferencingColumn": "cod_tipoendosso",
+        "ReferencedTable": "a_tipoendosso",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_tipoproposta",
+        "Constraint": "NVRI_SEGPROPOSTA_TIPOPROPOSTA_RE_NVRF",
+        "ReferencingColumn": "cod_tipoproposta",
+        "ReferencedTable": "a_tipoproposta",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_produtor",
+        "Constraint": "NVRI_SEGPROPOSTA_PRODUTOR_RE_NVRF",
+        "ReferencingColumn": "cod_produtor",
+        "ReferencedTable": "produtores",
+        "ReferencedColumn": "codprod"
+      },
+      {
+        "Column": "cod_produto",
+        "Constraint": "NVRI_SEGPROPOSTA_PRODUTO_RE_NVRF",
+        "ReferencingColumn": "cod_produto",
+        "ReferencedTable": "produtos",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_statusprospect",
+        "Constraint": "NVRI_SEGPROPOSTA_STATUSPROSPECT_RE_NVRF",
+        "ReferencingColumn": "cod_statusprospect",
+        "ReferencedTable": "prospect_status",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_grupo",
+        "Constraint": "NVRI_SEGPROPOSTA_GRUPO_RE_NVRF",
+        "ReferencingColumn": "cod_grupo",
+        "ReferencedTable": "seg_grupo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "chavepasta",
+        "Constraint": "NVRI_SEGPROPOSTA_PASTA_RE_NVRF",
+        "ReferencingColumn": "chavepasta",
+        "ReferencedTable": "seg_pasta",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "cod_seguradora",
+        "Constraint": "NVRI_SEGPROPOSTA_SEGURADORA_RE_NVRF",
+        "ReferencingColumn": "cod_seguradora",
+        "ReferencedTable": "seguradoras",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_SEGPROPOSTA_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itensconsorcio": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "codtipo",
+        "Type": "int"
+      },
+      {
+        "Name": "grupo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cota",
+        "Type": "varchar"
+      },
+      {
+        "Name": "prazo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "indice",
+        "Type": "varchar"
+      },
+      {
+        "Name": "bemreferencia",
+        "Type": "varchar"
+      },
+      {
+        "Name": "valorcredito",
+        "Type": "decimal"
+      },
+      {
+        "Name": "produto",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nitem",
+        "Type": "int"
+      },
+      {
+        "Name": "observacoes",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtipo",
+        "Constraint": "FK__seg_itens__codti__51EF2864",
+        "ReferencingColumn": "codtipo",
+        "ReferencedTable": "seg_itenscosorciotipo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_fone": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "seguradoras_contatos": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "codseguradora",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "depto",
+        "Type": "varchar"
+      },
+      {
+        "Name": "fones",
+        "Type": "varchar"
+      },
+      {
+        "Name": "email",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codseguradora",
+        "Constraint": "NVRI_SEGURADORASCONTATO_SEGURADORA_RE_NVRF",
+        "ReferencingColumn": "codseguradora",
+        "ReferencedTable": "seguradoras",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_internet": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "sinistro_historicoterceiro": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_processo",
+        "Type": "int"
+      },
+      {
+        "Name": "dtmovimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "hrmovimento",
+        "Type": "time"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      },
+      {
+        "Name": "codterceiro",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_processo",
+        "Constraint": "NVRI_SINISTROHISTORICOTERCEIRO_PROCESSO_RE_NVRF",
+        "ReferencingColumn": "cod_processo",
+        "ReferencedTable": "sinistro_processo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codterceiro",
+        "Constraint": "NVRI_SINISTROHISTORICOTERCEIRO_TERCEIRO_RE_NVRF",
+        "ReferencingColumn": "codterceiro",
+        "ReferencedTable": "sinistro_terceiro",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_SINISTROHISTORICOTERCEIRO_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_estado": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "sigla",
+        "Type": "varchar"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "com_pagprodutor": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "data",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "hora",
+        "Type": "time"
+      },
+      {
+        "Name": "cod_produtor",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      },
+      {
+        "Name": "valor",
+        "Type": "decimal"
+      },
+      {
+        "Name": "ativo",
+        "Type": "bit"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_produtor",
+        "Constraint": "NVRI_COMPAGPRODUTOR_CODPRODUTOR_RE_NVRF",
+        "ReferencingColumn": "cod_produtor",
+        "ReferencedTable": "produtores",
+        "ReferencedColumn": "codprod"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_COMPAGPRODUTOR_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itensprevidencia": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cpf",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nascimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "codsexo",
+        "Type": "int"
+      },
+      {
+        "Name": "codecivil",
+        "Type": "int"
+      },
+      {
+        "Name": "nomemae",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nitem",
+        "Type": "int"
+      },
+      {
+        "Name": "observacoes",
+        "Type": "varchar"
+      },
+      {
+        "Name": "produto",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rg_numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rg_orgao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "rg_data",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "indice",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codecivil",
+        "Constraint": "NVRI_SEGITENSPREVIDENCIA_ECIVIL_RE_NVRF",
+        "ReferencingColumn": "codecivil",
+        "ReferencedTable": "a_ecivil",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codsexo",
+        "Constraint": "NVRI_SEGITENSPREVIDENCIA_SEXO_RE_NVRF",
+        "ReferencingColumn": "codsexo",
+        "ReferencedTable": "a_sexo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "cp_extrato": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "data",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "hora",
+        "Type": "time"
+      },
+      {
+        "Name": "cod_cc",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_titulo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      },
+      {
+        "Name": "tipodc",
+        "Type": "varchar"
+      },
+      {
+        "Name": "valorc",
+        "Type": "decimal"
+      },
+      {
+        "Name": "valord",
+        "Type": "decimal"
+      },
+      {
+        "Name": "saldo",
+        "Type": "decimal"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_cc",
+        "Constraint": "NVRI_CPEXTRATO_CONTA_RE_NVRF",
+        "ReferencingColumn": "cod_cc",
+        "ReferencedTable": "cp_contacorrente",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_titulo",
+        "Constraint": "NVRI_CPEXTRATO_TITULO_RE_NVRF",
+        "ReferencingColumn": "cod_titulo",
+        "ReferencedTable": "cp_titulo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_CPEXTRATO_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "clientes_enderecos": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "codcli",
+        "Type": "int"
+      },
+      {
+        "Name": "codtipoendereco",
+        "Type": "int"
+      },
+      {
+        "Name": "cep",
+        "Type": "varchar"
+      },
+      {
+        "Name": "tipologradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "logradouro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "numero",
+        "Type": "varchar"
+      },
+      {
+        "Name": "complemento",
+        "Type": "varchar"
+      },
+      {
+        "Name": "bairro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cidade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "estado",
+        "Type": "varchar"
+      },
+      {
+        "Name": "padrao",
+        "Type": "bit"
+      },
+      {
+        "Name": "endereco",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtipoendereco",
+        "Constraint": "NVRI_CLIENTESENDERECO_TIPO_RE_NVRF",
+        "ReferencingColumn": "codtipoendereco",
+        "ReferencedTable": "a_endereco",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codcli",
+        "Constraint": "NVRI_CLIENTESENDERECO_CLIENTE_RE_NVRF",
+        "ReferencingColumn": "codcli",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      }
+    ]
+  },
+  "parametros_opcoes": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "valor",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "com_extrato": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "data",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "hora",
+        "Type": "time"
+      },
+      {
+        "Name": "cod_produtor",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_origem",
+        "Type": "int"
+      },
+      {
+        "Name": "tipodc",
+        "Type": "varchar"
+      },
+      {
+        "Name": "valorc",
+        "Type": "decimal"
+      },
+      {
+        "Name": "valord",
+        "Type": "decimal"
+      },
+      {
+        "Name": "saldo",
+        "Type": "decimal"
+      },
+      {
+        "Name": "dtrecebecomissao",
+        "Type": "date"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_produtor",
+        "Constraint": "NVRI_COMEXTRATO_CODPRODUTOR_RE_NVRF",
+        "ReferencingColumn": "cod_produtor",
+        "ReferencedTable": "produtores",
+        "ReferencedColumn": "codprod"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_COMEXTRATO_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "coberturas": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_ramo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "is_padrao",
+        "Type": "decimal"
+      },
+      {
+        "Name": "premio_padrao",
+        "Type": "decimal"
+      },
+      {
+        "Name": "franquia_padrao",
+        "Type": "decimal"
+      },
+      {
+        "Name": "obs_padrao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "uso_padrao",
+        "Type": "bit"
+      },
+      {
+        "Name": "ordem",
+        "Type": "int"
+      },
+      {
+        "Name": "id_importacao",
+        "Type": "int"
+      },
+      {
+        "Name": "ativo",
+        "Type": "char"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_ramo",
+        "Constraint": "NVRI_COBERTURAS_RAMO_RE_NVRF",
+        "ReferencingColumn": "cod_ramo",
+        "ReferencedTable": "ramos",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "clientes_fones": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "codcli",
+        "Type": "int"
+      },
+      {
+        "Name": "codtipofone",
+        "Type": "int"
+      },
+      {
+        "Name": "fone",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtipofone",
+        "Constraint": "NVRI_CLIENTESFONE_TIPO_RE_NVRF",
+        "ReferencingColumn": "codtipofone",
+        "ReferencedTable": "a_fone",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codcli",
+        "Constraint": "NVRI_CLIENTESFONE_CLIENTE_RE_NVRF",
+        "ReferencingColumn": "codcli",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      }
+    ]
+  },
+  "prospect": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveproposta",
+        "Type": "int"
+      },
+      {
+        "Name": "dtmovimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "hrmovimento",
+        "Type": "time"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "chaveproposta",
+        "Constraint": "NVRI_PROSPECT_PROPOSTA_RE_NVRF",
+        "ReferencingColumn": "chaveproposta",
+        "ReferencedTable": "seg_proposta",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_PROSPECT_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_formapag": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "tipodado",
+        "Type": "char"
+      },
+      {
+        "Name": "id_importacao",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "seg_itens": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveproposta",
+        "Type": "int"
+      },
+      {
+        "Name": "nitem",
+        "Type": "int"
+      },
+      {
+        "Name": "descricaoseguro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ativo",
+        "Type": "bit"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "chaveproposta",
+        "Constraint": "NVRI_SEGITENS_PROPOSTA_RE_NVRF",
+        "ReferencingColumn": "chaveproposta",
+        "ReferencedTable": "seg_proposta",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "clientes_internet": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "codcli",
+        "Type": "int"
+      },
+      {
+        "Name": "codtipointernet",
+        "Type": "int"
+      },
+      {
+        "Name": "internet",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtipointernet",
+        "Constraint": "NVRI_CLIENTESINTERNET_TIPO_RE_NVRF",
+        "ReferencingColumn": "codtipointernet",
+        "ReferencedTable": "a_internet",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codcli",
+        "Constraint": "NVRI_CLIENTESINTERNET_CLIENTE_RE_NVRF",
+        "ReferencingColumn": "codcli",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      }
+    ]
+  },
+  "mail_localuso": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "mail_tipo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "localuso",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "localuso",
+        "Constraint": "FK__mail_tipo__local__61BB7BD9",
+        "ReferencingColumn": "localuso",
+        "ReferencedTable": "mail_localuso",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "acesso_personalizado": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "padrao",
+        "Type": "bit"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_franquia": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "id_importacao",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_banco": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "seg_parcelas": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_proposta",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_cabec",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_status",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_formapagto",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_banco",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_bandeira",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_pessoa",
+        "Type": "int"
+      },
+      {
+        "Name": "nparcela",
+        "Type": "int"
+      },
+      {
+        "Name": "dtvencimento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtpagamento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "valor",
+        "Type": "decimal"
+      },
+      {
+        "Name": "agencia",
+        "Type": "varchar"
+      },
+      {
+        "Name": "conta",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cpfcnpj",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ncartao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "validade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obscartao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_banco",
+        "Constraint": "NVRI_SEGPARCELAS_BANCO_RE_NVRF",
+        "ReferencingColumn": "cod_banco",
+        "ReferencedTable": "a_banco",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_bandeira",
+        "Constraint": "NVRI_SEGPARCELAS_BANDEIRA_RE_NVRF",
+        "ReferencingColumn": "cod_bandeira",
+        "ReferencedTable": "a_bandeiracartao",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_pessoa",
+        "Constraint": "FK__seg_parce__cod_p__64CCF2AE",
+        "ReferencingColumn": "cod_pessoa",
+        "ReferencedTable": "a_pessoa",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_cabec",
+        "Constraint": "NVRI_SEGPARCELAS_CODCABEC_RE_NVRF",
+        "ReferencingColumn": "cod_cabec",
+        "ReferencedTable": "com_cabec",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_status",
+        "Constraint": "FK__seg_parce__cod_s__63D8CE75",
+        "ReferencingColumn": "cod_status",
+        "ReferencedTable": "com_status",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_formapagto",
+        "Constraint": "NVRI_SEGPARCELAS_FORMAPAGTO_RE_NVRF",
+        "ReferencingColumn": "cod_formapagto",
+        "ReferencedTable": "seg_formapag",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_proposta",
+        "Constraint": "NVRI_SEGPARCELAS_CODPROPOSTA_RE_NVRF",
+        "ReferencingColumn": "cod_proposta",
+        "ReferencedTable": "seg_proposta",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "mail_status": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_kitgas": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "seg_itenscobertura": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "chavecobertura",
+        "Type": "int"
+      },
+      {
+        "Name": "valoris",
+        "Type": "decimal"
+      },
+      {
+        "Name": "premio",
+        "Type": "decimal"
+      },
+      {
+        "Name": "franquia",
+        "Type": "decimal"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "chavecobertura",
+        "Constraint": "NVRI_SEGITENSCOBERTURA_COBERTURA_RE_NVRF",
+        "ReferencingColumn": "chavecobertura",
+        "ReferencedTable": "coberturas",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSCOBERTURA_ITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "mail_texto": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_tipo",
+        "Type": "int"
+      },
+      {
+        "Name": "titulo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "assunto",
+        "Type": "varchar"
+      },
+      {
+        "Name": "texto",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ativo",
+        "Type": "bit"
+      },
+      {
+        "Name": "alinhamento",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_tipo",
+        "Constraint": "FK__mail_text__cod_t__668030F6",
+        "ReferencingColumn": "cod_tipo",
+        "ReferencedTable": "mail_tipo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "acesso_personalizado_item": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_menu",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_acessoprincipal",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_ordem",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_acessoprincipal",
+        "Constraint": "FK__acesso_pe__cod_a__679450C0",
+        "ReferencingColumn": "cod_acessoprincipal",
+        "ReferencedTable": "acesso_principal",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_menu",
+        "Constraint": "FK__acesso_pe__cod_m__66A02C87",
+        "ReferencingColumn": "cod_menu",
+        "ReferencedTable": "acesso_personalizado",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_rastreador": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_bandeiracartao": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "portovisa",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_usoveiculo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ordem",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "imp_painel": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "nome",
+        "Type": "varchar"
+      },
+      {
+        "Name": "endereco",
+        "Type": "varchar"
+      },
+      {
+        "Name": "bairro",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cidade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "estado",
+        "Type": "varchar"
+      },
+      {
+        "Name": "cep",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "acesso_personalizado_usuario": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_menu",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuario",
+        "Type": "int"
+      },
+      {
+        "Name": "restrito",
+        "Type": "bit"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_menu",
+        "Constraint": "FK__acesso_pe__cod_m__6A70BD6B",
+        "ReferencingColumn": "cod_menu",
+        "ReferencedTable": "acesso_personalizado",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuario",
+        "Constraint": "NVRI_ACESSOPERSONALIZADO_USUARIO_RE_NVRF",
+        "ReferencingColumn": "cod_usuario",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "clientes_contas": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "codcli",
+        "Type": "int"
+      },
+      {
+        "Name": "codbanco",
+        "Type": "int"
+      },
+      {
+        "Name": "agencia",
+        "Type": "varchar"
+      },
+      {
+        "Name": "conta",
+        "Type": "varchar"
+      },
+      {
+        "Name": "codpessoa",
+        "Type": "int"
+      },
+      {
+        "Name": "cpfcnpj",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codbanco",
+        "Constraint": "NVRI_CLIENTESCONTAS_CODBANCO_RE_NVRF",
+        "ReferencingColumn": "codbanco",
+        "ReferencedTable": "a_banco",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codpessoa",
+        "Constraint": "NVRI_CLIENTESCONTAS_CODPESSOA_RE_NVRF",
+        "ReferencingColumn": "codpessoa",
+        "ReferencedTable": "a_pessoa",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codcli",
+        "Constraint": "NVRI_CLIENTESCONTAS_CLIENTE_RE_NVRF",
+        "ReferencingColumn": "codcli",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      }
+    ]
+  },
+  "mail_painel": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuariocria",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_usuarioevento",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_status",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_tipo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_texto",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_cliente",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_proposta",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_item",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_produtor",
+        "Type": "int"
+      },
+      {
+        "Name": "destinatario",
+        "Type": "varchar"
+      },
+      {
+        "Name": "copia",
+        "Type": "varchar"
+      },
+      {
+        "Name": "dtcria",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "dtevento",
+        "Type": "smalldatetime"
+      },
+      {
+        "Name": "hrevento",
+        "Type": "time"
+      },
+      {
+        "Name": "htm",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_cliente",
+        "Constraint": "NVRI_MAIL_CLIENTE_RE_NVRF",
+        "ReferencingColumn": "cod_cliente",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      },
+      {
+        "Column": "cod_status",
+        "Constraint": "FK__mail_pain__cod_s__6C390A4C",
+        "ReferencingColumn": "cod_status",
+        "ReferencedTable": "mail_status",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_texto",
+        "Constraint": "NVRI_MAIL_TEXTO_RE_NVRF",
+        "ReferencingColumn": "cod_texto",
+        "ReferencedTable": "mail_texto",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_tipo",
+        "Constraint": "FK__mail_pain__cod_t__6D2D2E85",
+        "ReferencingColumn": "cod_tipo",
+        "ReferencedTable": "mail_tipo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_produtor",
+        "Constraint": "NVRI_MAIL_PRODUTOR_RE_NVRF",
+        "ReferencingColumn": "cod_produtor",
+        "ReferencedTable": "produtores",
+        "ReferencedColumn": "codprod"
+      },
+      {
+        "Column": "cod_item",
+        "Constraint": "NVRI_MAIL_ITEM_RE_NVRF",
+        "ReferencingColumn": "cod_item",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "cod_proposta",
+        "Constraint": "NVRI_MAIL_PROPOSTA_RE_NVRF",
+        "ReferencingColumn": "cod_proposta",
+        "ReferencedTable": "seg_proposta",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "cod_usuariocria",
+        "Constraint": "NVRI_MAIL_USUARIOCRIA_RE_NVRF",
+        "ReferencingColumn": "cod_usuariocria",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_usuarioevento",
+        "Constraint": "NVRI_MAIL_USUARIOEVENTO_RE_NVRF",
+        "ReferencingColumn": "cod_usuarioevento",
+        "ReferencedTable": "usuarios",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "com_calculocabec": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_tipo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_seguradora",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_ramo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_produto",
+        "Type": "int"
+      },
+      {
+        "Name": "comissaobase",
+        "Type": "decimal"
+      },
+      {
+        "Name": "custoapolice",
+        "Type": "decimal"
+      },
+      {
+        "Name": "tipodesconto",
+        "Type": "char"
+      },
+      {
+        "Name": "ca_primeira",
+        "Type": "char"
+      },
+      {
+        "Name": "pliquidadif",
+        "Type": "char"
+      },
+      {
+        "Name": "esgotamentodif",
+        "Type": "char"
+      },
+      {
+        "Name": "configurado",
+        "Type": "bit"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_licenciamento": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "clausulas": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_ramo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs_padrao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "uso_padrao",
+        "Type": "bit"
+      },
+      {
+        "Name": "ordem",
+        "Type": "int"
+      },
+      {
+        "Name": "ativo",
+        "Type": "char"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_ramo",
+        "Constraint": "NVRI_CLAUSULAS_RAMO_RE_NVRF",
+        "ReferencingColumn": "cod_ramo",
+        "ReferencedTable": "ramos",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_meses": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "com_calculoitem": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_cabec",
+        "Type": "int"
+      },
+      {
+        "Name": "qtdpcliente",
+        "Type": "int"
+      },
+      {
+        "Name": "qtdpcomissao",
+        "Type": "int"
+      },
+      {
+        "Name": "pagaadicional",
+        "Type": "char"
+      },
+      {
+        "Name": "divisaosimples",
+        "Type": "char"
+      },
+      {
+        "Name": "parcelaliquida",
+        "Type": "decimal"
+      },
+      {
+        "Name": "tipofluxo",
+        "Type": "char"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_cabec",
+        "Constraint": "FK__com_calcu__cod_c__6F4A8121",
+        "ReferencingColumn": "cod_cabec",
+        "ReferencedTable": "com_calculocabec",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "clientes_cartoes": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "codcli",
+        "Type": "int"
+      },
+      {
+        "Name": "codbandeira",
+        "Type": "int"
+      },
+      {
+        "Name": "ncartao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "validade",
+        "Type": "varchar"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      },
+      {
+        "Name": "nomeimpresso",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codbandeira",
+        "Constraint": "NVRI_CLIENTESCARTOES_BANDEIRA_RE_NVRF",
+        "ReferencingColumn": "codbandeira",
+        "ReferencedTable": "a_bandeiracartao",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codcli",
+        "Constraint": "NVRI_CLIENTESCARTOES_CLIENTE_RE_NVRF",
+        "ReferencingColumn": "codcli",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      }
+    ]
+  },
+  "a_licenciamentomeses": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "finalplaca",
+        "Type": "char"
+      },
+      {
+        "Name": "mesveiculo",
+        "Type": "int"
+      },
+      {
+        "Name": "mescaminhao",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "mescaminhao",
+        "Constraint": "FK__a_licenci__mesca__719CDDE7",
+        "ReferencingColumn": "mescaminhao",
+        "ReferencedTable": "a_meses",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "mesveiculo",
+        "Constraint": "FK__a_licenci__mesve__70A8B9AE",
+        "ReferencingColumn": "mesveiculo",
+        "ReferencedTable": "a_meses",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "com_calculoitemdif": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_cabec",
+        "Type": "int"
+      },
+      {
+        "Name": "cod_item",
+        "Type": "int"
+      },
+      {
+        "Name": "parcela",
+        "Type": "int"
+      },
+      {
+        "Name": "percentual",
+        "Type": "decimal"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "cod_cabec",
+        "Constraint": "FK__com_calcu__cod_c__7226EDCC",
+        "ReferencingColumn": "cod_cabec",
+        "ReferencedTable": "com_calculocabec",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "cod_item",
+        "Constraint": "FK__com_calcu__cod_i__731B1205",
+        "ReferencingColumn": "cod_item",
+        "ReferencedTable": "com_calculoitem",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_tipodata": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "seg_itensclausula": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveclausula",
+        "Type": "int"
+      },
+      {
+        "Name": "obs",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "chaveclausula",
+        "Constraint": "NVRI_SEGITENSCLAUSULA_CLAUSULA_RE_NVRF",
+        "ReferencingColumn": "chaveclausula",
+        "ReferencedTable": "clausulas",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSCLAUSULA_ITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "a_combustivel": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_pessoacampo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "com_calculotipo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_cores": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "ordem",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "mail_campos": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "localuso",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "localuso",
+        "Constraint": "FK__mail_camp__local__76B698BF",
+        "ReferencingColumn": "localuso",
+        "ReferencedTable": "mail_localuso",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "a_camposcliente": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "codtipo",
+        "Type": "int"
+      },
+      {
+        "Name": "codpessoa",
+        "Type": "int"
+      },
+      {
+        "Name": "ordem",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codpessoa",
+        "Constraint": "FK__a_camposc__codpe__787EE5A0",
+        "ReferencingColumn": "codpessoa",
+        "ReferencedTable": "a_pessoacampo",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codtipo",
+        "Constraint": "FK__a_camposc__codti__778AC167",
+        "ReferencingColumn": "codtipo",
+        "ReferencedTable": "a_tipodata",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "com_calculotipofluxo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "varchar"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "sinistro_natureza": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "codigo_tipo",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codigo_tipo",
+        "Constraint": "FK__sinistro___codig__78D3EB5B",
+        "ReferencingColumn": "codigo_tipo",
+        "ReferencedTable": "ramos_tipo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "seg_itenscondutor": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "codclirelacao",
+        "Type": "int"
+      },
+      {
+        "Name": "codtiporelacao",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codtiporelacao",
+        "Constraint": "NVRI_SEGITENSCONDUTOR_TIPORELACAO_RE_NVRF",
+        "ReferencingColumn": "codtiporelacao",
+        "ReferencedTable": "a_tiporelacao",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codclirelacao",
+        "Constraint": "NVRI_SEGITENSCONDUTOR_CLIENTERELACAO_RE_NVRF",
+        "ReferencingColumn": "codclirelacao",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSCONDUTOR_ITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "envelope": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "altura",
+        "Type": "int"
+      },
+      {
+        "Name": "largura",
+        "Type": "int"
+      },
+      {
+        "Name": "imprimelogo",
+        "Type": "char"
+      },
+      {
+        "Name": "imprimerodape",
+        "Type": "char"
+      },
+      {
+        "Name": "usacorretora",
+        "Type": "char"
+      },
+      {
+        "Name": "corretora",
+        "Type": "varchar"
+      },
+      {
+        "Name": "endereco",
+        "Type": "varchar"
+      },
+      {
+        "Name": "orientacao",
+        "Type": "int"
+      },
+      {
+        "Name": "subir",
+        "Type": "int"
+      },
+      {
+        "Name": "padrao",
+        "Type": "int"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "perfil_tipo": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "perfil_status": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "sinistro_status": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "clientes_campos": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "codcli",
+        "Type": "int"
+      },
+      {
+        "Name": "codcampo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      },
+      {
+        "Name": "data",
+        "Type": "smalldatetime"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "codcampo",
+        "Constraint": "NVRI_CLIENTESCAMPOS_CAMPO_RE_NVRF",
+        "ReferencingColumn": "codcampo",
+        "ReferencedTable": "a_camposcliente",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "codcli",
+        "Constraint": "NVRI_CLIENTESCAMPOS_CLIENTE_RE_NVRF",
+        "ReferencingColumn": "codcli",
+        "ReferencedTable": "clientes",
+        "ReferencedColumn": "codcli"
+      }
+    ]
+  },
+  "seg_itensperfil": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chaveitem",
+        "Type": "int"
+      },
+      {
+        "Name": "chave_pergunta",
+        "Type": "int"
+      },
+      {
+        "Name": "chave_resposta",
+        "Type": "int"
+      },
+      {
+        "Name": "resposta_texto",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "chave_pergunta",
+        "Constraint": "NVRI_SEGITENSPERFIL_PERGUNTA_RE_NVRF",
+        "ReferencingColumn": "chave_pergunta",
+        "ReferencedTable": "perfil_perguntas",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "chave_resposta",
+        "Constraint": "NVRI_SEGITENSPERFIL_RESPOSTA_RE_NVRF",
+        "ReferencingColumn": "chave_resposta",
+        "ReferencedTable": "perfil_respostas",
+        "ReferencedColumn": "chave"
+      },
+      {
+        "Column": "chaveitem",
+        "Constraint": "NVRI_SEGITENSPERFIL_ITEM_RE_NVRF",
+        "ReferencingColumn": "chaveitem",
+        "ReferencedTable": "seg_itens",
+        "ReferencedColumn": "chave"
+      }
+    ]
+  },
+  "perfil_perguntas": {
+    "Columns": [
+      {
+        "Name": "chave",
+        "Type": "int"
+      },
+      {
+        "Name": "chave_tipo",
+        "Type": "int"
+      },
+      {
+        "Name": "chave_status",
+        "Type": "int"
+      },
+      {
+        "Name": "pergunta",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Column": "chave_status",
+        "Constraint": "FK__perfil_pe__chave__7EF6D905",
+        "ReferencingColumn": "chave_status",
+        "ReferencedTable": "perfil_status",
+        "ReferencedColumn": "codigo"
+      },
+      {
+        "Column": "chave_tipo",
+        "Constraint": "FK__perfil_pe__chave__7E02B4CC",
+        "ReferencingColumn": "chave_tipo",
+        "ReferencedTable": "perfil_tipo",
+        "ReferencedColumn": "codigo"
+      }
+    ]
+  },
+  "sinistro_guincho": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "sinistro_culpa": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "a_tiporelacao": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "descricao",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  },
+  "envelope_outros": {
+    "Columns": [
+      {
+        "Name": "codigo",
+        "Type": "int"
+      },
+      {
+        "Name": "linha1",
+        "Type": "varchar"
+      },
+      {
+        "Name": "linha2",
+        "Type": "varchar"
+      },
+      {
+        "Name": "linha3",
+        "Type": "varchar"
+      },
+      {
+        "Name": "linha4",
+        "Type": "varchar"
+      },
+      {
+        "Name": "linha5",
+        "Type": "varchar"
+      }
+    ],
+    "ForeignKeys": []
+  }
+}
