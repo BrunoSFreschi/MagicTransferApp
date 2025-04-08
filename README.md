@@ -86,3 +86,57 @@ O arquivo JSON gerado tem a seguinte estrutura:
     ]
   }
 }
+```
+
+
+## Logs de Execução
+Durante o processo de ETL, o programa gera logs detalhados sobre cada etapa. As mensagens incluem ícones e informações sobre o andamento do processo, como tempo de execução e número de tabelas processadas.
+
+## Exemplo de log:
+🔵 [ETAPA 1/4] Iniciando análise da estrutura do banco de dados...
+🔵 [ETAPA 2/4] Conectando ao banco de dados...
+✅ Conexão estabelecida com sucesso. ⏱️ Tempo: 2.35s
+🔵 [ETAPA 3/4] Obtendo lista de tabelas...
+📋 Encontradas 10 tabelas. ⏱️ Tempo: 1.10s
+🔵 [ETAPA 4/4] Processando 10 tabelas...
+ℹ️ Processando tabela 1/10: Tabela1
+📝 Obtendo colunas e tipos de dados...
+🔗 Buscando chaves estrangeiras...
+📋 Tabela Tabela1 processada. ⏱️ Tempo: 0.75s
+📄 Arquivo 'db_structure.json' gerado com sucesso. ⏱️ Tempo: 1.50s
+✅ Processo concluído com sucesso! ⏱️ Tempo total: 5.35s
+
+
+## Tipos de Dados Suportados
+O modelo é compatível com vários tipos de dados comuns em bancos de dados SQL Server, como:
+
+INT
+
+VARCHAR
+
+DATE
+
+DECIMAL
+
+DATETIME
+
+E outros tipos de dados padrão.
+
+Contribuindo
+Se você deseja contribuir para o projeto, siga os seguintes passos:
+
+Faça um fork do repositório.
+
+Crie uma branch para a sua feature (git checkout -b feature/nova-feature).
+
+Faça as alterações necessárias.
+
+Envie as alterações para o seu fork (git push origin feature/nova-feature).
+
+Abra um pull request para o repositório principal.
+
+Licença
+Este projeto está licenciado sob a MIT License.
+
+Considerações Finais
+Este modelo ETL foi criado para ser uma base para análise e documentação de bancos de dados. Ele pode ser integrado a outras ferramentas de análise de dados ou adaptado para cenários específicos, como migrações ou auditorias.
