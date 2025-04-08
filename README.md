@@ -136,7 +136,10 @@ Envie as alterações para o seu fork (git push origin feature/nova-feature).
 Abra um pull request para o repositório principal.
 
 ## Licença
-Este projeto está licenciado sob a MIT License.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
+
 
 Considerações Finais
 Este modelo ETL foi criado para ser uma base para análise e documentação de bancos de dados. Ele pode ser integrado a outras ferramentas de análise de dados ou adaptado para cenários específicos, como migrações ou auditorias.
+
+❤️ 💙 💜
