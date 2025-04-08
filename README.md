@@ -142,4 +142,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para 
 Considerações Finais
 Este modelo ETL foi criado para ser uma base para análise e documentação de bancos de dados. Ele pode ser integrado a outras ferramentas de análise de dados ou adaptado para cenários específicos, como migrações ou auditorias.
 
+
+## 
 ❤️ 💙 💜
