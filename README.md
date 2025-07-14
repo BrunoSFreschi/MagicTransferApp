@@ -1,3 +1,4 @@
+# Projeto de Conclusão de curso
 # Modelo ETL para Análise de Estrutura de Banco de Dados
 
 Este projeto foi desenvolvido como um modelo **ETL (Extract, Transform, Load)** para a análise e extração da estrutura de um banco de dados SQL Server. Ele é projetado para coletar informações sobre tabelas, colunas e chaves estrangeiras, transformá-las em um formato JSON estruturado e carregar esse resultado em um arquivo para ser utilizado em análises posteriores.
