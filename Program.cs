@@ -18,8 +18,8 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 string server = "localhost";
 string database = "DOUTOR";
-string username = "aggersa";
-string password = "1800Dz10";
+string username = "localhost";
+string password = "12345";
 string connStr = $"Server={server};Database={database};User Id={username};Password={password};";
 
 Stopwatch totalTimer = Stopwatch.StartNew();
